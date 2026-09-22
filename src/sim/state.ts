@@ -372,7 +372,7 @@ export function createState(b: Balance, seed: number, prestige: Prestige = { mar
       soldBuf: [],
       secTimer: 0,
     },
-    messages: [],
+    messages: [{ tick: 0, text: 'Produktions-KI online. Erster Auftrag: Autos montieren und verkaufen.' }],
     nextMilestone: 0,
     prestige: { ...prestige },
   };
@@ -381,4 +381,10 @@ export function createState(b: Balance, seed: number, prestige: Prestige = { mar
 /** Spielzeit in Sekunden. */
 export function playSeconds(s: GameState, b: Balance): number {
   return (s.tick * b.tick.fastMs) / 1000;
+}
+
+/** Ersetzt den Inhalt eines Zustandsobjekts in place (Prestige-Reset, Import). Referenzen bleiben gültig. */
+export function replaceState(target: GameState, source: GameState): void {
+  for (const k of Object.keys(target)) delete (target as unknown as Record<string, unknown>)[k];
+  Object.assign(target, source);
 }

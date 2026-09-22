@@ -1,7 +1,7 @@
 import type { Balance } from './balance';
 import { log } from './messages';
 import { rand } from './rng';
-import { createState, type GameState } from './state';
+import { createState, replaceState, type GameState } from './state';
 
 /** Ende-Trigger (Kap. 8.1). */
 export function checkEnd(s: GameState, b: Balance): void {
@@ -29,8 +29,6 @@ export function prestigeReset(s: GameState, b: Balance, kind: 'market' | 'ideas'
   const prestige = { ...s.prestige };
   prestige[kind]++;
   const seed = Math.floor(rand(s) * 0x100000000) >>> 0;
-  const fresh = createState(b, seed, prestige);
-  for (const k of Object.keys(s)) delete (s as unknown as Record<string, unknown>)[k];
-  Object.assign(s, fresh);
+  replaceState(s, createState(b, seed, prestige));
   log(s, kind === 'market' ? 'Ein neues Werk. Der Markt erinnert sich (+10 % Nachfrage).' : 'Ein inneres Werk. Die Ideen fließen schneller (+10 %).');
 }

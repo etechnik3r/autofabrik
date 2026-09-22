@@ -123,7 +123,7 @@ Die Projektliste wird nach ID gediffed (neue Projekte blinken kurz).
 
 - `tools/simulate.ts` – headless Lauf mit wählbarem Bot und Seed, gibt Meilensteinzeiten aus.
 - `tools/bots/` – Referenz-Bot nach Anhang C, gieriger Bot.
-- `tools/reachability.ts` – statische Prüfung des Projektgraphen.
+- `tools/reachability.ts` – statische Prüfung des Projektgraphen (Verweise, Zyklen) und dynamisch: welche Projekte der gierige Bot nie sieht.
 - `test/` – Formelbeispiele aus der Spec, PRNG-Determinismus, Invarianten (kein NaN, nichts negativ), Anhang-C-Referenz (±10 %), Speichern/Laden, Projekt-Integrität.
 
 ## 8. Interpretationen der Spec
