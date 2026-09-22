@@ -7,7 +7,7 @@ export interface Cost {
   ideas?: number;
   insight?: number;
   rep?: number;
-  money?: number; // k€
+  money?: number; // k∈
   pool?: number;
   energy?: number; // gespeicherte Energie (MWt)
   storage?: number; // Speichereinheiten (P135)

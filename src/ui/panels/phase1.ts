@@ -31,8 +31,8 @@ export const salesPanel = definePanel({
     p.stat('Lager', (s) => fmtNum(s.stock));
     p.stat('Preis je Auto', (s) => fmtMoney(s.price));
     p.group('row', undefined, (g) => {
-      g.button('−', { type: 'price', delta: -1 }, { title: 'Preis −1 k€' });
-      g.button('+', { type: 'price', delta: 1 }, { title: 'Preis +1 k€' });
+      g.button('−', { type: 'price', delta: -1 }, { title: 'Preis −1 k∈' });
+      g.button('+', { type: 'price', delta: 1 }, { title: 'Preis +1 k∈' });
     });
     p.stat('Marktnachfrage', (s) => fmtPct(s.demand * 10));
     p.stat('Erwarteter Absatz', (s) => `${fmtRate(expectedSales(s.demand, p.game.b))} Autos/s`);

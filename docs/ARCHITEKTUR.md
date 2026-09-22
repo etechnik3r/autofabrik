@@ -132,6 +132,7 @@ Die Projektliste wird nach ID gediffed. Neu erschienene Karten bleiben 30 Spiels
 - `tools/simulate.ts` – headless Lauf mit wählbarem Bot und Seed, gibt Meilensteinzeiten aus.
 - `tools/bots/` – Referenz-Bot nach Anhang C, gieriger Bot.
 - `tools/reachability.ts` – statische Prüfung des Projektgraphen (Verweise, Zyklen) und dynamisch: welche Projekte der gierige Bot nie sieht.
+- `tools/dump-texts.ts` (`npm run docs:texts`) – extrahiert alle Projekttitel, Beschreibungen, Kosten, Abhängigkeiten (aus dem Trigger-Quelltext per Regex, wie in `reachability.ts`) und die Glossareinträge in `docs/TEXTE.md` und `docs/texte.json`. Einzige Quelle für eine Gesamtübersicht der Spieltexte, da diese sonst nur verstreut in den Projekt-Dateien stehen; Texte selbst bitte weiterhin in `src/sim/projects/*.ts` ändern, dieses Kommando läuft danach erneut.
 - `test/` – Formelbeispiele aus der Spec, PRNG-Determinismus, Invarianten (kein NaN, nichts negativ), Anhang-C-Referenz (±10 %), Speichern/Laden, Projekt-Integrität.
 
 ## 8. Interpretationen der Spec

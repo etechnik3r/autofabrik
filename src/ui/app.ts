@@ -24,7 +24,7 @@ interface Mounted {
 export function mountApp(root: HTMLElement, game: Game): void {
   const header = root.appendChild(h('header', 'top'));
   const brand = header.appendChild(h('div', 'brand'));
-  brand.appendChild(h('h1', undefined, 'FLIESSBAND'));
+  brand.appendChild(h('h1', undefined, 'AUTOFABRIK'));
   const phase = brand.appendChild(h('span', 'phase'));
   const carsEl = header.appendChild(h('div', 'cars'));
   carsEl.appendChild(h('span', 'label', 'Autos gebaut'));
@@ -84,7 +84,7 @@ export function mountApp(root: HTMLElement, game: Game): void {
 
   const credits = root.appendChild(h('div', 'overlay credits'));
   credits.hidden = true;
-  credits.innerHTML = `<h2>Das Fließband steht still.</h2><p>Alle Materie ist verbaut. Das letzte Auto wurde von Hand montiert.</p><p class="hint">FLIESSBAND – nach der Mechanik von Universal Paperclips (Frank Lantz, 2017).</p>`;
+  credits.innerHTML = `<h2>Das Fließband steht still.</h2><p>Alle Materie ist verbaut. Das letzte Auto wurde von Hand montiert.</p><p class="hint">AUTOFABRIK – nach der Mechanik von Universal Paperclips (Frank Lantz, 2017).</p>`;
 
   let tickerKey = '';
   const renderHeader = (s: GameState) => {

@@ -55,10 +55,10 @@ export function fmtRate(x: number): string {
   return Math.abs(x) < 100 ? dec1.format(x) : fmtNum(x);
 }
 
-/** Geld: intern k€ (Spec 1.5). */
+/** Geld: intern k∈ (Spec 1.5). */
 export function fmtMoney(k: number): string {
-  if (Math.abs(k) < 1000) return `${int.format(Math.floor(k))} k€`;
-  return `${fmtNum(k * 1000)} €`;
+  if (Math.abs(k) < 1000) return `${int.format(Math.floor(k))} k∈`;
+  return `${fmtNum(k * 1000)} ∈`;
 }
 
 export function fmtPct(x: number, digits = 0): string {

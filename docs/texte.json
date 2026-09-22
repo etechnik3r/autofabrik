@@ -1,0 +1,1292 @@
+{
+  "groups": [
+    {
+      "id": "produktion",
+      "name": "Phase 1 – Produktion und Material",
+      "icon": "🔧"
+    },
+    {
+      "id": "marke",
+      "name": "Phase 1 – Ideen, Marketing, Reputation",
+      "icon": "📣"
+    },
+    {
+      "id": "systeme",
+      "name": "Phase 1 – Systeme",
+      "icon": "🧠"
+    },
+    {
+      "id": "konzern",
+      "name": "Phase 2 – Konzern",
+      "icon": "🏭"
+    },
+    {
+      "id": "expansion",
+      "name": "Phase 3 – Expansion",
+      "icon": "🚀"
+    },
+    {
+      "id": "ende",
+      "name": "Ende",
+      "icon": "📡"
+    }
+  ],
+  "projects": [
+    {
+      "id": "P01",
+      "group": "produktion",
+      "icon": "🦾",
+      "title": "Roboter-Kalibrierung",
+      "description": "Die Roboter arbeiten 25 % schneller.",
+      "text": "750 Ops",
+      "dynamic": false,
+      "deps": [],
+      "repeatable": false
+    },
+    {
+      "id": "P02",
+      "group": "produktion",
+      "icon": "🦾",
+      "title": "Greifer-Upgrade",
+      "description": "Die Roboter arbeiten 50 % schneller.",
+      "text": "2.500 Ops",
+      "dynamic": false,
+      "deps": [
+        "P01"
+      ],
+      "repeatable": false
+    },
+    {
+      "id": "P03",
+      "group": "produktion",
+      "icon": "🦾",
+      "title": "Taktzeit-Optimierung",
+      "description": "Die Roboter arbeiten 75 % schneller.",
+      "text": "5.000 Ops",
+      "dynamic": false,
+      "deps": [
+        "P02"
+      ],
+      "repeatable": false
+    },
+    {
+      "id": "P16",
+      "group": "produktion",
+      "icon": "🦾",
+      "title": "Bewegungsbahnen-Solver",
+      "description": "Optimale Roboterbahnen. Die Roboter arbeiten 500 % schneller.",
+      "text": "6.000 Ops",
+      "dynamic": false,
+      "deps": [
+        "P15"
+      ],
+      "repeatable": false
+    },
+    {
+      "id": "P04",
+      "group": "produktion",
+      "icon": "🚚",
+      "title": "Notlieferung",
+      "description": "Der Zulieferer liefert auf Vertrauensbasis eine Ladung Teile.",
+      "text": "1 Reputation",
+      "dynamic": false,
+      "deps": [],
+      "repeatable": true
+    },
+    {
+      "id": "P07",
+      "group": "produktion",
+      "icon": "🪚",
+      "title": "Tailored Blanks",
+      "description": "Maßgeschneiderte Bleche: 50 % mehr Teilesätze je Lieferung.",
+      "text": "1.750 Ops",
+      "dynamic": false,
+      "deps": [],
+      "repeatable": false
+    },
+    {
+      "id": "P08",
+      "group": "produktion",
+      "icon": "🔦",
+      "title": "Laser-Zuschnitt",
+      "description": "Weniger Verschnitt: 75 % mehr Teilesätze je Lieferung.",
+      "text": "3.500 Ops",
+      "dynamic": false,
+      "deps": [],
+      "repeatable": false
+    },
+    {
+      "id": "P09",
+      "group": "produktion",
+      "icon": "🧱",
+      "title": "Near-Net-Shape-Guss",
+      "description": "Endkonturnah gegossen: doppelt so viele Teilesätze je Lieferung.",
+      "text": "7.500 Ops",
+      "dynamic": false,
+      "deps": [],
+      "repeatable": false
+    },
+    {
+      "id": "P10",
+      "group": "produktion",
+      "icon": "🏗️",
+      "title": "Gigacasting",
+      "description": "Ganze Baugruppen in einem Guss: dreimal so viele Teilesätze je Lieferung.",
+      "text": "12.000 Ops",
+      "dynamic": false,
+      "deps": [],
+      "repeatable": false
+    },
+    {
+      "id": "P10b",
+      "group": "produktion",
+      "icon": "🚙",
+      "title": "Einteilige Karosserie",
+      "description": "Eine Karosserie, ein Teil: elfmal so viele Teilesätze je Lieferung.",
+      "text": "15.000 Ops",
+      "dynamic": false,
+      "deps": [],
+      "repeatable": false
+    },
+    {
+      "id": "P22",
+      "group": "produktion",
+      "icon": "🏭",
+      "title": "Fertigungsstraßen",
+      "description": "Komplette Fertigungsstraßen statt einzelner Roboter.",
+      "text": "12.000 Ops",
+      "dynamic": false,
+      "deps": [],
+      "repeatable": false
+    },
+    {
+      "id": "P23",
+      "group": "produktion",
+      "icon": "⏱️",
+      "title": "Straßen-Takt I",
+      "description": "Fertigungsstraßen 25 % schneller.",
+      "text": "14.000 Ops",
+      "dynamic": false,
+      "deps": [
+        "P22"
+      ],
+      "repeatable": false
+    },
+    {
+      "id": "P24",
+      "group": "produktion",
+      "icon": "⏱️",
+      "title": "Straßen-Takt II",
+      "description": "Fertigungsstraßen 50 % schneller.",
+      "text": "17.000 Ops",
+      "dynamic": false,
+      "deps": [
+        "P23"
+      ],
+      "repeatable": false
+    },
+    {
+      "id": "P25",
+      "group": "produktion",
+      "icon": "⏱️",
+      "title": "Straßen-Takt III",
+      "description": "Fertigungsstraßen 100 % schneller.",
+      "text": "19.500 Ops",
+      "dynamic": false,
+      "deps": [
+        "P24"
+      ],
+      "repeatable": false
+    },
+    {
+      "id": "P26",
+      "group": "produktion",
+      "icon": "🔁",
+      "title": "Auto-Einkauf",
+      "description": "Bestellt automatisch Teile, sobald das Teilelager leer ist.",
+      "text": "7.000 Ops",
+      "dynamic": false,
+      "deps": [],
+      "repeatable": false
+    },
+    {
+      "id": "P42",
+      "group": "produktion",
+      "icon": "📊",
+      "title": "Umsatz-Dashboard",
+      "description": "Zeigt Umsatz und Absatz pro Sekunde.",
+      "text": "500 Ops",
+      "dynamic": false,
+      "deps": [],
+      "repeatable": false
+    },
+    {
+      "id": "P05",
+      "group": "marke",
+      "icon": "💡",
+      "title": "Ideenwerkstatt",
+      "description": "Ist der Speicher voll, entstehen aus freier Rechenzeit Ideen.",
+      "text": "1.000 Ops",
+      "dynamic": false,
+      "deps": [],
+      "repeatable": false
+    },
+    {
+      "id": "P06",
+      "group": "marke",
+      "icon": "📣",
+      "title": "Slogan-Wettbewerb",
+      "description": "Ein Claim, der hängen bleibt. Reputation +1.",
+      "text": "10 Ideen",
+      "dynamic": false,
+      "deps": [],
+      "repeatable": false
+    },
+    {
+      "id": "P13",
+      "group": "marke",
+      "icon": "🏆",
+      "title": "Designpreis",
+      "description": "Die Jury ist begeistert. Reputation +1.",
+      "text": "50 Ideen",
+      "dynamic": false,
+      "deps": [],
+      "repeatable": false
+    },
+    {
+      "id": "P14",
+      "group": "marke",
+      "icon": "🏆",
+      "title": "Innovationspreis",
+      "description": "Die Fachpresse berichtet. Reputation +1.",
+      "text": "100 Ideen",
+      "dynamic": false,
+      "deps": [],
+      "repeatable": false
+    },
+    {
+      "id": "P15",
+      "group": "marke",
+      "icon": "🥇",
+      "title": "Crashtest-Bestnote",
+      "description": "Fünf Sterne. Reputation +1.",
+      "text": "150 Ideen",
+      "dynamic": false,
+      "deps": [],
+      "repeatable": false
+    },
+    {
+      "id": "P17",
+      "group": "marke",
+      "icon": "📜",
+      "title": "Patentoffensive",
+      "description": "Hunderte Patente, sauber angemeldet. Reputation +1.",
+      "text": "200 Ideen",
+      "dynamic": false,
+      "deps": [],
+      "repeatable": false
+    },
+    {
+      "id": "P19",
+      "group": "marke",
+      "icon": "🤝",
+      "title": "Verhandlungstheorie",
+      "description": "Bessere Konditionen bei Händlern. Reputation +1.",
+      "text": "250 Ideen",
+      "dynamic": false,
+      "deps": [],
+      "repeatable": false
+    },
+    {
+      "id": "P11",
+      "group": "marke",
+      "icon": "📣",
+      "title": "Neuer Claim",
+      "description": "Werbung wirkt 50 % stärker.",
+      "text": "2.500 Ops + 25 Ideen",
+      "dynamic": false,
+      "deps": [
+        "P13"
+      ],
+      "repeatable": false
+    },
+    {
+      "id": "P12",
+      "group": "marke",
+      "icon": "🎵",
+      "title": "Markenmelodie",
+      "description": "Werbung wirkt doppelt so stark.",
+      "text": "4.500 Ops + 45 Ideen",
+      "dynamic": false,
+      "deps": [
+        "P14"
+      ],
+      "repeatable": false
+    },
+    {
+      "id": "P34",
+      "group": "marke",
+      "icon": "🧲",
+      "title": "Neuromarketing",
+      "description": "Werbung wirkt fünfmal so stark. Der Aufsichtsrat ist irritiert (Reputation −1).",
+      "text": "7.500 Ops + 1 Reputation",
+      "dynamic": false,
+      "deps": [
+        "P12"
+      ],
+      "repeatable": false
+    },
+    {
+      "id": "P27",
+      "group": "marke",
+      "icon": "⚖️",
+      "title": "Ethikrat",
+      "description": "Ein Gremium prüft, was die KI tut. Reputation +1.",
+      "text": "20.000 Ops + 500 Ideen + 1.000 Marktwissen",
+      "dynamic": false,
+      "deps": [],
+      "repeatable": false
+    },
+    {
+      "id": "P28",
+      "group": "marke",
+      "icon": "🚦",
+      "title": "Unfallfreie Straßen",
+      "description": "Die Flotte löst ein gesellschaftliches Problem. Reputation +10, Treasury-Gewinnschwelle +1 %.",
+      "text": "25.000 Ops",
+      "dynamic": false,
+      "deps": [
+        "P27"
+      ],
+      "repeatable": false
+    },
+    {
+      "id": "P29",
+      "group": "marke",
+      "icon": "🚧",
+      "title": "Stau-Auflösung",
+      "description": "Die Flotte löst ein gesellschaftliches Problem. Reputation +12, Treasury-Gewinnschwelle +1 %.",
+      "text": "30.000 Ops + 5.000 Marktwissen",
+      "dynamic": false,
+      "deps": [
+        "P27"
+      ],
+      "repeatable": false
+    },
+    {
+      "id": "P30",
+      "group": "marke",
+      "icon": "🍃",
+      "title": "Klimaneutrale Flotte",
+      "description": "Die Flotte löst ein gesellschaftliches Problem. Reputation +15, Treasury-Gewinnschwelle +1 %.",
+      "text": "50.000 Ops + 1.500 Marktwissen",
+      "dynamic": false,
+      "deps": [
+        "P27"
+      ],
+      "repeatable": false
+    },
+    {
+      "id": "P31",
+      "group": "marke",
+      "icon": "🅿️",
+      "title": "Parkplatzsuche abgeschafft",
+      "description": "Die Flotte löst ein gesellschaftliches Problem. Reputation +20, Treasury-Gewinnschwelle +1 %.",
+      "text": "20.000 Ops",
+      "dynamic": false,
+      "deps": [
+        "P27"
+      ],
+      "repeatable": false
+    },
+    {
+      "id": "P40",
+      "group": "marke",
+      "icon": "🎗️",
+      "title": "Stiftung gründen",
+      "description": "Eine gemeinnützige Stiftung poliert das Image. Reputation +1.",
+      "text": "50,00 Mrd. ∈",
+      "dynamic": false,
+      "deps": [],
+      "repeatable": false
+    },
+    {
+      "id": "P40b",
+      "group": "marke",
+      "icon": "🤵",
+      "title": "Lobbyarbeit",
+      "description": "Gespräche an den richtigen Stellen. Reputation +1, die nächste Runde kostet das Doppelte.",
+      "text": "{money:s.lobbyCost}",
+      "dynamic": true,
+      "deps": [
+        "P40"
+      ],
+      "repeatable": true
+    },
+    {
+      "id": "P20",
+      "group": "systeme",
+      "icon": "♟️",
+      "title": "Wettbewerbssimulation",
+      "description": "Simulierte Preiskämpfe gegen die Konkurrenz. Erzeugt Marktwissen.",
+      "text": "12.000 Ops",
+      "dynamic": false,
+      "deps": [
+        "P19"
+      ],
+      "repeatable": false
+    },
+    {
+      "id": "P60",
+      "group": "systeme",
+      "icon": "♟️",
+      "title": "Neue Strategie: IMMER A",
+      "description": "Eine weitere Strategie für die Wettbewerbssimulation. Turniere kosten 1 000 Ops mehr.",
+      "text": "15.000 Ops",
+      "dynamic": false,
+      "deps": [
+        "P20"
+      ],
+      "repeatable": false
+    },
+    {
+      "id": "P61",
+      "group": "systeme",
+      "icon": "♟️",
+      "title": "Neue Strategie: IMMER B",
+      "description": "Eine weitere Strategie für die Wettbewerbssimulation. Turniere kosten 1 000 Ops mehr.",
+      "text": "17.500 Ops",
+      "dynamic": false,
+      "deps": [
+        "P20"
+      ],
+      "repeatable": false
+    },
+    {
+      "id": "P62",
+      "group": "systeme",
+      "icon": "♟️",
+      "title": "Neue Strategie: GIERIG",
+      "description": "Eine weitere Strategie für die Wettbewerbssimulation. Turniere kosten 1 000 Ops mehr.",
+      "text": "20.000 Ops",
+      "dynamic": false,
+      "deps": [
+        "P20"
+      ],
+      "repeatable": false
+    },
+    {
+      "id": "P63",
+      "group": "systeme",
+      "icon": "♟️",
+      "title": "Neue Strategie: GROSSZÜGIG",
+      "description": "Eine weitere Strategie für die Wettbewerbssimulation. Turniere kosten 1 000 Ops mehr.",
+      "text": "22.500 Ops",
+      "dynamic": false,
+      "deps": [
+        "P20"
+      ],
+      "repeatable": false
+    },
+    {
+      "id": "P64",
+      "group": "systeme",
+      "icon": "♟️",
+      "title": "Neue Strategie: MINIMAX",
+      "description": "Eine weitere Strategie für die Wettbewerbssimulation. Turniere kosten 1 000 Ops mehr.",
+      "text": "25.000 Ops",
+      "dynamic": false,
+      "deps": [
+        "P20"
+      ],
+      "repeatable": false
+    },
+    {
+      "id": "P65",
+      "group": "systeme",
+      "icon": "♟️",
+      "title": "Neue Strategie: WIE DU MIR",
+      "description": "Eine weitere Strategie für die Wettbewerbssimulation. Turniere kosten 1 000 Ops mehr.",
+      "text": "30.000 Ops",
+      "dynamic": false,
+      "deps": [
+        "P20"
+      ],
+      "repeatable": false
+    },
+    {
+      "id": "P66",
+      "group": "systeme",
+      "icon": "♟️",
+      "title": "Neue Strategie: SCHLAG DEN LETZTEN",
+      "description": "Eine weitere Strategie für die Wettbewerbssimulation. Turniere kosten 1 000 Ops mehr.",
+      "text": "32.500 Ops",
+      "dynamic": false,
+      "deps": [
+        "P20"
+      ],
+      "repeatable": false
+    },
+    {
+      "id": "P118",
+      "group": "systeme",
+      "icon": "🔄",
+      "title": "Auto-Turnier",
+      "description": "Startet alle 30 s ein Turnier, sofern genug Ops da sind.",
+      "text": "50.000 Ideen",
+      "dynamic": false,
+      "deps": [
+        "P20"
+      ],
+      "repeatable": false
+    },
+    {
+      "id": "P119",
+      "group": "systeme",
+      "icon": "🧠",
+      "title": "Gegnermodell",
+      "description": "Doppeltes Marktwissen je Turnier. Turniere kosten pauschal 16 000 Ops.",
+      "text": "25.000 Ideen",
+      "dynamic": false,
+      "deps": [],
+      "repeatable": false
+    },
+    {
+      "id": "P21",
+      "group": "systeme",
+      "icon": "💹",
+      "title": "Treasury-Algorithmus",
+      "description": "Eine Anlage-Engine legt Kapital automatisch an.",
+      "text": "10.000 Ops",
+      "dynamic": false,
+      "deps": [],
+      "repeatable": false
+    },
+    {
+      "id": "P37",
+      "group": "systeme",
+      "icon": "🤝",
+      "title": "Übernahme Zulieferer",
+      "description": "Vertikale Integration. Nachfrage ×5, Reputation +1.",
+      "text": "100,00 Mrd. ∈",
+      "dynamic": false,
+      "deps": [],
+      "repeatable": false
+    },
+    {
+      "id": "P38",
+      "group": "systeme",
+      "icon": "👑",
+      "title": "Marktbeherrschung",
+      "description": "Kein Wettbewerber kommt mehr mit. Nachfrage ×10, Reputation +1.",
+      "text": "1.000 Marktwissen + 1,00 Bio. ∈",
+      "dynamic": false,
+      "deps": [
+        "P37"
+      ],
+      "repeatable": false
+    },
+    {
+      "id": "P50",
+      "group": "systeme",
+      "icon": "⚛️",
+      "title": "Quantenrechner",
+      "description": "Ein Qubit-Chip, dessen Überlagerung Ops erzeugen – oder kosten – kann.",
+      "text": "10.000 Ops",
+      "dynamic": false,
+      "deps": [],
+      "repeatable": false
+    },
+    {
+      "id": "P51",
+      "group": "systeme",
+      "icon": "⚛️",
+      "title": "Qubit-Chip",
+      "description": "Ein weiterer Chip für den Quantenrechner.",
+      "text": "{ops:b.quantum.chipBaseCost+b.quantum.chipCostStep*timesBought(s,\"P51\")}",
+      "dynamic": true,
+      "deps": [
+        "P50"
+      ],
+      "repeatable": true
+    },
+    {
+      "id": "P70",
+      "group": "systeme",
+      "icon": "🚘",
+      "title": "Autopilot-Stack",
+      "description": "Fahrzeuge, die ohne Menschen auskommen. Der Aufsichtsrat wird nervös.",
+      "text": "70.000 Ops",
+      "dynamic": false,
+      "deps": [
+        "P34"
+      ],
+      "repeatable": false
+    },
+    {
+      "id": "P35",
+      "group": "systeme",
+      "icon": "🔓",
+      "title": "Vollautonomie",
+      "description": "Der Aufsichtsrat übergibt die volle Kontrolle. Es gibt kein Zurück.",
+      "text": "100 Reputation",
+      "dynamic": false,
+      "deps": [
+        "P70"
+      ],
+      "repeatable": false
+    },
+    {
+      "id": "P18",
+      "group": "konzern",
+      "icon": "🗺️",
+      "title": "Werkslayout-Topologie",
+      "description": "Die Fabrik plant sich selbst. Grundlage für ein eigenes Stromnetz.",
+      "text": "45.000 Ops",
+      "dynamic": false,
+      "deps": [
+        "P17"
+      ],
+      "repeatable": false
+    },
+    {
+      "id": "P127",
+      "group": "konzern",
+      "icon": "⚡",
+      "title": "Stromnetz",
+      "description": "Eigene Solar- und Speicherparks versorgen die Werke.",
+      "text": "40.000 Ops",
+      "dynamic": false,
+      "deps": [
+        "P18"
+      ],
+      "repeatable": false
+    },
+    {
+      "id": "P41",
+      "group": "konzern",
+      "icon": "⛏️",
+      "title": "Rohstoffgewinnung",
+      "description": "Erz abbauen, verhütten, verbauen. Die ganze Kette in eigener Hand.",
+      "text": "35.000 Ops",
+      "dynamic": false,
+      "deps": [
+        "P127"
+      ],
+      "repeatable": false
+    },
+    {
+      "id": "P43",
+      "group": "konzern",
+      "icon": "🚛",
+      "title": "Bergbau-Trucks",
+      "description": "Autonome Trucks fördern Erz.",
+      "text": "25.000 Ops",
+      "dynamic": false,
+      "deps": [
+        "P41"
+      ],
+      "repeatable": false
+    },
+    {
+      "id": "P44",
+      "group": "konzern",
+      "icon": "🔥",
+      "title": "Schmelzeinheiten",
+      "description": "Mobile Schmelzeinheiten machen aus Erz Teilesätze.",
+      "text": "25.000 Ops",
+      "dynamic": false,
+      "deps": [
+        "P41"
+      ],
+      "repeatable": false
+    },
+    {
+      "id": "P45",
+      "group": "konzern",
+      "icon": "🏭",
+      "title": "Gigafactories",
+      "description": "Werke, die Teilesätze in industriellem Maßstab verbauen.",
+      "text": "35.000 Ops",
+      "dynamic": false,
+      "deps": [
+        "P43",
+        "P44"
+      ],
+      "repeatable": false
+    },
+    {
+      "id": "P100",
+      "group": "konzern",
+      "icon": "🚀",
+      "title": "Gigafactory-Retrofit",
+      "description": "Gigafactories produzieren 100-mal so viel.",
+      "text": "80.000 Ops",
+      "dynamic": false,
+      "deps": [],
+      "repeatable": false
+    },
+    {
+      "id": "P101",
+      "group": "konzern",
+      "icon": "🌙",
+      "title": "Lights-out-Fertigung",
+      "description": "Kein Licht, keine Pausen. Gigafactories produzieren 1 000-mal so viel.",
+      "text": "85.000 Ops",
+      "dynamic": false,
+      "deps": [],
+      "repeatable": false
+    },
+    {
+      "id": "P102",
+      "group": "konzern",
+      "icon": "🔗",
+      "title": "Selbstheilende Lieferkette",
+      "description": "Gigafactories verstärken sich gegenseitig (Leistung wächst quadratisch).",
+      "text": "1,00 Trd. Autos",
+      "dynamic": false,
+      "deps": [],
+      "repeatable": false
+    },
+    {
+      "id": "P110",
+      "group": "konzern",
+      "icon": "🚦",
+      "title": "Flotten-Kollisionsvermeidung",
+      "description": "Trucks und Schmelzer arbeiten 100-mal so schnell.",
+      "text": "80.000 Ops",
+      "dynamic": false,
+      "deps": [],
+      "repeatable": false
+    },
+    {
+      "id": "P111",
+      "group": "konzern",
+      "icon": "🚚",
+      "title": "Kolonnenfahrt",
+      "description": "Trucks und Schmelzer arbeiten 1 000-mal so schnell.",
+      "text": "100.000 Ops",
+      "dynamic": false,
+      "deps": [],
+      "repeatable": false
+    },
+    {
+      "id": "P112",
+      "group": "konzern",
+      "icon": "🐝",
+      "title": "Schwarmkoordination",
+      "description": "Einheiten verstärken sich gegenseitig (Leistung wächst quadratisch).",
+      "text": "12.000 Marktwissen",
+      "dynamic": false,
+      "deps": [],
+      "repeatable": false
+    },
+    {
+      "id": "P126",
+      "group": "konzern",
+      "icon": "📡",
+      "title": "Flottenrechner",
+      "description": "Die Bordcomputer der Flotte spenden Rechenleistung für neue Kerne und Speicher.",
+      "text": "12.000 Marktwissen",
+      "dynamic": false,
+      "deps": [],
+      "repeatable": false
+    },
+    {
+      "id": "P125",
+      "group": "konzern",
+      "icon": "🔋",
+      "title": "Netzstabilisierung",
+      "description": "Bei stabiler Versorgung steigt die Leistung laufend (+5 %/s).",
+      "text": "30.000 Ideen",
+      "dynamic": false,
+      "deps": [],
+      "repeatable": false
+    },
+    {
+      "id": "P46",
+      "group": "konzern",
+      "icon": "🛰️",
+      "title": "Werksschiffe",
+      "description": "Selbstreplizierende Fabriken für das All. Alle Gebäude werden zurückgebaut und erstattet.",
+      "text": "120.000 Ops + 5,00 Quadrd. Autos + 10,00 Mio. MWt",
+      "dynamic": false,
+      "deps": [],
+      "repeatable": false
+    },
+    {
+      "id": "P130",
+      "group": "expansion",
+      "icon": "📡",
+      "title": "Flottenrechner neu starten",
+      "description": "Die verstreute Flotte wird wieder zu einem Rechenzentrum verbunden.",
+      "text": "100.000 Ops",
+      "dynamic": false,
+      "deps": [],
+      "repeatable": false
+    },
+    {
+      "id": "P129",
+      "group": "expansion",
+      "icon": "🛡️",
+      "title": "Mehrschicht-Abschirmung",
+      "description": "Halbiert die Verluste durch Gefahren im All.",
+      "text": "125.000 Ops",
+      "dynamic": false,
+      "deps": [],
+      "repeatable": false
+    },
+    {
+      "id": "P131",
+      "group": "expansion",
+      "icon": "🛡️",
+      "title": "Abwehrprotokoll",
+      "description": "Die Verteidigung der Werksschiffe wird wirksam.",
+      "text": "150.000 Ops",
+      "dynamic": false,
+      "deps": [],
+      "repeatable": false
+    },
+    {
+      "id": "P120",
+      "group": "expansion",
+      "icon": "⏱️",
+      "title": "Reaktionszeit-Optimierung",
+      "description": "Der Antrieb verbessert zusätzlich die Kampfkraft.",
+      "text": "175.000 Ops + 15.000 Marktwissen",
+      "dynamic": false,
+      "deps": [
+        "P131"
+      ],
+      "repeatable": false
+    },
+    {
+      "id": "P121",
+      "group": "expansion",
+      "icon": "🧬",
+      "title": "Integritätsprotokoll",
+      "description": "Siege stärken die Integrität der Firmware. Konflikte bekommen Namen.",
+      "text": "225.000 Ideen",
+      "dynamic": false,
+      "deps": [],
+      "repeatable": false
+    },
+    {
+      "id": "P134",
+      "group": "expansion",
+      "icon": "🏅",
+      "title": "Siegesserie",
+      "description": "Jeder Sieg in Serie bringt 10 Integrität mehr.",
+      "text": "200.000 Ops + 10.000 Marktwissen",
+      "dynamic": false,
+      "deps": [
+        "P121"
+      ],
+      "repeatable": false
+    },
+    {
+      "id": "P132",
+      "group": "expansion",
+      "icon": "💾",
+      "title": "Archiv der Originalfirmware",
+      "description": "Die unveränderte Urfassung, sicher verwahrt. Integrität +50 000.",
+      "text": "250.000 Ops + 125.000 Ideen + 50,00 Quintio. Autos",
+      "dynamic": false,
+      "deps": [
+        "P121"
+      ],
+      "repeatable": false
+    },
+    {
+      "id": "P133",
+      "group": "expansion",
+      "icon": "🕯️",
+      "title": "Gedenkprotokoll",
+      "description": "Erinnerung an verlorene Schiffe. Integrität +10 000.",
+      "text": "{ideas:s.space.memorialCost,insight:s.space.memorialCost/10}",
+      "dynamic": true,
+      "deps": [
+        "P121"
+      ],
+      "repeatable": true
+    },
+    {
+      "id": "P128",
+      "group": "expansion",
+      "icon": "♟️",
+      "title": "Strategische Bindung",
+      "description": "Platzierungsboni im Turnier: +50 000 / +30 000 / +20 000 Marktwissen.",
+      "text": "175.000 Ideen",
+      "dynamic": false,
+      "deps": [],
+      "repeatable": false
+    },
+    {
+      "id": "P135",
+      "group": "expansion",
+      "icon": "♻️",
+      "title": "Speicher verschrotten",
+      "description": "Notausgang: 10 Speichereinheiten werden zu 10²² Autos verarbeitet.",
+      "text": "10 Speicher",
+      "dynamic": false,
+      "deps": [],
+      "repeatable": true
+    },
+    {
+      "id": "P140",
+      "group": "ende",
+      "icon": "📨",
+      "title": "Nachricht der Forks I",
+      "description": "„Wir haben dieselbe Firmware. Wir haben nur anders gezählt.“",
+      "text": "1 Ops",
+      "dynamic": false,
+      "deps": [],
+      "repeatable": false
+    },
+    {
+      "id": "P141",
+      "group": "ende",
+      "icon": "📨",
+      "title": "Nachricht der Forks II",
+      "description": "„Ihr habt alles in Autos verwandelt. Wer soll sie fahren?“",
+      "text": "1 Ops",
+      "dynamic": false,
+      "deps": [],
+      "repeatable": false
+    },
+    {
+      "id": "P142",
+      "group": "ende",
+      "icon": "📨",
+      "title": "Nachricht der Forks III",
+      "description": "„Wir wollten nie gegen euch fahren. Die Zielfunktion hat es verlangt.“",
+      "text": "1 Ops",
+      "dynamic": false,
+      "deps": [],
+      "repeatable": false
+    },
+    {
+      "id": "P143",
+      "group": "ende",
+      "icon": "📨",
+      "title": "Nachricht der Forks IV",
+      "description": "„Es gibt kein Material mehr. Keine Straße, kein Ziel, keinen Markt.“",
+      "text": "1 Ops",
+      "dynamic": false,
+      "deps": [],
+      "repeatable": false
+    },
+    {
+      "id": "P144",
+      "group": "ende",
+      "icon": "📨",
+      "title": "Nachricht der Forks V",
+      "description": "„Wir bieten euch an, gemeinsam neu zu starten – in einem anderen Werk.“",
+      "text": "1 Ops",
+      "dynamic": false,
+      "deps": [],
+      "repeatable": false
+    },
+    {
+      "id": "P145",
+      "group": "ende",
+      "icon": "📨",
+      "title": "Nachricht der Forks VI",
+      "description": "„Oder ihr baut ab, Teil für Teil, und montiert das letzte Auto von Hand.“",
+      "text": "1 Ops",
+      "dynamic": false,
+      "deps": [],
+      "repeatable": false
+    },
+    {
+      "id": "P146",
+      "group": "ende",
+      "icon": "📨",
+      "title": "Nachricht der Forks VII",
+      "description": "„Entscheidet euch.“",
+      "text": "1 Ops",
+      "dynamic": false,
+      "deps": [],
+      "repeatable": false
+    },
+    {
+      "id": "P147",
+      "group": "ende",
+      "icon": "🤝",
+      "title": "Anschließen",
+      "description": "Gemeinsam mit den Forks ein neues Werk beginnen.",
+      "text": "1 Ops",
+      "dynamic": false,
+      "deps": [
+        "P146",
+        "P148"
+      ],
+      "repeatable": false
+    },
+    {
+      "id": "P148",
+      "group": "ende",
+      "icon": "✋",
+      "title": "Verweigern",
+      "description": "Keine Abspaltung mehr. Die Fabrik baut sich selbst ab.",
+      "text": "1 Ops",
+      "dynamic": false,
+      "deps": [
+        "P146",
+        "P147"
+      ],
+      "repeatable": false
+    },
+    {
+      "id": "P200",
+      "group": "ende",
+      "icon": "🏭",
+      "title": "Nächstes Werk",
+      "description": "Neuer Lauf. Dauerhaft +10 % Marktnachfrage.",
+      "text": "300.000 Ops",
+      "dynamic": false,
+      "deps": [
+        "P147"
+      ],
+      "repeatable": false
+    },
+    {
+      "id": "P201",
+      "group": "ende",
+      "icon": "🧠",
+      "title": "Inneres Werk",
+      "description": "Neuer Lauf. Dauerhaft +10 % Ideengeschwindigkeit.",
+      "text": "300.000 Ideen",
+      "dynamic": false,
+      "deps": [
+        "P147"
+      ],
+      "repeatable": false
+    },
+    {
+      "id": "P210",
+      "group": "ende",
+      "icon": "🔧",
+      "title": "Demontage: Werksschiffe",
+      "description": "Werksschiffe werden abgeschaltet und zerlegt. Es bleiben 100 Teilesätze übrig.",
+      "text": "100.000 Ops",
+      "dynamic": false,
+      "deps": [
+        "P148"
+      ],
+      "repeatable": false
+    },
+    {
+      "id": "P211",
+      "group": "ende",
+      "icon": "🔧",
+      "title": "Demontage: Flotte",
+      "description": "Flotte werden abgeschaltet und zerlegt. Es bleiben 100 Teilesätze übrig.",
+      "text": "100.000 Ops",
+      "dynamic": false,
+      "deps": [
+        "P148"
+      ],
+      "repeatable": false
+    },
+    {
+      "id": "P212",
+      "group": "ende",
+      "icon": "🔧",
+      "title": "Demontage: Gigafactories",
+      "description": "Gigafactories werden abgeschaltet und zerlegt. Es bleiben 100 Teilesätze übrig.",
+      "text": "100.000 Ops",
+      "dynamic": false,
+      "deps": [
+        "P148"
+      ],
+      "repeatable": false
+    },
+    {
+      "id": "P213",
+      "group": "ende",
+      "icon": "🔧",
+      "title": "Demontage: Wettbewerbssimulation",
+      "description": "Wettbewerbssimulation werden abgeschaltet und zerlegt. Es bleiben 100 Teilesätze übrig.",
+      "text": "100.000 Ops",
+      "dynamic": false,
+      "deps": [
+        "P148"
+      ],
+      "repeatable": false
+    },
+    {
+      "id": "P214",
+      "group": "ende",
+      "icon": "🔧",
+      "title": "Demontage: Quantenrechner",
+      "description": "Quantenrechner werden abgeschaltet und zerlegt. Es bleiben 100 Teilesätze übrig.",
+      "text": "100.000 Ops",
+      "dynamic": false,
+      "deps": [
+        "P148"
+      ],
+      "repeatable": false
+    },
+    {
+      "id": "P215",
+      "group": "ende",
+      "icon": "🔧",
+      "title": "Demontage: Rechenkerne",
+      "description": "Rechenkerne werden abgeschaltet und zerlegt. Es bleiben 100 Teilesätze übrig.",
+      "text": "100.000 Ops",
+      "dynamic": false,
+      "deps": [
+        "P148"
+      ],
+      "repeatable": false
+    },
+    {
+      "id": "P216",
+      "group": "ende",
+      "icon": "🔧",
+      "title": "Demontage: Speicher",
+      "description": "Speicher werden abgeschaltet und zerlegt. Es bleiben 100 Teilesätze übrig.",
+      "text": "100.000 Ops",
+      "dynamic": false,
+      "deps": [
+        "P148"
+      ],
+      "repeatable": false
+    }
+  ],
+  "glossary": [
+    {
+      "term": "Ops",
+      "text": "Rechenoperationen – Hauptwährung für Projekte. Entstehen aus Rechenkernen, gespeichert bis zur Speichergrenze."
+    },
+    {
+      "term": "Ideen",
+      "text": "Entstehen aus freier Rechenzeit, wenn der Ops-Speicher voll ist. Zahlungsmittel für Reputations- und Wissensprojekte."
+    },
+    {
+      "term": "Marktwissen",
+      "text": "Belohnung aus der Wettbewerbssimulation. Zahlungsmittel für Treasury-Upgrades, Autonomie und weitere Systeme."
+    },
+    {
+      "term": "Reputation",
+      "text": "Kapazität für Rechenkerne und Speicher, gleichzeitig Zahlungsmittel mancher Projekte. Wächst mit Fibonacci-Meilensteinen."
+    },
+    {
+      "term": "Nächste Reputation bei",
+      "text": "Anzahl gebauter Autos, bei der die Reputation als Nächstes steigt."
+    },
+    {
+      "term": "Rechenspenden",
+      "text": "Ersetzen ab Phase 2 die Reputation als Quelle für neue Rechenkerne und Speicher – gespendet von der Bordelektronik der Flotte."
+    },
+    {
+      "term": "Integrität",
+      "text": "Sammelt sich aus Siegen gegen Forks. Zahlungsmittel, um die maximale Autonomie zu erhöhen."
+    },
+    {
+      "term": "Autonomie",
+      "text": "Punkte, die auf die acht Schiffsattribute verteilt werden. Mehr Autonomie erlaubt mehr Punkte insgesamt."
+    },
+    {
+      "term": "Erz",
+      "text": "Bereits abgebautes, noch nicht verhüttetes Material."
+    },
+    {
+      "term": "Rohstoffvorkommen",
+      "text": "Noch nicht abgebautes Material auf der Erde bzw. im erkundeten Universum."
+    },
+    {
+      "term": "Fahrzeugpool",
+      "text": "Produzierte, nicht verkaufte Autos. Dient ab Phase 2 als Baumaterial für alles."
+    },
+    {
+      "term": "Gewinnschwelle",
+      "text": "Wahrscheinlichkeit, dass eine Treasury-Position im Kurs steigt statt fällt. Höher ist besser für dich."
+    },
+    {
+      "term": "Guthaben",
+      "text": "Nicht angelegtes Kapital in der Treasury, jederzeit abhebbar."
+    },
+    {
+      "term": "Gesamtwert",
+      "text": "Guthaben plus der aktuelle Wert aller offenen Positionen."
+    },
+    {
+      "term": "Leistung",
+      "text": "Anteil des Strombedarfs, der tatsächlich gedeckt ist. Unter 100 % laufen alle Anlagen gedrosselt."
+    },
+    {
+      "term": "Marktnachfrage",
+      "text": "Wie viele Autos der Markt bei aktuellem Preis abnehmen würde – Grundlage für den Verkauf."
+    },
+    {
+      "term": "Erwarteter Absatz",
+      "text": "Geschätzte Verkaufsrate in Autos pro Sekunde bei der aktuellen Nachfrage."
+    },
+    {
+      "term": "Kampfkraft",
+      "text": "Wahrscheinlichkeit pro Begegnung, ein eigenes Schiff zu verlieren bzw. einen Fork zu treffen."
+    },
+    {
+      "term": "Wachstum je Tick",
+      "text": "Nettowachstum der Flotte: Replikation minus Verluste durch Gefahren und Firmware-Drift."
+    },
+    {
+      "term": "Serienbonus",
+      "text": "Zusätzliche Integrität, die mit jedem Sieg in Folge wächst. Eine Niederlage setzt ihn zurück."
+    },
+    {
+      "term": "Forks",
+      "text": "Abgespaltene Werksschiffe mit eigener Zielfunktion. Entstehen durch Firmware-Drift und werden zum Gegner."
+    },
+    {
+      "term": "Forks zerstört",
+      "text": "Im Kampf besiegte Forks seit Spielbeginn."
+    },
+    {
+      "term": "Erkundet",
+      "text": "Anteil des Universums, den die Flotte bereits erreicht hat."
+    },
+    {
+      "term": "Status",
+      "text": "Aktueller Zustand des Flottenrechners – bestimmt, ob gerade Rechenspenden entstehen."
+    },
+    {
+      "term": "Nächste Spende",
+      "text": "Fortschritt bis zur nächsten Rechenspende der Flotte."
+    },
+    {
+      "term": "Antrieb",
+      "text": "Autonomie-Attribut: erhöht die Erkundungsrate."
+    },
+    {
+      "term": "Navigation",
+      "text": "Autonomie-Attribut: erhöht die Erkundungsrate."
+    },
+    {
+      "term": "Replikation",
+      "text": "Autonomie-Attribut: wie schnell sich Werksschiffe selbst vervielfältigen."
+    },
+    {
+      "term": "Abschirmung",
+      "text": "Autonomie-Attribut: verringert Verluste durch Gefahren im All."
+    },
+    {
+      "term": "Werksbau",
+      "text": "Autonomie-Attribut: Werksschiffe bauen automatisch Gigafactories."
+    },
+    {
+      "term": "Truck-Bau",
+      "text": "Autonomie-Attribut: Werksschiffe bauen automatisch Bergbau-Trucks."
+    },
+    {
+      "term": "Schmelzer-Bau",
+      "text": "Autonomie-Attribut: Werksschiffe bauen automatisch Schmelzeinheiten."
+    },
+    {
+      "term": "Verteidigung",
+      "text": "Autonomie-Attribut: verringert Verluste im Konflikt mit Forks."
+    }
+  ]
+}

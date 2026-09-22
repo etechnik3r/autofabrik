@@ -1,4 +1,4 @@
-# FLIESSBAND – Autofabrik
+# Autofabrik
 
 Incremental-/Idle-Browserspiel über eine Fahrzeugfabrik-KI: von der Manufaktur über den Konzern bis zur Besiedlung des Universums. Mechanik nach Universal Paperclips, eigenes Thema.
 
@@ -34,7 +34,11 @@ npm run typecheck
 npm run sim -- bot=referenz seeds=1,2,3 minutes=120   # Anhang C nachstellen
 npm run sim -- bot=gierig seeds=1 minutes=600         # ganzes Spiel headless
 npm run reachability     # Projektgraph statisch + dynamisch prüfen
+npm run docs:texts       # Übersicht aller Spieltexte neu erzeugen (docs/TEXTE.md)
 ```
+
+Alle Projekttitel, Beschreibungen, Kosten und Abhängigkeiten in einer Übersicht: [`docs/TEXTE.md`](docs/TEXTE.md)
+(wird aus dem Code erzeugt – Texte selbst in `src/sim/projects/*.ts` ändern, dann neu generieren).
 
 ## Aufbau
 

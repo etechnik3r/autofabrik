@@ -37,8 +37,8 @@ for (const seed of seeds) {
   console.log(`\n=== Seed ${seed}, Bot ${bot.name}, ${(r.seconds / 60).toFixed(1)} min Spielzeit (${((performance.now() - t0) / 1000).toFixed(1)} s Rechenzeit)`);
   for (const e of r.events) console.log(`  ${e.name.padEnd(18)} ${(e.seconds / 60).toFixed(1).padStart(7)} min`);
   console.log(
-    `  Ende: Phase ${s.phase}, ${s.cars.toExponential(3)} Autos, ${s.robots} Roboter, ${s.lines} Straßen, Preis ${s.price} k€, ` +
-      `Teilebasis ${s.partsBasePrice.toFixed(0)} k€, Rep ${s.rep}, Kerne ${s.cores}, Speicher ${s.storage}`,
+    `  Ende: Phase ${s.phase}, ${s.cars.toExponential(3)} Autos, ${s.robots} Roboter, ${s.lines} Straßen, Preis ${s.price} k∈, ` +
+      `Teilebasis ${s.partsBasePrice.toFixed(0)} k∈, Rep ${s.rep}, Kerne ${s.cores}, Speicher ${s.storage}`,
   );
   const bought = Object.entries(s.projects).filter(([, p]) => p.count > 0).map(([id]) => id);
   console.log(`  Projekte (${bought.length}): ${bought.join(' ')}`);

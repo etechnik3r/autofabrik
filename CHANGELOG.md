@@ -7,7 +7,23 @@ Versionsnummern werden noch nicht vergeben (Projekt vor dem ersten Release).
 
 ## [Unveröffentlicht]
 
+### Geändert
+- Spielname von „FLIESSBAND“ auf **Autofabrik** vereinheitlicht (Titel, Kopfbereich, Abspann,
+  README, `package.json`). Die ursprüngliche Spielspezifikation bleibt als historisches
+  Dokument unverändert.
+- Das Euro-Zeichen (€) wurde im gesamten Code, den Tests und in den generierten Texten durch
+  U+2208 (∈) ersetzt, um spätere Probleme mit dem echten Währungszeichen zu vermeiden. `k€`
+  wird jetzt als `k∈` angezeigt.
+
 ### Hinzugefügt
+- Generierte Gesamtübersicht aller Spieltexte und Projekt-Abhängigkeiten:
+  [`docs/TEXTE.md`](docs/TEXTE.md) (Markdown, versioniert) und `docs/texte.json`
+  (maschinenlesbar), erzeugt aus dem Code über `npm run docs:texts`
+  (`tools/dump-texts.ts`). Bisher standen Titel, Beschreibungen, Kosten und Abhängigkeiten
+  nur verstreut in den TS-Dateien; jetzt gibt es dafür eine einzige, reproduzierbare Quelle
+  zum Nachschlagen und Abgleichen von Formulierungen.
+- Zusätzlich eine durchsuchbare Browser-Übersicht derselben Daten (Filter je Phase,
+  Volltextsuche, klickbare Abhängigkeiten) als Artifact veröffentlicht.
 - Passende Icons je Projekt und Panel (Unicode-Emoji, z. B. 💡 für die Ideenwerkstatt oder
   🦾 für die Roboterprojekte) für mehr Wiedererkennbarkeit auf den ersten Blick.
 - Neu erschienene Projekte bleiben 30 Spielsekunden lang farbig gerahmt und tragen eine

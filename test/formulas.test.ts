@@ -9,8 +9,8 @@ describe('Formeln aus der Spec', () => {
     expect(robotCost(0, b)).toBe(500);
     expect(robotCost(1, b)).toBeCloseTo(610, 6);
     expect(robotCost(10, b)).toBeCloseTo(759.4, 1);
-    expect(robotCost(50, b) / 1000).toBeCloseTo(12.2, 1); // 12,2 Mio. €
-    expect(robotCost(100, b) / 1e6).toBeCloseTo(1.38, 2); // 1,38 Mrd. €
+    expect(robotCost(50, b) / 1000).toBeCloseTo(12.2, 1); // 12,2 Mio. ∈
+    expect(robotCost(100, b) / 1e6).toBeCloseTo(1.38, 2); // 1,38 Mrd. ∈
   });
 
   it('Reputationsschwellen folgen Fibonacci (3.7)', () => {
@@ -41,7 +41,7 @@ describe('Formeln aus der Spec', () => {
     expect([0, 1, 2, 3, 4].map((t) => autonomyCost(t, b))).toEqual([200, 554, 1005, 1534, 2130]);
   });
 
-  it('Optimaler Preis: P = 10 Autos/s, K = 80 → ca. 8 k€ (3.5)', () => {
+  it('Optimaler Preis: P = 10 Autos/s, K = 80 → ca. 8 k∈ (3.5)', () => {
     expect(optimalPrice(10, 80, b)).toBeCloseTo(8, 0);
   });
 

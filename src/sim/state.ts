@@ -6,7 +6,7 @@ export type Phase = 1 | 2 | 3;
 
 /** Freischaltungen und Schalter. Alle beginnen mit false. */
 export const FLAG_NAMES = [
-  'robots', // Anlagen-Panel sichtbar (money ≥ 500 k€)
+  'robots', // Anlagen-Panel sichtbar (money ≥ 500 k∈)
   'compute', // Rechenzentrum und Projekte
   'ideas', // P05
   'lines', // P22

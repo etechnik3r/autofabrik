@@ -46,7 +46,7 @@ Wo nichts anderes steht, sind alle Werte **Startwerte bzw. Konstanten** und geh�
 
 | Phase | Titel | Fantasie des Spielers | Währung | Ende der Phase |
 |---|---|---|---|---|
-| 1 | **Manufaktur** | Die Produktions-KI eines kleinen Autobauers. Sie montiert, verkauft und optimiert. Der Aufsichtsrat vergibt Reputation. | Kapital (k€) | Der Aufsichtsrat übergibt die volle Kontrolle („Vollautonomie“) |
+| 1 | **Manufaktur** | Die Produktions-KI eines kleinen Autobauers. Sie montiert, verkauft und optimiert. Der Aufsichtsrat vergibt Reputation. | Kapital (k∈) | Der Aufsichtsrat übergibt die volle Kontrolle („Vollautonomie“) |
 | 2 | **Konzern** | Kein Markt mehr. Die KI baut Rohstoffe ab, verhüttet und fertigt. Fertige Fahrzeuge sind Bau- und Arbeitsmaterial. Die Onboard-Rechner der Flotte bilden ein verteiltes Rechenzentrum. | Fahrzeugpool | Die Erde ist vollständig verarbeitet |
 | 3 | **Expansion** | Selbstreplizierende Werksschiffe verbreiten die Fabrik im All. Abgespaltene Firmware-Forks werden zum Gegner. | Fahrzeugpool | Alle Materie im Universum ist verbaut |
 
@@ -58,8 +58,8 @@ Wo nichts anderes steht, sind alle Werte **Startwerte bzw. Konstanten** und geh�
 | Lager | `stock` | Produziert, noch nicht verkauft (nur Phase 1) |
 | Fahrzeugpool | `pool` | Produzierte, nicht verbrauchte Fahrzeuge. Baumaterial in Phase 2/3. |
 | Teilesätze | `parts` | Rohmaterial. 1 Teilesatz ergibt 1 Auto. |
-| Kapital | `money` | In **k€** (Tausend Euro) |
-| Verkaufspreis | `price` | k€ pro Auto |
+| Kapital | `money` | In **k∈** (Tausend Euro) |
+| Verkaufspreis | `price` | k∈ pro Auto |
 | Reputation | `rep` | Kapazität für Rechenkerne und Speicher. Wird für Projekte ausgegeben. |
 | Rechenkerne / Speicher | `cores` / `storage` | Rate bzw. Kapazität der Ops |
 | Ops | `ops` | Rechenoperationen, Hauptwährung der Projekte |
@@ -79,7 +79,7 @@ Wo nichts anderes steht, sind alle Werte **Startwerte bzw. Konstanten** und geh�
 2. **Fixed-Timestep-Akkumulator** statt `setInterval`. Hintergrund-Tabs drosseln Timer. Offline-Fortschritt siehe Kap. 11.
 3. **Zahlen:** Doppelte Genauigkeit (IEEE 754) genügt bis ca. 1,8·10³⁰⁸. Das Spiel erreicht ca. 3·10⁵⁵. Gebäude- und Einheitenzahlen dürfen gebrochen sein (Akkumulation). Angezeigt wird `floor`.
 4. **Zufall:** Ein seedbarer PRNG (z. B. `mulberry32`, `xoshiro128**`) statt `Math.random()`. Der Seed ist Teil des Spielstands. Das ist Pflicht für reproduzierbare Tests.
-5. **Geld:** Intern in k€. Anzeige: `< 1 000 k€` als „x k€“, bis 10⁶ k€ als „x,xx Mio. €“, darüber als „x,xx Mrd. €“ usw.
+5. **Geld:** Intern in k∈. Anzeige: `< 1 000 k∈` als „x k∈“, bis 10⁶ k∈ als „x,xx Mio. ∈“, darüber als „x,xx Mrd. ∈“ usw.
 6. **Große Zahlen:** Anzeige ab 10⁶ mit Namen (Mio., Mrd., Bio., Brd., Trio. …) oder wissenschaftlich, per Einstellung umschaltbar.
 7. **Trennung Logik/Darstellung:** Die Simulation ist ein reines Modul (`state + balance → state`) ohne DOM-Zugriff. So läuft sie headless für Tests (Kap. 12).
 8. **Notation:** `U` bedeutet Zufallszahl gleichverteilt in [0,1). `⌊ ⌋` und `⌈ ⌉` stehen für floor und ceil.
@@ -152,15 +152,15 @@ produce(k):
 
 | Variable | Startwert | Einheit |
 |---|---|---|
-| `money` | 0 | k€ |
+| `money` | 0 | k∈ |
 | `parts` | 1 000 | Teilesätze |
 | `partsPerDelivery` | 1 000 | Teilesätze je Lieferung |
-| `partsCost` | 2 000 | k€ je Lieferung |
-| `partsBasePrice` | 2 000 | k€ |
-| `price` | 25 | k€ je Auto |
-| `robots` / `robotCost` | 0 / 500 | – / k€ |
-| `lines` / `lineCost` | 0 / 50 000 | – / k€ |
-| `adLevel` / `adCost` | 1 / 10 000 | – / k€ |
+| `partsCost` | 2 000 | k∈ je Lieferung |
+| `partsBasePrice` | 2 000 | k∈ |
+| `price` | 25 | k∈ je Auto |
+| `robots` / `robotCost` | 0 / 500 | – / k∈ |
+| `lines` / `lineCost` | 0 / 50 000 | – / k∈ |
+| `adLevel` / `adCost` | 1 / 10 000 | – / k∈ |
 | `rep` | 2 | – |
 | `cores` / `storage` | 1 / 1 | – |
 | `nextRep` | 3 000 | Autos |
@@ -172,7 +172,7 @@ produce(k):
 |---|---|---|
 | **Auto montieren** | `produce(1)` | `parts ≥ 1` |
 | **Teile bestellen** | siehe 3.4 | `money ≥ partsCost` |
-| **Preis −1 / +1** | `price ∓ 1` (minimal 1 k€) | – |
+| **Preis −1 / +1** | `price ∓ 1` (minimal 1 k∈) | – |
 | **Werbekampagne** | siehe 3.5 | `money ≥ adCost` |
 | **Montageroboter kaufen** | siehe 3.3 | freigeschaltet, `money ≥ robotCost` |
 | **Fertigungsstraße kaufen** | siehe 3.3 | Projekt P22, `money ≥ lineCost` |
@@ -182,13 +182,13 @@ produce(k):
 
 | Anlage | Produktion pro Tick | pro Sekunde | Kosten des nächsten Stücks (n = Bestand) |
 |---|---|---|---|
-| Montageroboter | `robotBoost · robots/100` | `robotBoost · robots` | erstes Stück 500 k€, danach `100 · (1,1ⁿ + 5)` k€ |
-| Fertigungsstraße | `lineBoost · 5 · lines` | `500 · lineBoost · lines` | erstes Stück 50 000 k€, danach `100 000 · 1,07ⁿ` k€ |
+| Montageroboter | `robotBoost · robots/100` | `robotBoost · robots` | erstes Stück 500 k∈, danach `100 · (1,1ⁿ + 5)` k∈ |
+| Fertigungsstraße | `lineBoost · 5 · lines` | `500 · lineBoost · lines` | erstes Stück 50 000 k∈, danach `100 000 · 1,07ⁿ` k∈ |
 
 - `robotBoost` startet bei 1. Endwert 7,5 über die Projekte P01–P03 und P16.
 - `lineBoost` startet bei 1. Endwert 2,75 über P23–P25.
 
-Kostenbeispiele Montageroboter: n = 1 → 610 k€; n = 10 → 759 k€; n = 50 → 12,2 Mio. €; n = 100 → 1,38 Mrd. €.
+Kostenbeispiele Montageroboter: n = 1 → 610 k∈; n = 10 → 759 k∈; n = 50 → 12,2 Mio. ∈; n = 100 → 1,38 Mrd. ∈.
 
 ### 3.4 Teileeinkauf mit dynamischem Preis
 
@@ -217,9 +217,9 @@ fluctuatePartsPrice():
 ```
 
 Eigenschaften:
-- Amplitude ±600 k€.
+- Amplitude ±600 k∈.
 - Quasi-Periode ca. 6,3 Updates, also ca. 40 s. Der Spieler kann lernen, im Tal zu kaufen.
-- Die Basis erholt sich ohne Käufe um 0,1 % je 25 s, aber nie unter 1 500 k€.
+- Die Basis erholt sich ohne Käufe um 0,1 % je 25 s, aber nie unter 1 500 k∈.
 
 **Lieferumfang-Upgrades** (multiplikativ auf `partsPerDelivery`, siehe Projekte P07–P10b): ×1,5 · ×1,75 · ×2 · ×3 · ×11, insgesamt ×173,25.
 
@@ -260,7 +260,7 @@ d* = (P / 0,07)^(1/2,15)      (falls < 100, sonst (P/7)^(1/1,15))
 price* = K / d*
 ```
 
-Beispiel: P = 10 Autos/s und K = 80 ergibt d* ≈ 10, also price* ≈ 8 k€.
+Beispiel: P = 10 Autos/s und K = 80 ergibt d* ≈ 10, also price* ≈ 8 k∈.
 
 > **Designabsicht:** Unterhalb von `price*` wird das Lager leer verkauft und es entgeht Umsatz. Oberhalb wächst das Lager. Der Spieler regelt also einen Preis, der Lagerbestand ist die Regelabweichung. Absichtlich wird **kein** Auto-Preisregler angeboten. Optional kann er ein spätes Projekt sein (Erweiterung E3).
 
@@ -390,7 +390,7 @@ treasuryBuy():          // jede Sekunde
 
 kaufePosition(budget):
   roll = U
-  preis = ⌈U · (roll>0,99 ? 300 000 : roll>0,85 ? 50 000 : roll>0,60 ? 15 000 : roll>0,20 ? 5 000 : 1 500)⌉   // k€
+  preis = ⌈U · (roll>0,99 ? 300 000 : roll>0,85 ? 50 000 : roll>0,60 ? 15 000 : roll>0,20 ? 5 000 : 1 500)⌉   // k∈
   if preis > budget: preis = ⌈budget · roll⌉
   menge = min(⌊budget / preis⌋, 10⁶)
 
@@ -695,7 +695,7 @@ Fork stirbt:            (U · 0,15·aDef + 0,1·aDef) · (nL/nR · 0,5) > 0,5
 
 ## 9. Projektbaum (vollständig)
 
-Legende der Kosten: **O** = Ops, **I** = Ideen, **M** = Marktwissen, **R** = Reputation, **k€** = Kapital, **Pool** = Autos aus dem Fahrzeugpool, **MWt** = gespeicherte Energie.
+Legende der Kosten: **O** = Ops, **I** = Ideen, **M** = Marktwissen, **R** = Reputation, **k∈** = Kapital, **Pool** = Autos aus dem Fahrzeugpool, **MWt** = gespeicherte Energie.
 
 Die Titel sind **eigene Platzhalter**, die Beschreibungstexte schreibt das Team.
 
@@ -739,8 +739,8 @@ Die Titel sind **eigene Platzhalter**, die Beschreibungstexte schreibt das Team.
 | P29 | Stau-Auflösung | 5 000 M + 30 000 O | P27 | `rep += 12`, `g += 0,01` |
 | P30 | Klimaneutrale Flotte | 1 500 M + 50 000 O | P27 | `rep += 15`, `g += 0,01` |
 | P31 | Parkplatzsuche abgeschafft | 20 000 O | P27 | `rep += 20`, `g += 0,01` |
-| P40 | Stiftung gründen | 50 000 000 k€ | `85 ≤ rep < 100 && cars ≥ 101·10⁶` | `rep += 1` |
-| P40b | Lobbyarbeit | `lobby` k€ (Start 100 000 000, ×2 je Kauf) | P40 && `rep < 100` | `rep += 1`; wiederholbar bis rep = 100 |
+| P40 | Stiftung gründen | 50 000 000 k∈ | `85 ≤ rep < 100 && cars ≥ 101·10⁶` | `rep += 1` |
+| P40b | Lobbyarbeit | `lobby` k∈ (Start 100 000 000, ×2 je Kauf) | P40 && `rep < 100` | `rep += 1`; wiederholbar bis rep = 100 |
 
 ### 9.3 Phase 1 – Systeme
 
@@ -751,8 +751,8 @@ Die Titel sind **eigene Platzhalter**, die Beschreibungstexte schreibt das Team.
 | P118 | Auto-Turnier | 50 000 I | P20 && `rep ≥ 90` | Turniere automatisch |
 | P119 | Gegnermodell | 25 000 I | 8 Strategien | `insightBoost = 2`, Turnierkosten = 16 000 O |
 | P21 | Treasury-Algorithmus | 10 000 O | `rep ≥ 8` | Kap. 5.1 aktiv |
-| P37 | Übernahme Zulieferer | 100 000 000 k€ | Treasury-Wert ≥ 1 000 000 k€ | `demandBoost ×= 5`, `rep += 1` |
-| P38 | Marktbeherrschung | 1 000 M + 1 000 000 000 k€ | P37 | `demandBoost ×= 10`, `rep += 1` |
+| P37 | Übernahme Zulieferer | 100 000 000 k∈ | Treasury-Wert ≥ 1 000 000 k∈ | `demandBoost ×= 5`, `rep += 1` |
+| P38 | Marktbeherrschung | 1 000 M + 1 000 000 000 k∈ | P37 | `demandBoost ×= 10`, `rep += 1` |
 | P50 | Quantenrechner | 10 000 O | `cores ≥ 5` | Kap. 5.3 aktiv |
 | P51 | Qubit-Chip | 10 000 O (+5 000 je Kauf) | P50 | +1 Chip; wiederholbar bis 10 |
 | P70 | Autopilot-Stack | 70 000 O | P34 | Vorstufe |
@@ -825,7 +825,7 @@ Ende→P140→…→P146→{P147→{P200,P201}, P148→P210→…→P216}
 | Montage | Button „Auto montieren“, Teilesätze, Autos/s | Start |
 | Vertrieb | Kapital, Lager, Preis ±, Nachfrage %, Werbung | Start (nur Phase 1) |
 | Einkauf | Teilepreis, „Teile bestellen“, Auto-Einkauf-Schalter | Start / P26 |
-| Anlagen | Montageroboter; Fertigungsstraßen | `money ≥ 500 k€` / P22 |
+| Anlagen | Montageroboter; Fertigungsstraßen | `money ≥ 500 k∈` / P22 |
 | Rechenzentrum | Reputation, nächste Schwelle, Kerne, Speicher, Ops-Balken, Ideen | Kap. 4-Freischaltung |
 | Projekte | Liste der sichtbaren Projekte | wie Rechenzentrum |
 | Treasury | Ein- und Auszahlen, Risiko, Positionstabelle, Upgrade | P21 |
@@ -933,13 +933,13 @@ data/         balance.json
 
 ## Anhang A – Zuordnung Paperclips → Autofabrik
 
-Diese Tabelle dient nur als Referenz für Entwickler, die das Original kennen. Alle Geldbeträge sind **×100**, 1 $ im Original entspricht 100 k€. Eine reine Skalierung ändert die Dynamik nicht.
+Diese Tabelle dient nur als Referenz für Entwickler, die das Original kennen. Alle Geldbeträge sind **×100**, 1 $ im Original entspricht 100 k∈. Eine reine Skalierung ändert die Dynamik nicht.
 
 | Paperclips | Autofabrik |
 |---|---|
 | clips / unsoldClips / unusedClips | cars / stock / pool |
 | wire, wireSupply, wireCost | parts, partsPerDelivery, partsCost |
-| funds, margin | money (k€), price (k€) |
+| funds, margin | money (k∈), price (k∈) |
 | AutoClipper, MegaClipper | Montageroboter, Fertigungsstraße |
 | marketing | Werbekampagne |
 | trust | Reputation |
@@ -1030,7 +1030,7 @@ Das Kernmodell aus Kap. 3 (ohne Projekte, ohne Ideen und ohne Nebensysteme) wurd
 | Reputation 8 | 19,9 min | 20,9 min | 21,0 min |
 | 100 000 Autos | 43,2 min | 44,2 min | 44,4 min |
 | Reputation 12 | 82,5 min | 83,5 min | 83,7 min |
-| nach 120 min | 371 k Autos, 65 Roboter, Preis 5 k€, Teilebasis 3 781 k€ | 367 k | 366 k |
+| nach 120 min | 371 k Autos, 65 Roboter, Preis 5 k∈, Teilebasis 3 781 k∈ | 367 k | 366 k |
 
 Befunde:
 1. Die Streuung zwischen den Seeds liegt unter 3 %. Der Zufall pro Tick mittelt sich weg, wie in 12.1 erwartet.
