@@ -9,6 +9,11 @@ const MAX_TICKS_PER_FRAME = 2_000;
 const CATCH_UP_THRESHOLD_MS = 60_000;
 const CATCH_UP_CHUNK = 25_000;
 
+// DEV-MODUS – nur zum schnellen Durchklicken der Mechanik beim Testen, kein Spieler-Feature.
+// Bewusst nicht gespeichert (steht nach einem Neuladen wieder auf „aus“). Vor einem Release
+// kann dieser Block inklusive des Buttons in settings.ts ersatzlos entfernt werden.
+export const DEV_SPEED_MULTIPLIER = 60;
+
 export interface CatchUpProgress {
   done: number;
   total: number;
@@ -28,6 +33,8 @@ export class Game {
   /** Offline-Zeit seit dem letzten Speichern, wird beim Start nachgeholt. */
   private pendingOfflineMs = 0;
   onCatchUp: ((p: CatchUpProgress | null) => void) | null = null;
+  /** DEV-MODUS, siehe Konstante oben. Absichtlich nicht persistiert. */
+  devMode = false;
 
   constructor(private readonly store: KeyValueStore | null) {
     const loaded = store ? loadGame(store, this.b) : null;
@@ -75,8 +82,11 @@ export class Game {
       return;
     }
     const dt = this.b.tick.fastMs;
-    let n = Math.min(Math.floor(this.acc / dt), MAX_TICKS_PER_FRAME);
-    this.acc -= n * dt;
+    // Die Echtzeit-Buchhaltung (acc) bleibt unangetastet, damit die Offline-Erkennung oben
+    // korrekt funktioniert. Der Dev-Modus führt pro „realer“ Zeitscheibe nur mehr Ticks aus.
+    const slots = Math.min(Math.floor(this.acc / dt), MAX_TICKS_PER_FRAME);
+    this.acc -= slots * dt;
+    let n = slots * (this.devMode ? DEV_SPEED_MULTIPLIER : 1);
     while (n-- > 0) fastTick(this.state, this.b);
     if (now - this.lastSave > AUTOSAVE_MS) this.save();
   }

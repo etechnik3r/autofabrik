@@ -3,6 +3,10 @@ import { allProjects, canBuyProject, costOf } from '../../sim/projects';
 import type { Cost, ProjectDef } from '../../sim/projects/types';
 import { definePanel, h } from '../dom';
 import { fmtMoney, fmtNum } from '../format';
+import { projectIcon } from '../icons';
+
+/** So lange (Spielzeit, ms) bleibt ein neu erschienenes Projekt farbig hervorgehoben. */
+const NEW_HIGHLIGHT_MS = 30_000;
 
 export const computePanel = definePanel({
   id: 'compute',
@@ -44,7 +48,11 @@ export function priceTag(c: Cost): string {
     .join(' + ');
 }
 
-/** Projektliste, nach ID gediffed. Neue Projekte erscheinen oben und blinken kurz. */
+/**
+ * Projektliste, nach ID gediffed. Neue Projekte erscheinen oben und bleiben 30 (Spiel-)Sekunden
+ * lang farbig gerahmt – gesteuert über `shownAt` im Zustand, nicht über eine CSS-Animation, damit
+ * es auch nach einem Neuladen korrekt weiterzählt statt wieder von vorn zu beginnen.
+ */
 export const projectsPanel = definePanel({
   id: 'projects',
   title: 'Projekte',
@@ -54,7 +62,7 @@ export const projectsPanel = definePanel({
     const b = p.game.b;
     const list = p.add(h('div', 'projects'));
     const empty = p.text('Keine Projekte verfügbar.', 'hint');
-    const cards = new Map<string, { el: HTMLButtonElement; cost: HTMLElement; def: ProjectDef; tag: string }>();
+    const cards = new Map<string, { el: HTMLButtonElement; cost: HTMLElement; def: ProjectDef; tag: string; isNew: boolean }>();
 
     p.bind((s) => {
       const visible = allProjects.filter((d) => s.projects[d.id]?.status === 1);
@@ -68,21 +76,25 @@ export const projectsPanel = definePanel({
       for (const def of visible) {
         let c = cards.get(def.id);
         if (!c) {
-          const el = h('button', 'project flash');
+          const el = h('button', 'project');
           el.type = 'button';
-          el.appendChild(h('span', 'ptitle', def.title));
+          const head = el.appendChild(h('span', 'phead'));
+          head.appendChild(h('span', 'picon', projectIcon(def.id, def.group)));
+          head.appendChild(h('span', 'ptitle', def.title));
           const cost = el.appendChild(h('span', 'pcost'));
           el.appendChild(h('span', 'pdesc', def.description));
           el.addEventListener('click', () => p.game.dispatch({ type: 'project', id: def.id }));
-          el.addEventListener('animationend', () => el.classList.remove('flash'));
           list.prepend(el);
-          c = { el, cost, def, tag: '' };
+          c = { el, cost, def, tag: '', isNew: false };
           cards.set(def.id, c);
         }
         const tag = `(${priceTag(costOf(s, b, def))})`;
         if (tag !== c.tag) c.cost.textContent = c.tag = tag;
         const disabled = !canBuyProject(s, b, def.id) || p.game.busy;
         if (c.el.disabled !== disabled) c.el.disabled = disabled;
+        const shownAt = s.projects[def.id]?.shownAt ?? 0;
+        const isNew = (s.tick - shownAt) * b.tick.fastMs < NEW_HIGHLIGHT_MS;
+        if (isNew !== c.isNew) c.el.classList.toggle('new', (c.isNew = isNew));
       }
       empty.hidden = visible.length > 0;
     });

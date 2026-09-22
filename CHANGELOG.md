@@ -7,17 +7,34 @@ Versionsnummern werden noch nicht vergeben (Projekt vor dem ersten Release).
 
 ## [Unveröffentlicht]
 
+### Hinzugefügt
+- Passende Icons je Projekt und Panel (Unicode-Emoji, z. B. 💡 für die Ideenwerkstatt oder
+  🦾 für die Roboterprojekte) für mehr Wiedererkennbarkeit auf den ersten Blick.
+- Neu erschienene Projekte bleiben 30 Spielsekunden lang farbig gerahmt und tragen eine
+  „NEU“-Marke, statt nur kurz aufzublinken; überlebt auch einen Neuladen der Seite korrekt.
+- Hover-Tooltips für Fachbegriffe (Ops, Ideen, Marktwissen, Integrität, Autonomie, Erz, …) über
+  ein zentrales Glossar (`src/ui/glossary.ts`).
+- Vier zusätzliche Farbschemen im Einstellungsmenü: System (folgt dem Betriebssystem), Hell,
+  Dunkel, „Wolfsburg“ (Blau/Weiß) und „Getriebe“ (dunkler Industrie-Look mit türkisem Akzent).
+- Entwicklermodus im Einstellungsmenü: beschleunigt die Simulation testweise um das 60-Fache,
+  um die Mechanik schnell durchzuklicken. Absichtlich nicht gespeichert (steht nach jedem
+  Neuladen wieder auf „aus“); als Testwerkzeug markiert und leicht wieder entfernbar.
+
 ### Behoben
 - GitHub Pages zeigte nur eine weiße Seite: Pages lieferte den Repo-Inhalt roh aus, aber
   `index.html` bindet TypeScript ein, das der Browser nicht ausführen kann. Ein GitHub-Actions-
   Workflow ([`.github/workflows/pages.yml`](.github/workflows/pages.yml)) baut das Projekt jetzt
   bei jedem Push nach `main` mit Vite und veröffentlicht den fertigen `dist/`-Ordner.
+- Panels konnten am unteren Bildschirmrand abgeschnitten sein (z. B. der Kaufen-Knopf im
+  Anlagen-Panel), sodass man scrollen musste. Ab Tablet-Breite scrollt jetzt nicht mehr die
+  ganze Seite, sondern jede Spalte für sich – Kopf und die anderen Spalten bleiben immer
+  sichtbar. Auf schmalen Bildschirmen (eine Spalte) bleibt normales Scrollen der ganzen Seite.
 
 ### Geändert
 - Einstellungen aus dem eigenen „System“-Panel in ein Zahnrad-Menü im Kopfbereich verschoben:
-  Zahlenformat, Export/Import und ein „Spielstand zurücksetzen“-Knopf mit Bestätigung
-  (Prestige bleibt dabei erhalten). Der Spielstand wird weiterhin automatisch lokal im
-  Browser gespeichert (localStorage, zwei Slots) und beim Öffnen fortgesetzt.
+  Zahlenformat, Farbschema, Export/Import und ein „Spielstand zurücksetzen“-Knopf mit
+  Bestätigung (Prestige bleibt dabei erhalten). Der Spielstand wird weiterhin automatisch lokal
+  im Browser gespeichert (localStorage, zwei Slots) und beim Öffnen fortgesetzt.
 
 ## [0.2.0] – 2026-09-22
 

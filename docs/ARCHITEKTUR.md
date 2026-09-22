@@ -113,7 +113,15 @@ definePanel({ id: 'sales', title: 'Vertrieb', visible: s => s.phase === 1,
   build(p) { p.stat('Kapital', s => fmtMoney(s.money)); p.button('Preis +1', { type: 'price', delta: 1 }); } })
 ```
 
-Die Projektliste wird nach ID gediffed (neue Projekte blinken kurz).
+Die Projektliste wird nach ID gediffed. Neu erschienene Karten bleiben 30 Spielsekunden lang farbig gerahmt – gesteuert über `shownAt` im Zustand (nicht über eine CSS-Animation), damit die verbleibende Zeit auch nach einem Neuladen korrekt weiterzählt statt neu zu beginnen.
+
+**Icons und Tooltips:** `icons.ts` ordnet jeder Projekt-ID und jedem Panel ein passendes Unicode-Emoji zu (mit Fallback über die Projektgruppe), reine Eye-Candy ohne Spiellogik. `glossary.ts` hält Kurzerklärungen für Fachbegriffe; `Builder.stat()` setzt automatisch einen `title`-Tooltip, wenn die Beschriftung im Glossar steht.
+
+**Farbschemen:** Alle Panel-Farben sind CSS-Variablen auf `:root`. `theme.ts` setzt `data-theme` auf `<html>` (`system` | `light` | `dark` | `wolfsburg` | `getriebe`), die Auswahl steht im Zahnrad-Menü und wird in `localStorage` gemerkt. `system` folgt `prefers-color-scheme`, alle anderen Werte erzwingen ein festes Schema.
+
+**Unabhängig scrollende Spalten:** Ab Tablet-Breite (≥ 641 px) scrollt nicht die ganze Seite, sondern jede der drei Spalten für sich (`overflow-y: auto` pro `.col`, `#app` auf `100vh` fixiert). Kopf und Zahnrad bleiben so immer sichtbar. Auf einer gestapelten Handy-Spalte bleibt normales Seiten-Scrollen, das ist dort die gewohnte Bedienung. Echtes „nie scrollen“ ist bei unbegrenzt wachsenden Listen (Projekte, Gebäude) nicht erreichbar, ohne Inhalte zu verstecken – das hier ist der pragmatische Kompromiss, den auch das Vorbild Universal Paperclips fährt.
+
+**Dev-Modus** (`game.ts`, `DEV_SPEED_MULTIPLIER`): beschleunigt testweise nur die Anzahl ausgeführter Ticks pro realer Zeitscheibe, ohne die Echtzeit-Buchhaltung (`acc`) selbst zu verzerren – damit bleibt die Offline-Fortschritt-Erkennung beim normalen Spielen unberührt. Bewusst nicht persistiert und klar als Testwerkzeug markiert, damit er sich vor einem Release rückstandsfrei entfernen lässt.
 
 ## 6. Speichern (`src/save/`)
 

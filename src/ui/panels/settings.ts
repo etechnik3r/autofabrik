@@ -1,30 +1,43 @@
 import { Builder, h } from '../dom';
 import { isScientific, setScientific } from '../format';
-import type { Game } from '../game';
+import { DEV_SPEED_MULTIPLIER, type Game } from '../game';
+import { applyTheme, isThemeId, THEMES, type ThemeId } from '../theme';
 
 const SETTINGS_KEY = 'autofabrik.settings';
 
-export function loadSettings(): void {
+interface Settings {
+  scientific: boolean;
+  theme: ThemeId;
+}
+
+function readSettings(): Settings {
   try {
     const s = JSON.parse(localStorage.getItem(SETTINGS_KEY) ?? '{}');
-    setScientific(!!s.scientific);
+    return { scientific: !!s.scientific, theme: typeof s.theme === 'string' && isThemeId(s.theme) ? s.theme : 'system' };
   } catch {
-    /* Standardwerte */
+    return { scientific: false, theme: 'system' };
   }
 }
 
-function storeSettings(): void {
+function writeSettings(patch: Partial<Settings>): void {
   try {
-    localStorage.setItem(SETTINGS_KEY, JSON.stringify({ scientific: isScientific() }));
+    localStorage.setItem(SETTINGS_KEY, JSON.stringify({ ...readSettings(), ...patch }));
   } catch {
     /* ohne Speicher weiter */
   }
 }
 
+/** Beim Start aufrufen: Zahlenformat und Farbschema aus dem vorigen Besuch übernehmen. */
+export function loadSettings(): void {
+  const s = readSettings();
+  setScientific(s.scientific);
+  applyTheme(s.theme);
+}
+
 /**
  * Inhalt des Einstellungsmenüs (Zahnrad im Kopfbereich): Speichern läuft ohnehin automatisch
- * im Hintergrund (localStorage, zwei Slots) – hier stehen nur Anzeige, Ein-/Ausgabe und der
- * Rücksetzen-Knopf. `close` blendet das Menü nach einer Aktion wieder aus.
+ * im Hintergrund (localStorage, zwei Slots) – hier stehen nur Anzeige, Farbschema, Ein-/Ausgabe,
+ * ein Entwicklermodus zum schnellen Testen und der Rücksetzen-Knopf.
  */
 export function buildSettings(builder: Builder, game: Game, close: () => void): void {
   const status = builder.add(h('p', 'hint'));
@@ -34,9 +47,21 @@ export function buildSettings(builder: Builder, game: Game, close: () => void): 
 
   builder.text('Der Spielstand wird laufend automatisch im Browser gespeichert (localStorage) und beim Öffnen fortgesetzt.', 'hint');
 
+  builder.heading('Farbschema');
+  const themeSelect = builder.add(h('select', 'select'));
+  for (const t of THEMES) themeSelect.appendChild(new Option(t.label, t.id));
+  themeSelect.value = readSettings().theme;
+  themeSelect.addEventListener('change', () => {
+    const id = themeSelect.value;
+    if (isThemeId(id)) {
+      applyTheme(id);
+      writeSettings({ theme: id });
+    }
+  });
+
   builder.command(() => (isScientific() ? 'Zahlen: 1,23·10^9' : 'Zahlen: 1,23 Mrd.'), () => {
     setScientific(!isScientific());
-    storeSettings();
+    writeSettings({ scientific: isScientific() });
   });
 
   builder.heading('Spielstand austauschen');
@@ -51,6 +76,15 @@ export function buildSettings(builder: Builder, game: Game, close: () => void): 
     });
     r.command('Importieren', () => say(game.importSave(area.value) ? 'Spielstand geladen.' : 'Ungültiger Spielstand.'));
   });
+
+  builder.heading('Entwicklung');
+  builder.text(`Beschleunigt die Simulation testweise um das ${DEV_SPEED_MULTIPLIER}-Fache, um die Mechanik schnell durchzuklicken.`, 'hint');
+  const devBtn = builder.command(
+    () => `Entwicklermodus: ${game.devMode ? `an (×${DEV_SPEED_MULTIPLIER})` : 'aus'}`,
+    () => void (game.devMode = !game.devMode),
+    'btn toggle',
+  );
+  builder.bind(() => devBtn.classList.toggle('on', game.devMode));
 
   builder.heading('Zurücksetzen');
   builder.command(

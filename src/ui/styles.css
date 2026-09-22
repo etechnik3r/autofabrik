@@ -1,3 +1,8 @@
+/*
+ * Farbschemen als Tokens. Auswahl über [data-theme] auf <html> (siehe src/ui/theme.ts),
+ * gesetzt im Zahnrad-Menü. "system" (Standard, kein expliziter Wunsch) folgt den
+ * Betriebssystem-Einstellungen; alle anderen Werte erzwingen ein festes Schema.
+ */
 :root {
   --bg: #f4f2ee;
   --panel: #ffffff;
@@ -16,7 +21,8 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme]),
+  :root[data-theme='system'] {
     --bg: #15161a;
     --panel: #1d1f24;
     --panel-2: #25282e;
@@ -30,6 +36,53 @@
     --shadow: none;
     color-scheme: dark;
   }
+}
+
+:root[data-theme='dark'] {
+  --bg: #15161a;
+  --panel: #1d1f24;
+  --panel-2: #25282e;
+  --text: #e7e4de;
+  --muted: #9a958c;
+  --line: #33363d;
+  --accent: #e8a33d;
+  --accent-text: #1a1305;
+  --good: #5cc28a;
+  --bad: #ef6b5e;
+  --shadow: none;
+  color-scheme: dark;
+}
+
+/* „Wolfsburg“ – helles Blau/Weiß, angelehnt an klassische Automobil-Markenfarben. */
+:root[data-theme='wolfsburg'] {
+  --bg: #eef3fb;
+  --panel: #ffffff;
+  --panel-2: #dde8f6;
+  --text: #0b1c3a;
+  --muted: #4c6083;
+  --line: #c2d3ec;
+  --accent: #0a3fa3;
+  --accent-text: #ffffff;
+  --good: #16814f;
+  --bad: #c62828;
+  --shadow: 0 1px 2px rgba(10, 40, 100, 0.08);
+  color-scheme: light;
+}
+
+/* „Getriebe“ – dunkler Industrie-Look, grafitfarben mit türkisem Leitstand-Akzent. */
+:root[data-theme='getriebe'] {
+  --bg: #0c1210;
+  --panel: #151f1c;
+  --panel-2: #1d2b26;
+  --text: #dcf3ea;
+  --muted: #7ea495;
+  --line: #2b3c36;
+  --accent: #2ecfa5;
+  --accent-text: #04231a;
+  --good: #58d68d;
+  --bad: #ff6b5e;
+  --shadow: none;
+  color-scheme: dark;
 }
 
 * {
@@ -47,6 +100,58 @@ body {
   max-width: 1280px;
   margin: 0 auto;
   padding: 16px;
+}
+
+/*
+ * Ab Tabletbreite scrollt nicht mehr die ganze Seite, sondern jede Spalte für sich:
+ * Kopf, Zahnrad und die anderen Spalten bleiben immer sichtbar. Auf schmalen Bildschirmen
+ * (Handy, eine Spalte) bleibt normales Scrollen der ganzen Seite – dort ist das die
+ * gewohnte Bedienung, unabhängige Spalten-Scrollbereiche wären dort nur Frickelei.
+ */
+@media (min-width: 641px) {
+  html,
+  body {
+    height: 100%;
+    overflow: hidden;
+  }
+
+  #app {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .top {
+    flex: 0 0 auto;
+  }
+
+  .columns {
+    flex: 1 1 auto;
+    min-height: 0;
+    align-items: stretch;
+  }
+
+  .col {
+    max-height: 100%;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-gutter: stable;
+    scrollbar-width: thin;
+    padding-right: 2px;
+  }
+
+  .col::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .col::-webkit-scrollbar-thumb {
+    background: var(--line);
+    border-radius: 4px;
+  }
+
+  .col::-webkit-scrollbar-thumb:hover {
+    background: var(--muted);
+  }
 }
 
 [hidden] {
@@ -146,12 +251,20 @@ body {
 }
 
 .panel h2 {
+  display: flex;
+  align-items: center;
+  gap: 6px;
   margin: 0 0 8px;
   font-size: 12px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--muted);
+}
+
+.panel h2 .picon {
+  font-size: 14px;
+  line-height: 1;
 }
 
 .panel h3.sub {
@@ -171,8 +284,16 @@ body {
   gap: 12px;
 }
 
+.stat.has-info {
+  cursor: help;
+}
+
 .stat .label {
   color: var(--muted);
+}
+
+.stat.has-info .label {
+  border-bottom: 1px dotted var(--muted);
 }
 
 .stat .value {
@@ -325,6 +446,17 @@ body {
   padding: 8px 10px;
 }
 
+.project .phead {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.project .picon {
+  font-size: 15px;
+  line-height: 1;
+}
+
 .project .ptitle {
   font-weight: 600;
 }
@@ -339,17 +471,34 @@ body {
   color: var(--muted);
 }
 
-.project.flash {
-  animation: flash 1.2s ease-out 2;
+/* Neu erschienenes Projekt: 30 Spiel-Sekunden lang gerahmt und leicht pulsierend, mit Eckmarke. */
+.project.new {
+  position: relative;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 1px var(--accent);
+  animation: pulse 1.6s ease-in-out infinite;
 }
 
-@keyframes flash {
-  0% {
-    border-color: var(--accent);
-    box-shadow: 0 0 0 2px var(--accent);
-  }
+.project.new::after {
+  content: 'NEU';
+  position: absolute;
+  top: -7px;
+  right: 8px;
+  padding: 1px 6px;
+  font: 700 9px/1.4 var(--sans);
+  letter-spacing: 0.04em;
+  color: var(--accent-text);
+  background: var(--accent);
+  border-radius: 3px;
+}
+
+@keyframes pulse {
+  0%,
   100% {
-    box-shadow: 0 0 0 0 transparent;
+    box-shadow: 0 0 0 1px var(--accent);
+  }
+  50% {
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 45%, transparent);
   }
 }
 

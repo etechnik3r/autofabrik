@@ -3,6 +3,7 @@ import { playSeconds } from '../sim/state';
 import { Builder, h, type Binder, type PanelDef } from './dom';
 import { fmtNum, fmtTime } from './format';
 import type { Game } from './game';
+import { PANEL_ICONS } from './icons';
 import { panels } from './panels';
 import { buildSettings } from './panels/settings';
 
@@ -14,7 +15,7 @@ const PHASE_NAMES = ['', 'Manufaktur', 'Konzern', 'Expansion'];
 interface Mounted {
   def: PanelDef;
   el: HTMLElement;
-  title: HTMLElement;
+  titleText: HTMLElement;
   binders: Binder[];
   shown: boolean;
 }
@@ -58,11 +59,14 @@ export function mountApp(root: HTMLElement, game: Game): void {
     const el = cols[def.column - 1].appendChild(h('section', 'panel'));
     el.dataset.panel = def.id;
     const title = el.appendChild(h('h2'));
+    const icon = PANEL_ICONS[def.id];
+    if (icon) title.appendChild(h('span', 'picon', icon));
+    const titleText = title.appendChild(h('span', 'ptext'));
     const body = el.appendChild(h('div', 'body'));
     const builder = new Builder(body, game);
     def.build(builder);
     el.hidden = true;
-    return { def, el, title, binders: builder.binders, shown: false };
+    return { def, el, titleText, binders: builder.binders, shown: false };
   });
 
   const overlay = root.appendChild(h('div', 'overlay'));
@@ -113,7 +117,7 @@ export function mountApp(root: HTMLElement, game: Game): void {
       }
       if (!show) continue;
       const t = typeof m.def.title === 'function' ? m.def.title(s) : m.def.title;
-      if (m.title.textContent !== t) m.title.textContent = t;
+      if (m.titleText.textContent !== t) m.titleText.textContent = t;
       for (const b of m.binders) b(s);
     }
     requestAnimationFrame(frame);

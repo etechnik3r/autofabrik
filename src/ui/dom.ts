@@ -1,4 +1,5 @@
 import type { Action, GameState } from '../sim';
+import { GLOSSARY } from './glossary';
 import type { Game } from './game';
 
 /** Ein Binder gleicht ein DOM-Detail mit dem Zustand ab. Er schreibt nur bei Änderung. */
@@ -71,7 +72,14 @@ export class Builder {
     const l = row.appendChild(h('span', 'label'));
     const v = row.appendChild(h('span', 'value'));
     if (typeof label === 'function') this.bind(bindText(l, label));
-    else l.textContent = label;
+    else {
+      l.textContent = label;
+      const info = GLOSSARY[label];
+      if (info) {
+        row.title = info;
+        row.classList.add('has-info');
+      }
+    }
     this.bind(bindText(v, value));
     if (visible) this.bind(bindVisible(row, visible));
     return row;
