@@ -1,5 +1,6 @@
 import { demandConstant, expectedSales, lineCost, optimalPrice, robotCost } from '../../sim/formulas';
 import { avgIncome } from '../../sim/phase1';
+import { bought } from '../../sim/projects/types';
 import { definePanel } from '../dom';
 import { fmtMoney, fmtNum, fmtPct, fmtRate } from '../format';
 
@@ -34,7 +35,7 @@ export const salesPanel = definePanel({
       g.button('−', { type: 'price', delta: -1 }, { title: 'Preis −1 k∈', enabled: (s) => !s.flags.autoPrice });
       g.button('+', { type: 'price', delta: 1 }, { title: 'Preis +1 k∈', enabled: (s) => !s.flags.autoPrice });
       const cruise = g.button((s) => `🎚️ Tempomat: ${s.flags.autoPrice ? 'an' : 'aus'}`, { type: 'toggleAutoPrice' }, {
-        visible: (s) => s.flags.autoPriceAvailable,
+        visible: (s) => bought(s, 'P26b'),
         title: 'Hält den Preis automatisch auf der Preisempfehlung',
         cls: 'btn toggle',
       });
@@ -68,7 +69,7 @@ export const purchasingPanel = definePanel({
     p.stat('Teilesätze je Lieferung', (s) => fmtNum(s.partsPerDelivery));
     p.button('Teile bestellen', { type: 'buyParts' });
     p.button((s) => `Auto-Einkauf: ${s.flags.autoBuy ? 'an' : 'aus'}`, { type: 'toggleAutoBuy' }, {
-      visible: (s) => s.flags.autoBuyAvailable,
+      visible: (s) => bought(s, 'P26'),
     });
   },
 });

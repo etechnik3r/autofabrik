@@ -10,15 +10,15 @@ export const FLAG_NAMES = [
   'compute', // Rechenzentrum und Projekte
   'ideas', // P05
   'lines', // P22
-  'autoBuyAvailable', // P26
-  'autoBuy', // Schalter
-  'autoPriceAvailable', // P26b
-  'autoPrice', // Schalter
+  // Für "verfügbar" wird direkt bought(s, id) geprüft statt eines eigenen Flags – sonst bleibt
+  // der Schalter für alle, die das Projekt schon vor einer neuen Auto-Funktion gekauft hatten,
+  // für immer unsichtbar (das Flag würde nur im einmaligen Kauf-Effekt gesetzt).
+  'autoBuy', // Schalter, "verfügbar" = bought(s, 'P26')
+  'autoPrice', // Schalter, "verfügbar" = bought(s, 'P26b')
   'revenue', // P42
   'treasury', // P21
   'strategy', // P20
-  'autoTourneyAvailable', // P118
-  'autoTourney', // Schalter
+  'autoTourney', // Schalter, "verfügbar" = bought(s, 'P118')
   'quantum', // P50
   'power', // P127
   'mining', // P41

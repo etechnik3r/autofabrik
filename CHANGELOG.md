@@ -7,6 +7,14 @@ Versionsnummern werden noch nicht vergeben (Projekt vor dem ersten Release).
 
 ## [Unveröffentlicht]
 
+### Behoben
+- Die neuen Schalter „Auto-Turnier“ und „Preis-Tempomat“ blieben unsichtbar, wenn das
+  freischaltende Projekt (P118 bzw. P26b) schon **vor** diesem Update gekauft war: Das
+  „verfügbar“-Flag wurde nur im einmaligen Kauf-Effekt gesetzt, der bei bereits gekauften
+  Projekten nie erneut läuft. Sichtbarkeit hängt jetzt direkt von `bought(s, id)` ab statt von
+  einem separat gespeicherten Flag – funktioniert dadurch unabhängig davon, wann das Projekt
+  gekauft wurde. Betrifft auch den bestehenden Auto-Einkauf-Schalter (vorsorglich mitkorrigiert).
+
 ### Hinzugefügt
 - Neues Projekt **„Preis-Tempomat“** (P26b, nach P26): schaltet einen Automatikmodus für den
   Verkaufspreis frei, hält ihn selbstständig auf der Preisempfehlung (dieselbe Formel wie die

@@ -1,4 +1,5 @@
 import { tourneyCost, treasuryUpgradeCost } from '../../sim/formulas';
+import { bought } from '../../sim/projects/types';
 import type { Risk } from '../../sim/state';
 import { chipValue, quantumSum } from '../../sim/quantum';
 import { STRATEGY_NAMES } from '../../sim/strategy';
@@ -74,7 +75,7 @@ export const strategyPanel = definePanel({
       if (select.value !== String(s.strategy.selected)) select.value = String(s.strategy.selected);
     });
     p.button((s) => `Turnier starten (${fmtNum(tourneyCost(s, b))} Taktzyklen)`, { type: 'runTourney' });
-    p.group('row', (s) => s.flags.autoTourneyAvailable, (g) => {
+    p.group('row', (s) => bought(s, 'P118'), (g) => {
       const auto = g.button((s) => `Auto-Turnier: ${s.flags.autoTourney ? 'an' : 'aus'}`, { type: 'toggleAutoTourney' }, {
         title: 'Startet alle 30 s automatisch ein Turnier',
         cls: 'btn toggle',

@@ -16,6 +16,7 @@ import {
   launchShip,
 } from './phase3';
 import { buyProject, canBuyProject } from './projects';
+import { bought } from './projects/types';
 import { quantumCompute } from './quantum';
 import type { Attr, BuildingKind, GameState, Risk } from './state';
 import { canRunTourney, runTourney } from './strategy';
@@ -104,15 +105,15 @@ const handlers: Handlers = {
     run: (s) => void allocateCompute(s, 'storage'),
   },
   toggleAutoBuy: {
-    can: (s) => p1(s) && s.flags.autoBuyAvailable,
+    can: (s) => p1(s) && bought(s, 'P26'),
     run: (s) => void (s.flags.autoBuy = !s.flags.autoBuy),
   },
   toggleAutoPrice: {
-    can: (s) => p1(s) && s.flags.autoPriceAvailable,
+    can: (s) => p1(s) && bought(s, 'P26b'),
     run: (s) => void (s.flags.autoPrice = !s.flags.autoPrice),
   },
   toggleAutoTourney: {
-    can: (s) => s.flags.autoTourneyAvailable,
+    can: (s) => bought(s, 'P118'),
     run: (s) => void (s.flags.autoTourney = !s.flags.autoTourney),
   },
   project: {

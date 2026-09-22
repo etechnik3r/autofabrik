@@ -145,10 +145,7 @@ const production: ProjectDef[] = [
     group: 'produktion',
     cost: { ops: 7_000 },
     trigger: (s) => p1(s) && s.deliveries >= 15,
-    effect: (s) => {
-      s.flags.autoBuyAvailable = true;
-      s.flags.autoBuy = true;
-    },
+    effect: (s) => void (s.flags.autoBuy = true),
   },
   {
     id: 'P26b',
@@ -157,10 +154,7 @@ const production: ProjectDef[] = [
     group: 'produktion',
     cost: { ops: 60_000 },
     trigger: (s) => p1(s) && bought(s, 'P26'),
-    effect: (s) => {
-      s.flags.autoPriceAvailable = true;
-      s.flags.autoPrice = true;
-    },
+    effect: (s) => void (s.flags.autoPrice = true),
   },
   {
     id: 'P42',
@@ -312,10 +306,7 @@ const systems: ProjectDef[] = [
     group: 'systeme',
     cost: { ideas: 50_000 },
     trigger: (s) => bought(s, 'P20') && s.rep >= 90,
-    effect: (s) => {
-      s.flags.autoTourneyAvailable = true;
-      s.flags.autoTourney = true;
-    },
+    effect: (s) => void (s.flags.autoTourney = true),
   },
   {
     id: 'P119',
