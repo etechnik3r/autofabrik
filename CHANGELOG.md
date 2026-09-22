@@ -7,6 +7,12 @@ Versionsnummern werden noch nicht vergeben (Projekt vor dem ersten Release).
 
 ## [Unveröffentlicht]
 
+### Behoben
+- GitHub Pages zeigte nur eine weiße Seite: Pages lieferte den Repo-Inhalt roh aus, aber
+  `index.html` bindet TypeScript ein, das der Browser nicht ausführen kann. Ein GitHub-Actions-
+  Workflow ([`.github/workflows/pages.yml`](.github/workflows/pages.yml)) baut das Projekt jetzt
+  bei jedem Push nach `main` mit Vite und veröffentlicht den fertigen `dist/`-Ordner.
+
 ### Geändert
 - Einstellungen aus dem eigenen „System“-Panel in ein Zahnrad-Menü im Kopfbereich verschoben:
   Zahlenformat, Export/Import und ein „Spielstand zurücksetzen“-Knopf mit Bestätigung

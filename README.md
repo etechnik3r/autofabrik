@@ -16,6 +16,16 @@ npm run build      # Typecheck + statischer Build nach dist/
 
 `dist/` ist eine statische Seite ohne Backend und kann auf jedem Webspace liegen.
 
+## Veröffentlichen auf GitHub Pages
+
+`index.html` bindet TypeScript-Quellcode ein, den nur Vite übersetzen kann – Pages kann also
+nicht einfach den Repo-Inhalt ausliefern (sonst bleibt die Seite weiß). Stattdessen baut
+[`.github/workflows/pages.yml`](.github/workflows/pages.yml) bei jedem Push nach `main`
+automatisch und veröffentlicht `dist/`.
+
+Einmalig einrichten: **Repo → Settings → Pages → Source: „GitHub Actions“.** Danach erscheint
+die Seite unter `https://<benutzer>.github.io/<repo>/` und aktualisiert sich bei jedem Push.
+
 ## Prüfen
 
 ```bash
