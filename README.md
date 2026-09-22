@@ -4,6 +4,7 @@ Incremental-/Idle-Browserspiel über eine Fahrzeugfabrik-KI: von der Manufaktur 
 
 - Spielspezifikation: [`autofabrik_spec.md`](autofabrik_spec.md)
 - Architekturkonzept und Abweichungen von der Spec: [`docs/ARCHITEKTUR.md`](docs/ARCHITEKTUR.md)
+- Änderungshistorie: [`CHANGELOG.md`](CHANGELOG.md)
 
 ## Starten
 
