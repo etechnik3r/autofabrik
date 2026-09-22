@@ -4,6 +4,10 @@ import { Builder, h, type Binder, type PanelDef } from './dom';
 import { fmtNum, fmtTime } from './format';
 import type { Game } from './game';
 import { panels } from './panels';
+import { buildSettings } from './panels/settings';
+
+const GEAR_ICON =
+  '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>';
 
 const PHASE_NAMES = ['', 'Manufaktur', 'Konzern', 'Expansion'];
 
@@ -25,6 +29,27 @@ export function mountApp(root: HTMLElement, game: Game): void {
   carsEl.appendChild(h('span', 'label', 'Autos gebaut'));
   const carsValue = carsEl.appendChild(h('span', 'big'));
   const ticker = header.appendChild(h('ol', 'ticker'));
+
+  const gearWrap = header.appendChild(h('div', 'gear-wrap'));
+  const gearBtn = gearWrap.appendChild(h('button', 'gear-btn'));
+  gearBtn.type = 'button';
+  gearBtn.title = 'Einstellungen';
+  gearBtn.setAttribute('aria-label', 'Einstellungen');
+  gearBtn.innerHTML = GEAR_ICON;
+  const settingsMenu = gearWrap.appendChild(h('div', 'settings-menu'));
+  settingsMenu.hidden = true;
+  const closeSettings = () => {
+    settingsMenu.hidden = true;
+  };
+  gearBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    settingsMenu.hidden = !settingsMenu.hidden;
+  });
+  settingsMenu.addEventListener('click', (e) => e.stopPropagation());
+  document.addEventListener('click', closeSettings);
+  document.addEventListener('keydown', (e) => e.key === 'Escape' && closeSettings());
+  const settingsBuilder = new Builder(settingsMenu, game);
+  buildSettings(settingsBuilder, game, closeSettings);
 
   const main = root.appendChild(h('main', 'columns'));
   const cols = [1, 2, 3].map(() => main.appendChild(h('div', 'col')));
@@ -78,6 +103,7 @@ export function mountApp(root: HTMLElement, game: Game): void {
   const frame = () => {
     const s = game.state;
     renderHeader(s);
+    for (const b of settingsBuilder.binders) b(s);
     for (const m of mounted) {
       const show = m.def.visible(s);
       if (show !== m.shown) {

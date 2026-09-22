@@ -1,5 +1,6 @@
-import { definePanel, h } from '../dom';
+import { Builder, h } from '../dom';
 import { isScientific, setScientific } from '../format';
+import type { Game } from '../game';
 
 const SETTINGS_KEY = 'autofabrik.settings';
 
@@ -20,47 +21,48 @@ function storeSettings(): void {
   }
 }
 
-export const settingsPanel = definePanel({
-  id: 'settings',
-  title: 'System',
-  column: 3,
-  visible: () => true,
-  build(p) {
-    const status = h('p', 'hint');
-    const say = (t: string) => {
-      status.textContent = t;
-    };
-    p.group('row', undefined, (r) => {
-      r.command('Speichern', () => {
-        p.game.save();
-        say('Gespeichert.');
-      });
-      r.command(
-        () => (isScientific() ? 'Zahlen: 1,23·10^9' : 'Zahlen: 1,23 Mrd.'),
-        () => {
-          setScientific(!isScientific());
-          storeSettings();
-        },
-      );
+/**
+ * Inhalt des Einstellungsmenüs (Zahnrad im Kopfbereich): Speichern läuft ohnehin automatisch
+ * im Hintergrund (localStorage, zwei Slots) – hier stehen nur Anzeige, Ein-/Ausgabe und der
+ * Rücksetzen-Knopf. `close` blendet das Menü nach einer Aktion wieder aus.
+ */
+export function buildSettings(builder: Builder, game: Game, close: () => void): void {
+  const status = builder.add(h('p', 'hint'));
+  const say = (t: string) => {
+    status.textContent = t;
+  };
+
+  builder.text('Der Spielstand wird laufend automatisch im Browser gespeichert (localStorage) und beim Öffnen fortgesetzt.', 'hint');
+
+  builder.command(() => (isScientific() ? 'Zahlen: 1,23·10^9' : 'Zahlen: 1,23 Mrd.'), () => {
+    setScientific(!isScientific());
+    storeSettings();
+  });
+
+  builder.heading('Spielstand austauschen');
+  const area = builder.add(h('textarea', 'io'));
+  area.placeholder = 'Spielstand (Base64) zum Kopieren oder Einfügen';
+  area.rows = 3;
+  builder.group('row', undefined, (r) => {
+    r.command('Exportieren', () => {
+      area.value = game.exportSave();
+      area.select();
+      say('Spielstand exportiert – jetzt kopieren.');
     });
-    const area = p.add(h('textarea', 'io'));
-    area.placeholder = 'Spielstand (Base64) zum Kopieren oder Einfügen';
-    area.rows = 3;
-    p.group('row', undefined, (r) => {
-      r.command('Exportieren', () => {
-        area.value = p.game.exportSave();
-        area.select();
-        say('Spielstand exportiert – jetzt kopieren.');
-      });
-      r.command('Importieren', () => say(p.game.importSave(area.value) ? 'Spielstand geladen.' : 'Ungültiger Spielstand.'));
-      r.command(
-        'Neues Spiel',
-        () => {
-          if (confirm('Wirklich neu anfangen? Der aktuelle Lauf geht verloren (Prestige bleibt).')) p.game.newGame();
-        },
-        'btn danger',
-      );
-    });
-    p.add(status);
-  },
-});
+    r.command('Importieren', () => say(game.importSave(area.value) ? 'Spielstand geladen.' : 'Ungültiger Spielstand.'));
+  });
+
+  builder.heading('Zurücksetzen');
+  builder.command(
+    'Spielstand zurücksetzen',
+    () => {
+      if (confirm('Spielstand wirklich zurücksetzen? Der aktuelle Lauf geht unwiderruflich verloren (Prestige bleibt erhalten).')) {
+        game.newGame();
+        close();
+      }
+    },
+    'btn danger',
+  );
+
+  builder.add(status);
+}
