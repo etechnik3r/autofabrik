@@ -2,10 +2,10 @@ import type { Balance } from './balance';
 import type { BuildingKind, GameState } from './state';
 
 export const BUILDING_NAMES: Record<BuildingKind, string> = {
-  truck: 'Bergbau-Truck',
-  smelter: 'Schmelzeinheit',
+  truck: 'Rohstoff-Rover',
+  smelter: 'Zellwerk',
   solar: 'Solarpark',
-  battery: 'Speicherpark',
+  battery: 'Batteriespeicher',
   giga: 'Gigafactory',
 };
 

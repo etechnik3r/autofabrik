@@ -281,7 +281,7 @@ const STRATEGY_COSTS = [15_000, 17_500, 20_000, 22_500, 25_000, 30_000, 32_500];
 const strategyProjects: ProjectDef[] = STRATEGY_COSTS.map((ops, k) => ({
   id: `P6${k}`,
   title: `Neue Strategie: ${STRATEGY_NAMES[k + 1]}`,
-  description: 'Eine weitere Strategie für die Wettbewerbssimulation. Turniere kosten 1 000 Taktzyklen mehr.',
+  description: 'Eine weitere Strategie für den Preiskampf-Simulator. Turniere kosten 1 000 Taktzyklen mehr.',
   group: 'systeme' as const,
   cost: { ops },
   trigger: (s) => (k === 0 ? bought(s, 'P20') : bought(s, `P6${k - 1}`)),
@@ -291,7 +291,7 @@ const strategyProjects: ProjectDef[] = STRATEGY_COSTS.map((ops, k) => ({
 const systems: ProjectDef[] = [
   {
     id: 'P20',
-    title: 'Wettbewerbssimulation',
+    title: 'Preiskampf-Simulator',
     description: 'Simulierte Preiskämpfe gegen die Konkurrenz. Erzeugt Marktwissen.',
     group: 'systeme',
     cost: { ops: 12_000 },

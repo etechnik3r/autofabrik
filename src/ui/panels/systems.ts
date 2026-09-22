@@ -60,7 +60,7 @@ export const treasuryPanel = definePanel({
 
 export const strategyPanel = definePanel({
   id: 'strategy',
-  title: 'Wettbewerbssimulation',
+  title: 'Preiskampf-Simulator',
   column: 3,
   visible: (s) => s.flags.strategy,
   build(p) {

@@ -5,7 +5,7 @@
 export const GLOSSARY: Record<string, string> = {
   Taktzyklen: 'Rechentakt der KI – Hauptwährung für Projekte, wie der Bandtakt in der Fertigung. Entstehen aus Rechenkernen, gespeichert bis zur Speichergrenze.',
   Ideen: 'Entstehen aus freier Rechenzeit, wenn der Taktzyklen-Speicher voll ist. Zahlungsmittel für Ansehens- und Wissensprojekte.',
-  Marktwissen: 'Belohnung aus der Wettbewerbssimulation. Zahlungsmittel für Upgrades der Kapitalanlage, Autonomie und weitere Systeme.',
+  Marktwissen: 'Belohnung aus dem Preiskampf-Simulator. Zahlungsmittel für Upgrades der Kapitalanlage, Autonomie und weitere Systeme.',
   Ansehen: 'Ruf der Marke beim Aufsichtsrat – Kapazität für Rechenkerne und Speicher, gleichzeitig Zahlungsmittel mancher Projekte. Wächst mit Fibonacci-Meilensteinen.',
   'Ansehen steigt bei': 'Anzahl gebauter Autos, bei der das Ansehen als Nächstes steigt.',
   Rechenspenden: 'Ersetzen ab Phase 2 das Ansehen als Quelle für neue Rechenkerne und Speicher – gespendet von der Bordelektronik der Flotte.',
@@ -34,7 +34,7 @@ export const GLOSSARY: Record<string, string> = {
   Replikation: 'Autonomie-Attribut: wie schnell sich Werksschiffe selbst vervielfältigen.',
   Abschirmung: 'Autonomie-Attribut: verringert Verluste durch Gefahren im All.',
   Werksbau: 'Autonomie-Attribut: Werksschiffe bauen automatisch Gigafactories.',
-  'Truck-Bau': 'Autonomie-Attribut: Werksschiffe bauen automatisch Bergbau-Trucks.',
-  'Schmelzer-Bau': 'Autonomie-Attribut: Werksschiffe bauen automatisch Schmelzeinheiten.',
+  'Rover-Bau': 'Autonomie-Attribut: Werksschiffe bauen automatisch Rohstoff-Rover.',
+  'Zellwerk-Bau': 'Autonomie-Attribut: Werksschiffe bauen automatisch Zellwerke.',
   Verteidigung: 'Autonomie-Attribut: verringert Verluste im Konflikt mit Forks.',
 };

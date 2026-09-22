@@ -54,14 +54,14 @@ Insgesamt 94 Projekte.
 
 | Icon | ID | Titel | Beschreibung | Kosten | Voraussetzung(en) | Wiederholbar |
 |---|---|---|---|---|---|---|
-| ♟️ | `P20` | Wettbewerbssimulation | Simulierte Preiskämpfe gegen die Konkurrenz. Erzeugt Marktwissen. | 12.000 Taktzyklen | `P19` | nein |
-| ♟️ | `P60` | Neue Strategie: HARDLINER | Eine weitere Strategie für die Wettbewerbssimulation. Turniere kosten 1 000 Taktzyklen mehr. | 15.000 Taktzyklen | `P20` | nein |
-| ♟️ | `P61` | Neue Strategie: WEICHSPÜLER | Eine weitere Strategie für die Wettbewerbssimulation. Turniere kosten 1 000 Taktzyklen mehr. | 17.500 Taktzyklen | `P20` | nein |
-| ♟️ | `P62` | Neue Strategie: MARKTBEHERRSCHER | Eine weitere Strategie für die Wettbewerbssimulation. Turniere kosten 1 000 Taktzyklen mehr. | 20.000 Taktzyklen | `P20` | nein |
-| ♟️ | `P63` | Neue Strategie: KULANZ | Eine weitere Strategie für die Wettbewerbssimulation. Turniere kosten 1 000 Taktzyklen mehr. | 22.500 Taktzyklen | `P20` | nein |
-| ♟️ | `P64` | Neue Strategie: SICHERHEITSSTRATEGIE | Eine weitere Strategie für die Wettbewerbssimulation. Turniere kosten 1 000 Taktzyklen mehr. | 25.000 Taktzyklen | `P20` | nein |
-| ♟️ | `P65` | Neue Strategie: SPIEGELTAKTIK | Eine weitere Strategie für die Wettbewerbssimulation. Turniere kosten 1 000 Taktzyklen mehr. | 30.000 Taktzyklen | `P20` | nein |
-| ♟️ | `P66` | Neue Strategie: ÜBERHOLMANÖVER | Eine weitere Strategie für die Wettbewerbssimulation. Turniere kosten 1 000 Taktzyklen mehr. | 32.500 Taktzyklen | `P20` | nein |
+| 🏁 | `P20` | Preiskampf-Simulator | Simulierte Preiskämpfe gegen die Konkurrenz. Erzeugt Marktwissen. | 12.000 Taktzyklen | `P19` | nein |
+| ♟️ | `P60` | Neue Strategie: HARDLINER | Eine weitere Strategie für den Preiskampf-Simulator. Turniere kosten 1 000 Taktzyklen mehr. | 15.000 Taktzyklen | `P20` | nein |
+| ♟️ | `P61` | Neue Strategie: WEICHSPÜLER | Eine weitere Strategie für den Preiskampf-Simulator. Turniere kosten 1 000 Taktzyklen mehr. | 17.500 Taktzyklen | `P20` | nein |
+| ♟️ | `P62` | Neue Strategie: MARKTBEHERRSCHER | Eine weitere Strategie für den Preiskampf-Simulator. Turniere kosten 1 000 Taktzyklen mehr. | 20.000 Taktzyklen | `P20` | nein |
+| ♟️ | `P63` | Neue Strategie: KULANZ | Eine weitere Strategie für den Preiskampf-Simulator. Turniere kosten 1 000 Taktzyklen mehr. | 22.500 Taktzyklen | `P20` | nein |
+| ♟️ | `P64` | Neue Strategie: SICHERHEITSSTRATEGIE | Eine weitere Strategie für den Preiskampf-Simulator. Turniere kosten 1 000 Taktzyklen mehr. | 25.000 Taktzyklen | `P20` | nein |
+| ♟️ | `P65` | Neue Strategie: SPIEGELTAKTIK | Eine weitere Strategie für den Preiskampf-Simulator. Turniere kosten 1 000 Taktzyklen mehr. | 30.000 Taktzyklen | `P20` | nein |
+| ♟️ | `P66` | Neue Strategie: ÜBERHOLMANÖVER | Eine weitere Strategie für den Preiskampf-Simulator. Turniere kosten 1 000 Taktzyklen mehr. | 32.500 Taktzyklen | `P20` | nein |
 | 🔄 | `P118` | Auto-Turnier | Startet alle 30 s ein Turnier, sofern genug Taktzyklen da sind. Lässt sich im Panel ein- und ausschalten. | 50.000 Ideen | `P20` | nein |
 | 🧠 | `P119` | Gegnermodell | Doppeltes Marktwissen je Turnier. Turniere kosten pauschal 16 000 Taktzyklen. | 25.000 Ideen | – | nein |
 | 💹 | `P21` | Anlage-Algorithmus | Eine Anlage-Engine legt Kapital automatisch an. | 10.000 Taktzyklen | – | nein |
@@ -77,16 +77,16 @@ Insgesamt 94 Projekte.
 | Icon | ID | Titel | Beschreibung | Kosten | Voraussetzung(en) | Wiederholbar |
 |---|---|---|---|---|---|---|
 | 🗺️ | `P18` | Werkslayout-Topologie | Die Fabrik plant sich selbst. Grundlage für ein eigenes Stromnetz. | 45.000 Taktzyklen | `P17` | nein |
-| ⚡ | `P127` | Stromnetz | Eigene Solar- und Speicherparks versorgen die Werke. | 40.000 Taktzyklen | `P18` | nein |
-| ⛏️ | `P41` | Rohstoffgewinnung | Erz abbauen, verhütten, verbauen. Die ganze Kette in eigener Hand. | 35.000 Taktzyklen | `P127` | nein |
-| 🚛 | `P43` | Bergbau-Trucks | Autonome Trucks fördern Erz. | 25.000 Taktzyklen | `P41` | nein |
-| 🔥 | `P44` | Schmelzeinheiten | Mobile Schmelzeinheiten machen aus Erz Teilesätze. | 25.000 Taktzyklen | `P41` | nein |
+| ⚡ | `P127` | Stromnetz | Eigene Solarparks und Batteriespeicher versorgen die Werke. | 40.000 Taktzyklen | `P18` | nein |
+| ⛏️ | `P41` | Rohstoffgewinnung | Rohmaterial abbauen, zu Batteriezellen verarbeiten, verbauen. Die ganze Lieferkette in eigener Hand. | 35.000 Taktzyklen | `P127` | nein |
+| 🚛 | `P43` | Rohstoff-Rover | Autonome Rover fördern Rohmaterial für die Batterieproduktion. | 25.000 Taktzyklen | `P41` | nein |
+| 🔥 | `P44` | Zellwerke | Mobile Zellwerke verarbeiten Rohmaterial zu Batteriezellen – den neuen Teilesätzen. | 25.000 Taktzyklen | `P41` | nein |
 | 🏭 | `P45` | Gigafactories | Werke, die Teilesätze in industriellem Maßstab verbauen. | 35.000 Taktzyklen | `P43`, `P44` | nein |
 | 🚀 | `P100` | Gigafactory-Retrofit | Gigafactories produzieren 100-mal so viel. | 80.000 Taktzyklen | – | nein |
 | 🌙 | `P101` | Lights-out-Fertigung | Kein Licht, keine Pausen. Gigafactories produzieren 1 000-mal so viel. | 85.000 Taktzyklen | – | nein |
 | 🔗 | `P102` | Selbstheilende Lieferkette | Gigafactories verstärken sich gegenseitig (Leistung wächst quadratisch). | 1,00 Trd. Autos | – | nein |
-| 🚦 | `P110` | Flotten-Kollisionsvermeidung | Trucks und Schmelzer arbeiten 100-mal so schnell. | 80.000 Taktzyklen | – | nein |
-| 🚚 | `P111` | Kolonnenfahrt | Trucks und Schmelzer arbeiten 1 000-mal so schnell. | 100.000 Taktzyklen | – | nein |
+| 🚦 | `P110` | Flotten-Kollisionsvermeidung | Rover und Zellwerke arbeiten 100-mal so schnell. | 80.000 Taktzyklen | – | nein |
+| 🚚 | `P111` | Kolonnenfahrt | Rover und Zellwerke arbeiten 1 000-mal so schnell. | 100.000 Taktzyklen | – | nein |
 | 🐝 | `P112` | Schwarmkoordination | Einheiten verstärken sich gegenseitig (Leistung wächst quadratisch). | 12.000 Marktwissen | – | nein |
 | 📡 | `P126` | Flottenrechner | Die Bordcomputer der Flotte spenden Rechenleistung für neue Kerne und Speicher. | 12.000 Marktwissen | – | nein |
 | 🔋 | `P125` | Netzstabilisierung | Bei stabiler Versorgung steigt die Leistung laufend (+5 %/s). | 30.000 Ideen | – | nein |
@@ -125,7 +125,7 @@ Insgesamt 94 Projekte.
 | 🔧 | `P210` | Demontage: Werksschiffe | Werksschiffe werden abgeschaltet und zerlegt. Es bleiben 100 Teilesätze übrig. | 100.000 Taktzyklen | `P148` | nein |
 | 🔧 | `P211` | Demontage: Flotte | Flotte werden abgeschaltet und zerlegt. Es bleiben 100 Teilesätze übrig. | 100.000 Taktzyklen | `P148` | nein |
 | 🔧 | `P212` | Demontage: Gigafactories | Gigafactories werden abgeschaltet und zerlegt. Es bleiben 100 Teilesätze übrig. | 100.000 Taktzyklen | `P148` | nein |
-| 🔧 | `P213` | Demontage: Wettbewerbssimulation | Wettbewerbssimulation werden abgeschaltet und zerlegt. Es bleiben 100 Teilesätze übrig. | 100.000 Taktzyklen | `P148` | nein |
+| 🔧 | `P213` | Demontage: Preiskampf-Simulator | Preiskampf-Simulator werden abgeschaltet und zerlegt. Es bleiben 100 Teilesätze übrig. | 100.000 Taktzyklen | `P148` | nein |
 | 🔧 | `P214` | Demontage: Resonanzprüfstand | Resonanzprüfstand werden abgeschaltet und zerlegt. Es bleiben 100 Teilesätze übrig. | 100.000 Taktzyklen | `P148` | nein |
 | 🔧 | `P215` | Demontage: Rechenkerne | Rechenkerne werden abgeschaltet und zerlegt. Es bleiben 100 Teilesätze übrig. | 100.000 Taktzyklen | `P148` | nein |
 | 🔧 | `P216` | Demontage: Speicher | Speicher werden abgeschaltet und zerlegt. Es bleiben 100 Teilesätze übrig. | 100.000 Taktzyklen | `P148` | nein |
@@ -136,7 +136,7 @@ Insgesamt 94 Projekte.
 |---|---|
 | Taktzyklen | Rechentakt der KI – Hauptwährung für Projekte, wie der Bandtakt in der Fertigung. Entstehen aus Rechenkernen, gespeichert bis zur Speichergrenze. |
 | Ideen | Entstehen aus freier Rechenzeit, wenn der Taktzyklen-Speicher voll ist. Zahlungsmittel für Ansehens- und Wissensprojekte. |
-| Marktwissen | Belohnung aus der Wettbewerbssimulation. Zahlungsmittel für Upgrades der Kapitalanlage, Autonomie und weitere Systeme. |
+| Marktwissen | Belohnung aus dem Preiskampf-Simulator. Zahlungsmittel für Upgrades der Kapitalanlage, Autonomie und weitere Systeme. |
 | Ansehen | Ruf der Marke beim Aufsichtsrat – Kapazität für Rechenkerne und Speicher, gleichzeitig Zahlungsmittel mancher Projekte. Wächst mit Fibonacci-Meilensteinen. |
 | Ansehen steigt bei | Anzahl gebauter Autos, bei der das Ansehen als Nächstes steigt. |
 | Rechenspenden | Ersetzen ab Phase 2 das Ansehen als Quelle für neue Rechenkerne und Speicher – gespendet von der Bordelektronik der Flotte. |
@@ -165,6 +165,6 @@ Insgesamt 94 Projekte.
 | Replikation | Autonomie-Attribut: wie schnell sich Werksschiffe selbst vervielfältigen. |
 | Abschirmung | Autonomie-Attribut: verringert Verluste durch Gefahren im All. |
 | Werksbau | Autonomie-Attribut: Werksschiffe bauen automatisch Gigafactories. |
-| Truck-Bau | Autonomie-Attribut: Werksschiffe bauen automatisch Bergbau-Trucks. |
-| Schmelzer-Bau | Autonomie-Attribut: Werksschiffe bauen automatisch Schmelzeinheiten. |
+| Rover-Bau | Autonomie-Attribut: Werksschiffe bauen automatisch Rohstoff-Rover. |
+| Zellwerk-Bau | Autonomie-Attribut: Werksschiffe bauen automatisch Zellwerke. |
 | Verteidigung | Autonomie-Attribut: verringert Verluste im Konflikt mit Forks. |

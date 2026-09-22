@@ -7,6 +7,21 @@ Versionsnummern werden noch nicht vergeben (Projekt vor dem ersten Release).
 
 ## [Unveröffentlicht]
 
+### Geändert
+- Phase 2 (Konzern) als durchgängige EV-Lieferkette statt generischer Bergbau-Begriffe:
+  „Bergbau-Truck“ → **„Rohstoff-Rover“** (autonome Fahrzeuge der eigenen Flotte, fördern
+  Rohmaterial), „Schmelzeinheit“ → **„Zellwerk“** (verarbeitet Rohmaterial zu Batteriezellen –
+  den neuen Teilesätzen), „Erz“ → **„Rohmaterial“**, „Speicherpark“ → **„Batteriespeicher“**.
+  Damit ergibt sich eine stimmige Kette Rohstoff-Rover → Zellwerk → Gigafactory, die zur
+  echten EV-Zellfertigung passt; Solarpark und Gigafactory (bereits reale Branchenbegriffe)
+  blieben unverändert. Betrifft Projekte P43–P45/P110–P112, das Konzern- und Energie-Panel,
+  die Autonomie-Attribute in Phase 3 (Werksschiffe bauen jetzt „Rover“/„Zellwerke“ statt
+  „Trucks“/„Schmelzer“) und das Glossar. Nur Texte, interne Feldnamen (`truck`, `smelter`, …)
+  unverändert.
+- „Wettbewerbssimulation“ → **„Preiskampf-Simulator“** (Panel, Projekt P20, Demontage-Stufe,
+  Glossar) – passte trotz der neuen Strategienamen aus dem letzten Update immer noch nicht
+  zum Automobil-Kontext. Icon von ♟️ auf 🏁 (Zielflagge) geändert.
+
 ### Behoben
 - Die neuen Schalter „Auto-Turnier“ und „Preis-Tempomat“ blieben unsichtbar, wenn das
   freischaltende Projekt (P118 bzw. P26b) schon **vor** diesem Update gekauft war: Das

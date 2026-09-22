@@ -439,8 +439,8 @@
     {
       "id": "P20",
       "group": "systeme",
-      "icon": "♟️",
-      "title": "Wettbewerbssimulation",
+      "icon": "🏁",
+      "title": "Preiskampf-Simulator",
       "description": "Simulierte Preiskämpfe gegen die Konkurrenz. Erzeugt Marktwissen.",
       "text": "12.000 Taktzyklen",
       "dynamic": false,
@@ -454,7 +454,7 @@
       "group": "systeme",
       "icon": "♟️",
       "title": "Neue Strategie: HARDLINER",
-      "description": "Eine weitere Strategie für die Wettbewerbssimulation. Turniere kosten 1 000 Taktzyklen mehr.",
+      "description": "Eine weitere Strategie für den Preiskampf-Simulator. Turniere kosten 1 000 Taktzyklen mehr.",
       "text": "15.000 Taktzyklen",
       "dynamic": false,
       "deps": [
@@ -467,7 +467,7 @@
       "group": "systeme",
       "icon": "♟️",
       "title": "Neue Strategie: WEICHSPÜLER",
-      "description": "Eine weitere Strategie für die Wettbewerbssimulation. Turniere kosten 1 000 Taktzyklen mehr.",
+      "description": "Eine weitere Strategie für den Preiskampf-Simulator. Turniere kosten 1 000 Taktzyklen mehr.",
       "text": "17.500 Taktzyklen",
       "dynamic": false,
       "deps": [
@@ -480,7 +480,7 @@
       "group": "systeme",
       "icon": "♟️",
       "title": "Neue Strategie: MARKTBEHERRSCHER",
-      "description": "Eine weitere Strategie für die Wettbewerbssimulation. Turniere kosten 1 000 Taktzyklen mehr.",
+      "description": "Eine weitere Strategie für den Preiskampf-Simulator. Turniere kosten 1 000 Taktzyklen mehr.",
       "text": "20.000 Taktzyklen",
       "dynamic": false,
       "deps": [
@@ -493,7 +493,7 @@
       "group": "systeme",
       "icon": "♟️",
       "title": "Neue Strategie: KULANZ",
-      "description": "Eine weitere Strategie für die Wettbewerbssimulation. Turniere kosten 1 000 Taktzyklen mehr.",
+      "description": "Eine weitere Strategie für den Preiskampf-Simulator. Turniere kosten 1 000 Taktzyklen mehr.",
       "text": "22.500 Taktzyklen",
       "dynamic": false,
       "deps": [
@@ -506,7 +506,7 @@
       "group": "systeme",
       "icon": "♟️",
       "title": "Neue Strategie: SICHERHEITSSTRATEGIE",
-      "description": "Eine weitere Strategie für die Wettbewerbssimulation. Turniere kosten 1 000 Taktzyklen mehr.",
+      "description": "Eine weitere Strategie für den Preiskampf-Simulator. Turniere kosten 1 000 Taktzyklen mehr.",
       "text": "25.000 Taktzyklen",
       "dynamic": false,
       "deps": [
@@ -519,7 +519,7 @@
       "group": "systeme",
       "icon": "♟️",
       "title": "Neue Strategie: SPIEGELTAKTIK",
-      "description": "Eine weitere Strategie für die Wettbewerbssimulation. Turniere kosten 1 000 Taktzyklen mehr.",
+      "description": "Eine weitere Strategie für den Preiskampf-Simulator. Turniere kosten 1 000 Taktzyklen mehr.",
       "text": "30.000 Taktzyklen",
       "dynamic": false,
       "deps": [
@@ -532,7 +532,7 @@
       "group": "systeme",
       "icon": "♟️",
       "title": "Neue Strategie: ÜBERHOLMANÖVER",
-      "description": "Eine weitere Strategie für die Wettbewerbssimulation. Turniere kosten 1 000 Taktzyklen mehr.",
+      "description": "Eine weitere Strategie für den Preiskampf-Simulator. Turniere kosten 1 000 Taktzyklen mehr.",
       "text": "32.500 Taktzyklen",
       "dynamic": false,
       "deps": [
@@ -667,7 +667,7 @@
       "group": "konzern",
       "icon": "⚡",
       "title": "Stromnetz",
-      "description": "Eigene Solar- und Speicherparks versorgen die Werke.",
+      "description": "Eigene Solarparks und Batteriespeicher versorgen die Werke.",
       "text": "40.000 Taktzyklen",
       "dynamic": false,
       "deps": [
@@ -680,7 +680,7 @@
       "group": "konzern",
       "icon": "⛏️",
       "title": "Rohstoffgewinnung",
-      "description": "Erz abbauen, verhütten, verbauen. Die ganze Kette in eigener Hand.",
+      "description": "Rohmaterial abbauen, zu Batteriezellen verarbeiten, verbauen. Die ganze Lieferkette in eigener Hand.",
       "text": "35.000 Taktzyklen",
       "dynamic": false,
       "deps": [
@@ -692,8 +692,8 @@
       "id": "P43",
       "group": "konzern",
       "icon": "🚛",
-      "title": "Bergbau-Trucks",
-      "description": "Autonome Trucks fördern Erz.",
+      "title": "Rohstoff-Rover",
+      "description": "Autonome Rover fördern Rohmaterial für die Batterieproduktion.",
       "text": "25.000 Taktzyklen",
       "dynamic": false,
       "deps": [
@@ -705,8 +705,8 @@
       "id": "P44",
       "group": "konzern",
       "icon": "🔥",
-      "title": "Schmelzeinheiten",
-      "description": "Mobile Schmelzeinheiten machen aus Erz Teilesätze.",
+      "title": "Zellwerke",
+      "description": "Mobile Zellwerke verarbeiten Rohmaterial zu Batteriezellen – den neuen Teilesätzen.",
       "text": "25.000 Taktzyklen",
       "dynamic": false,
       "deps": [
@@ -766,7 +766,7 @@
       "group": "konzern",
       "icon": "🚦",
       "title": "Flotten-Kollisionsvermeidung",
-      "description": "Trucks und Schmelzer arbeiten 100-mal so schnell.",
+      "description": "Rover und Zellwerke arbeiten 100-mal so schnell.",
       "text": "80.000 Taktzyklen",
       "dynamic": false,
       "deps": [],
@@ -777,7 +777,7 @@
       "group": "konzern",
       "icon": "🚚",
       "title": "Kolonnenfahrt",
-      "description": "Trucks und Schmelzer arbeiten 1 000-mal so schnell.",
+      "description": "Rover und Zellwerke arbeiten 1 000-mal so schnell.",
       "text": "100.000 Taktzyklen",
       "dynamic": false,
       "deps": [],
@@ -1119,8 +1119,8 @@
       "id": "P213",
       "group": "ende",
       "icon": "🔧",
-      "title": "Demontage: Wettbewerbssimulation",
-      "description": "Wettbewerbssimulation werden abgeschaltet und zerlegt. Es bleiben 100 Teilesätze übrig.",
+      "title": "Demontage: Preiskampf-Simulator",
+      "description": "Preiskampf-Simulator werden abgeschaltet und zerlegt. Es bleiben 100 Teilesätze übrig.",
       "text": "100.000 Taktzyklen",
       "dynamic": false,
       "deps": [
@@ -1179,7 +1179,7 @@
     },
     {
       "term": "Marktwissen",
-      "text": "Belohnung aus der Wettbewerbssimulation. Zahlungsmittel für Upgrades der Kapitalanlage, Autonomie und weitere Systeme."
+      "text": "Belohnung aus dem Preiskampf-Simulator. Zahlungsmittel für Upgrades der Kapitalanlage, Autonomie und weitere Systeme."
     },
     {
       "term": "Ansehen",
@@ -1294,12 +1294,12 @@
       "text": "Autonomie-Attribut: Werksschiffe bauen automatisch Gigafactories."
     },
     {
-      "term": "Truck-Bau",
-      "text": "Autonomie-Attribut: Werksschiffe bauen automatisch Bergbau-Trucks."
+      "term": "Rover-Bau",
+      "text": "Autonomie-Attribut: Werksschiffe bauen automatisch Rohstoff-Rover."
     },
     {
-      "term": "Schmelzer-Bau",
-      "text": "Autonomie-Attribut: Werksschiffe bauen automatisch Schmelzeinheiten."
+      "term": "Zellwerk-Bau",
+      "text": "Autonomie-Attribut: Werksschiffe bauen automatisch Zellwerke."
     },
     {
       "term": "Verteidigung",

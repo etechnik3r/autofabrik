@@ -14,7 +14,7 @@ export const corporationPanel = definePanel({
     const b = p.game.b;
     p.stat('Fahrzeugpool', (s) => fmtNum(s.pool));
     p.stat('Rohstoffvorkommen', (s) => `${fmtNum(s.industry.ore)} ME`, (s) => s.flags.mining);
-    p.stat('Erz', (s) => `${fmtNum(s.industry.oreMined)} ME`, (s) => s.flags.mining);
+    p.stat('Rohmaterial', (s) => `${fmtNum(s.industry.oreMined)} ME`, (s) => s.flags.mining);
     p.stat('Teilesätze', (s) => fmtNum(s.parts));
     p.stat('Autos/s', (s) => fmtNum(s.stats.carsPerSec));
     for (const kind of KINDS) {

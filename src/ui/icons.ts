@@ -18,7 +18,7 @@ export const PROJECT_ICONS: Record<string, string> = {
   P27: '⚖️', P28: '🚦', P29: '🚧', P30: '🍃', P31: '🅿️',
   P40: '🎗️', P40b: '🤵',
   // Systeme
-  P20: '♟️', P60: '♟️', P61: '♟️', P62: '♟️', P63: '♟️', P64: '♟️', P65: '♟️', P66: '♟️',
+  P20: '🏁', P60: '♟️', P61: '♟️', P62: '♟️', P63: '♟️', P64: '♟️', P65: '♟️', P66: '♟️',
   P118: '🔄', P119: '🧠',
   P21: '💹', P37: '🤝', P38: '👑',
   P50: '📳', P51: '📳', P70: '🚘', P35: '🔓',
@@ -61,7 +61,7 @@ export const PANEL_ICONS: Record<string, string> = {
   quantum: '📳',
   projects: '🧭',
   treasury: '💹',
-  strategy: '♟️',
+  strategy: '🏁',
   expansion: '🚀',
   shipDesign: '🛰️',
   conflict: '⚔️',

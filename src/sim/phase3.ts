@@ -9,8 +9,8 @@ export const ATTR_NAMES: Record<Attr, string> = {
   rep: 'Replikation',
   haz: 'Abschirmung',
   fac: 'Werksbau',
-  truck: 'Truck-Bau',
-  smelt: 'Schmelzer-Bau',
+  truck: 'Rover-Bau',
+  smelt: 'Zellwerk-Bau',
   def: 'Verteidigung',
 };
 

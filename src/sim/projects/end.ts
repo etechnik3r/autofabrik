@@ -41,7 +41,7 @@ const DISMANTLE: [string, (s: GameState) => void][] = [
   ],
   ['Gigafactories', (s) => void (s.industry.gigas = 0)],
   [
-    'Wettbewerbssimulation',
+    'Preiskampf-Simulator',
     (s) => {
       s.flags.strategy = false;
       s.flags.autoTourney = false;

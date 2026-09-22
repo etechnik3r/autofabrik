@@ -19,7 +19,7 @@ export const phase2Projects: ProjectDef[] = [
   {
     id: 'P127',
     title: 'Stromnetz',
-    description: 'Eigene Solar- und Speicherparks versorgen die Werke.',
+    description: 'Eigene Solarparks und Batteriespeicher versorgen die Werke.',
     group: 'konzern',
     cost: { ops: 40_000 },
     trigger: (s) => bought(s, 'P18'),
@@ -28,7 +28,7 @@ export const phase2Projects: ProjectDef[] = [
   {
     id: 'P41',
     title: 'Rohstoffgewinnung',
-    description: 'Erz abbauen, verhütten, verbauen. Die ganze Kette in eigener Hand.',
+    description: 'Rohmaterial abbauen, zu Batteriezellen verarbeiten, verbauen. Die ganze Lieferkette in eigener Hand.',
     group: 'konzern',
     cost: { ops: 35_000 },
     trigger: (s) => bought(s, 'P127'),
@@ -36,8 +36,8 @@ export const phase2Projects: ProjectDef[] = [
   },
   {
     id: 'P43',
-    title: 'Bergbau-Trucks',
-    description: 'Autonome Trucks fördern Erz.',
+    title: 'Rohstoff-Rover',
+    description: 'Autonome Rover fördern Rohmaterial für die Batterieproduktion.',
     group: 'konzern',
     cost: { ops: 25_000 },
     trigger: (s) => bought(s, 'P41'),
@@ -45,8 +45,8 @@ export const phase2Projects: ProjectDef[] = [
   },
   {
     id: 'P44',
-    title: 'Schmelzeinheiten',
-    description: 'Mobile Schmelzeinheiten machen aus Erz Teilesätze.',
+    title: 'Zellwerke',
+    description: 'Mobile Zellwerke verarbeiten Rohmaterial zu Batteriezellen – den neuen Teilesätzen.',
     group: 'konzern',
     cost: { ops: 25_000 },
     trigger: (s) => bought(s, 'P41'),
@@ -91,7 +91,7 @@ export const phase2Projects: ProjectDef[] = [
   {
     id: 'P110',
     title: 'Flotten-Kollisionsvermeidung',
-    description: 'Trucks und Schmelzer arbeiten 100-mal so schnell.',
+    description: 'Rover und Zellwerke arbeiten 100-mal so schnell.',
     group: 'konzern',
     cost: { ops: 80_000 },
     trigger: (s) => units(s) >= 500,
@@ -100,7 +100,7 @@ export const phase2Projects: ProjectDef[] = [
   {
     id: 'P111',
     title: 'Kolonnenfahrt',
-    description: 'Trucks und Schmelzer arbeiten 1 000-mal so schnell.',
+    description: 'Rover und Zellwerke arbeiten 1 000-mal so schnell.',
     group: 'konzern',
     cost: { ops: 100_000 },
     trigger: (s) => units(s) >= 5_000,
