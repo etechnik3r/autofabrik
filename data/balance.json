@@ -1,0 +1,52 @@
+{
+  "tick": { "fastMs": 10, "slowMs": 100, "autosaveSlowTicks": 250, "offlineMaxHours": 8 },
+  "phase1": {
+    "startMoney": 0, "startParts": 1000, "partsPerDelivery": 1000,
+    "partsBasePrice": 2000, "partsPriceAmplitude": 600, "partsPriceUpdateChance": 0.015,
+    "partsBaseIncreasePerBuy": 5, "partsBaseDecay": 0.001, "partsBaseDecayTicks": 250, "partsBaseFloor": 1500,
+    "startPrice": 25, "priceStep": 1, "priceMin": 1,
+    "demandConstant": 80, "salesFactor": 0.7, "salesExponent": 1.15,
+    "adStartCost": 10000, "adCostFactor": 2, "adDemandFactor": 1.1,
+    "robotFirstCost": 500, "robotCostBase": 1.1, "robotCostOffset": 5, "robotCostScale": 100,
+    "lineFirstCost": 50000, "lineCostBase": 1.07, "lineCostScale": 100000, "lineOutputPerTick": 5,
+    "unlockRobotsAtMoney": 500, "unlockComputeAtCars": 2000
+  },
+  "reputation": { "start": 2, "firstThreshold": 3000, "fibA": 2, "fibB": 3, "scale": 1000 },
+  "compute": {
+    "startCores": 1, "startStorage": 1, "opsPerCorePerTick": 0.1, "opsPerStorage": 1000,
+    "ideaThreshold": 400, "tempOpsDelayTicks": 800, "tempOpsDecayStep": 0.0468
+  },
+  "treasury": {
+    "risk": { "low": 7, "med": 5, "high": 1 }, "gainThresholdStart": 0.5, "gainThresholdStep": 0.01,
+    "maxPositions": 5, "buyChance": 0.25, "moveChance": 0.6, "sellChance": 0.3, "sellMinIntervals": 5,
+    "minBankroll": 500, "upgradeCostScale": 100, "upgradeCostExp": 2.718281828459045,
+    "buyEveryTicks": 100, "updateEveryTicks": 250, "maxQuantity": 1000000,
+    "priceTiers": [[0.99, 300000], [0.85, 50000], [0.6, 15000], [0.2, 5000], [0, 1500]]
+  },
+  "strategy": { "tourneyBaseCost": 1000, "tourneyCostPerStrategy": 1000, "turnsPerMatch": 10,
+                "matrixMax": 10, "autoTourneySeconds": 30, "placeBonus": [50000, 30000, 20000],
+                "fixedCostAfterP119": 16000 },
+  "quantum": { "chips": 10, "chipBaseCost": 10000, "chipCostStep": 5000, "clockStep": 0.01, "scale": 360 },
+  "phase2": {
+    "oreEarth": 6e27, "truckRate": 26180337, "smelterRate": 16180339, "gigaRate": 1e9,
+    "unitCostScale": 1e6, "unitCostExp": 2.25,
+    "gigaFirstCost": 1e8, "gigaCostSteps": [[7, "11-n"], [12, 2], [19, 1.5], [38, 1.25], [78, 1.15], [1e9, 1.1]],
+    "solarFirstCost": 1e7, "solarCostScale": 1e8, "solarCostExp": 2.78,
+    "storageFirstCost": 1e6, "storageCostScale": 1e7, "storageCostExp": 2.54,
+    "solarOutput": 0.5, "gigaDemand": 2, "unitDemand": 0.01, "storageCapacity": 10000, "momentumStep": 0.0005,
+    "giftPeriod": 125000, "boredomTicks": 30000, "disorderRatio": 1.5, "disorderLimit": 100,
+    "entertainCost": 10000, "entertainStep": 10000, "resyncCost": 5000
+  },
+  "phase3": {
+    "universe": 3e55, "shipCost": 1e17, "exploreRate": 1.75e18, "repRate": 5e-5, "hazRate": 0.01,
+    "hazExp": 1.6, "driftRate": 1e-6, "driftExp": 1.2, "facRate": 1e-6, "truckRate": 2e-6, "smeltRate": 2e-6,
+    "facCost": 1e8, "unitCost": 2e6,
+    "autonomyCostScale": 200, "autonomyCostExp": 1.47, "maxAutonomyStart": 20, "maxAutonomyStep": 10,
+    "maxAutonomyCost": 91117.99,
+    "conflictTrigger": 1e6, "conflictStartChance": 0.5, "shipsPerSideMax": 200, "shipsPerSymbol": 1e6,
+    "forkCombat": 1.75, "defenseRate": 0.15, "baseThreshold": 0.5, "oodaFactor": 0.2, "streakBonus": 10,
+    "conflictRoundTicks": 10, "conflictMaxRounds": 300
+  },
+  "end": { "dismantleDelayTicks": 500, "dismantlePartsBonus": 100 },
+  "prestige": { "marketBonus": 0.1, "ideasBonus": 0.1 }
+}
