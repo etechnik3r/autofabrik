@@ -210,6 +210,19 @@
       "repeatable": false
     },
     {
+      "id": "P26b",
+      "group": "produktion",
+      "icon": "🔧",
+      "title": "Preis-Tempomat",
+      "description": "Hält den Preis automatisch auf der Preisempfehlung – wie ein Tempomat, nur fürs Preisschild.",
+      "text": "60.000 Taktzyklen",
+      "dynamic": false,
+      "deps": [
+        "P26"
+      ],
+      "repeatable": false
+    },
+    {
       "id": "P42",
       "group": "produktion",
       "icon": "📊",
@@ -440,7 +453,7 @@
       "id": "P60",
       "group": "systeme",
       "icon": "♟️",
-      "title": "Neue Strategie: IMMER A",
+      "title": "Neue Strategie: HARDLINER",
       "description": "Eine weitere Strategie für die Wettbewerbssimulation. Turniere kosten 1 000 Taktzyklen mehr.",
       "text": "15.000 Taktzyklen",
       "dynamic": false,
@@ -453,7 +466,7 @@
       "id": "P61",
       "group": "systeme",
       "icon": "♟️",
-      "title": "Neue Strategie: IMMER B",
+      "title": "Neue Strategie: WEICHSPÜLER",
       "description": "Eine weitere Strategie für die Wettbewerbssimulation. Turniere kosten 1 000 Taktzyklen mehr.",
       "text": "17.500 Taktzyklen",
       "dynamic": false,
@@ -466,7 +479,7 @@
       "id": "P62",
       "group": "systeme",
       "icon": "♟️",
-      "title": "Neue Strategie: GIERIG",
+      "title": "Neue Strategie: MARKTBEHERRSCHER",
       "description": "Eine weitere Strategie für die Wettbewerbssimulation. Turniere kosten 1 000 Taktzyklen mehr.",
       "text": "20.000 Taktzyklen",
       "dynamic": false,
@@ -479,7 +492,7 @@
       "id": "P63",
       "group": "systeme",
       "icon": "♟️",
-      "title": "Neue Strategie: GROSSZÜGIG",
+      "title": "Neue Strategie: KULANZ",
       "description": "Eine weitere Strategie für die Wettbewerbssimulation. Turniere kosten 1 000 Taktzyklen mehr.",
       "text": "22.500 Taktzyklen",
       "dynamic": false,
@@ -492,7 +505,7 @@
       "id": "P64",
       "group": "systeme",
       "icon": "♟️",
-      "title": "Neue Strategie: MINIMAX",
+      "title": "Neue Strategie: SICHERHEITSSTRATEGIE",
       "description": "Eine weitere Strategie für die Wettbewerbssimulation. Turniere kosten 1 000 Taktzyklen mehr.",
       "text": "25.000 Taktzyklen",
       "dynamic": false,
@@ -505,7 +518,7 @@
       "id": "P65",
       "group": "systeme",
       "icon": "♟️",
-      "title": "Neue Strategie: WIE DU MIR",
+      "title": "Neue Strategie: SPIEGELTAKTIK",
       "description": "Eine weitere Strategie für die Wettbewerbssimulation. Turniere kosten 1 000 Taktzyklen mehr.",
       "text": "30.000 Taktzyklen",
       "dynamic": false,
@@ -518,7 +531,7 @@
       "id": "P66",
       "group": "systeme",
       "icon": "♟️",
-      "title": "Neue Strategie: SCHLAG DEN LETZTEN",
+      "title": "Neue Strategie: ÜBERHOLMANÖVER",
       "description": "Eine weitere Strategie für die Wettbewerbssimulation. Turniere kosten 1 000 Taktzyklen mehr.",
       "text": "32.500 Taktzyklen",
       "dynamic": false,
@@ -532,7 +545,7 @@
       "group": "systeme",
       "icon": "🔄",
       "title": "Auto-Turnier",
-      "description": "Startet alle 30 s ein Turnier, sofern genug Taktzyklen da sind.",
+      "description": "Startet alle 30 s ein Turnier, sofern genug Taktzyklen da sind. Lässt sich im Panel ein- und ausschalten.",
       "text": "50.000 Ideen",
       "dynamic": false,
       "deps": [
@@ -1203,6 +1216,10 @@
     {
       "term": "Gewinnschwelle",
       "text": "Wahrscheinlichkeit, dass eine Position der Kapitalanlage im Kurs steigt statt fällt. Höher ist besser für dich."
+    },
+    {
+      "term": "Resonanz",
+      "text": "Zeigt, ob die Sensoren des Resonanzprüfstands gerade insgesamt positiv oder negativ ausschlagen. Nur bei „+“ lohnt sich eine Messung."
     },
     {
       "term": "Guthaben",

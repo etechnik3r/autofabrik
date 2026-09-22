@@ -151,6 +151,18 @@ const production: ProjectDef[] = [
     },
   },
   {
+    id: 'P26b',
+    title: 'Preis-Tempomat',
+    description: 'Hält den Preis automatisch auf der Preisempfehlung – wie ein Tempomat, nur fürs Preisschild.',
+    group: 'produktion',
+    cost: { ops: 60_000 },
+    trigger: (s) => p1(s) && bought(s, 'P26'),
+    effect: (s) => {
+      s.flags.autoPriceAvailable = true;
+      s.flags.autoPrice = true;
+    },
+  },
+  {
     id: 'P42',
     title: 'Umsatz-Dashboard',
     description: 'Zeigt Umsatz und Absatz pro Sekunde.',
@@ -296,11 +308,14 @@ const systems: ProjectDef[] = [
   {
     id: 'P118',
     title: 'Auto-Turnier',
-    description: 'Startet alle 30 s ein Turnier, sofern genug Taktzyklen da sind.',
+    description: 'Startet alle 30 s ein Turnier, sofern genug Taktzyklen da sind. Lässt sich im Panel ein- und ausschalten.',
     group: 'systeme',
     cost: { ideas: 50_000 },
     trigger: (s) => bought(s, 'P20') && s.rep >= 90,
-    effect: (s) => void (s.flags.autoTourney = true),
+    effect: (s) => {
+      s.flags.autoTourneyAvailable = true;
+      s.flags.autoTourney = true;
+    },
   },
   {
     id: 'P119',

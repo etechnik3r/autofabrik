@@ -7,7 +7,25 @@ Versionsnummern werden noch nicht vergeben (Projekt vor dem ersten Release).
 
 ## [Unveröffentlicht]
 
+### Hinzugefügt
+- Neues Projekt **„Preis-Tempomat“** (P26b, nach P26): schaltet einen Automatikmodus für den
+  Verkaufspreis frei, hält ihn selbstständig auf der Preisempfehlung (dieselbe Formel wie die
+  Anzeige). Schalter sitzt direkt neben den Preis −/+-Knöpfen; solange er an ist, sind die
+  beiden Knöpfe deaktiviert. Entspricht der optionalen Erweiterung E3 aus der Spec.
+- Button zum Ein-/Ausschalten des Auto-Turniers (P118) im Panel „Wettbewerbssimulation“ –
+  vorher lief es nach dem Kauf dauerhaft und ließ sich nicht mehr abstellen.
+- Tooltip und Hinweistext am Resonanzprüfstand, der erklärt, wann ein Klick auf „Messung
+  starten“ lohnt (viele grüne Balken über der Mitte) und wann nicht.
+
 ### Geändert
+- Die 8 Turnier-Strategien der Wettbewerbssimulation heißen jetzt automobilbranchen-typisch:
+  BAUCHGEFÜHL, HARDLINER, WEICHSPÜLER, MARKTBEHERRSCHER, KULANZ, SICHERHEITSSTRATEGIE,
+  SPIEGELTAKTIK, ÜBERHOLMANÖVER (vorher ZUFALL, IMMER A/B, GIERIG, GROSSZÜGIG, MINIMAX, WIE DU
+  MIR, SCHLAG DEN LETZTEN). Reine Anzeigenamen, die Spiellogik bleibt gleich.
+- Die Sensoren am Resonanzprüfstand sind jetzt bipolare Ausschlag-Balken (grün nach oben,
+  rot nach unten von einer Mittellinie) statt einfacher Farbflächen mit Opazität – zeigt
+  Richtung und Stärke der Schwingung auf einen Blick, vorher war ein negativer Ausschlag
+  optisch nicht von „nahe null“ zu unterscheiden.
 - „Treasury“ → **„Kapitalanlage“** (Panel, Projekttitel P21, Glossar) – klareres deutsches Wort
   für dieselbe Anlage-Engine.
 - „Quantenrechner“ → **„Resonanzprüfstand“**, passend zur Automobilbranche: Die Wellenüberlagerung
@@ -25,6 +43,10 @@ Versionsnummern werden noch nicht vergeben (Projekt vor dem ersten Release).
 - Die Kapitalanlage-Positionstabelle zeigte je nach Anzahl offener Positionen 0 bis 5 Zeilen,
   wodurch das ganze Panel bei jedem Kauf/Verkauf sichtbar in der Höhe sprang. Sie rendert jetzt
   immer alle 5 Zeilen (leere als Platzhalter „–“), die Höhe bleibt konstant.
+- Die Tabelle zitterte danach noch um ein paar Pixel: Der Browser berechnet Spaltenbreiten bei
+  `table-layout: auto` (Standard) bei jeder Kursänderung neu, je nach Ziffernanzahl der Zahlen.
+  Feste Spaltenbreiten über ein `<colgroup>` und `table-layout: fixed` beheben das; per
+  Playwright über 6 Sekunden gemessen, die Tabelle steht jetzt exakt auf dem Pixel still.
 - Spaltenlayout wirkte durch viel Leerraum unnötig scroll-lastig: Innenabstände der Panels,
   Zeilenabstände zwischen Werten und der Abstand zwischen Panels wurden verkleinert. Der
   Nachrichtenticker im Kopf zeigt jetzt 3 statt 5 Zeilen – spart oben zusätzlich Platz.

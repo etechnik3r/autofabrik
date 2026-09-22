@@ -15,6 +15,7 @@ export const GLOSSARY: Record<string, string> = {
   Rohstoffvorkommen: 'Noch nicht abgebautes Material auf der Erde bzw. im erkundeten Universum.',
   Fahrzeugpool: 'Produzierte, nicht verkaufte Autos. Dient ab Phase 2 als Baumaterial für alles.',
   Gewinnschwelle: 'Wahrscheinlichkeit, dass eine Position der Kapitalanlage im Kurs steigt statt fällt. Höher ist besser für dich.',
+  Resonanz: 'Zeigt, ob die Sensoren des Resonanzprüfstands gerade insgesamt positiv oder negativ ausschlagen. Nur bei „+“ lohnt sich eine Messung.',
   Guthaben: 'Nicht angelegtes Kapital der Kapitalanlage, jederzeit abhebbar.',
   Gesamtwert: 'Guthaben plus der aktuelle Wert aller offenen Positionen.',
   Leistung: 'Anteil des Strombedarfs, der tatsächlich gedeckt ist. Unter 100 % laufen alle Anlagen gedrosselt.',

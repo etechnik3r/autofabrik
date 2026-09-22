@@ -1,5 +1,5 @@
 import type { Balance } from './balance';
-import { demandConstant } from './formulas';
+import { demandConstant, optimalPrice } from './formulas';
 import { log } from './messages';
 import { rand } from './rng';
 import type { GameState } from './state';
@@ -63,6 +63,17 @@ export function updateStats(s: GameState): void {
 export function avgIncome(s: GameState): number {
   const buf = s.stats.incomeBuf;
   return buf.length ? buf.reduce((a, x) => a + x, 0) / buf.length : 0;
+}
+
+/**
+ * Preis-Tempomat (P26b): hält den Preis wie eine Geschwindigkeitsregelung automatisch auf der
+ * Preisempfehlung (3.5), sobald `updateStats` die aktuelle Produktionsrate neu gemessen hat.
+ * Dieselbe Formel wie die Anzeige „Preisempfehlung“, damit beide immer übereinstimmen.
+ */
+export function applyAutoPrice(s: GameState, b: Balance): void {
+  if (!s.flags.autoPrice) return;
+  const P = Math.max(s.stats.carsPerSec, 0.1);
+  s.price = Math.max(b.phase1.priceMin, Math.round(optimalPrice(P, demandConstant(s, b), b)));
 }
 
 /** Reputation über Fibonacci-Meilensteine (3.7). */

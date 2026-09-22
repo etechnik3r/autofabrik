@@ -4,9 +4,9 @@
 Titel und Beschreibungen ändern: in `src/sim/projects/<phase>.ts` beim jeweiligen Projekt, danach dieses
 Dokument neu erzeugen. Symbole stammen aus `src/ui/icons.ts`, Fachbegriffe unten aus `src/ui/glossary.ts`.
 
-Insgesamt 93 Projekte.
+Insgesamt 94 Projekte.
 
-## Phase 1 – Produktion und Material (🔧 16)
+## Phase 1 – Produktion und Material (🔧 17)
 
 | Icon | ID | Titel | Beschreibung | Kosten | Voraussetzung(en) | Wiederholbar |
 |---|---|---|---|---|---|---|
@@ -25,6 +25,7 @@ Insgesamt 93 Projekte.
 | ⏱️ | `P24` | Straßen-Takt II | Fertigungsstraßen 50 % schneller. | 17.000 Taktzyklen | `P23` | nein |
 | ⏱️ | `P25` | Straßen-Takt III | Fertigungsstraßen 100 % schneller. | 19.500 Taktzyklen | `P24` | nein |
 | 🔁 | `P26` | Auto-Einkauf | Bestellt automatisch Teile, sobald das Teilelager leer ist. | 7.000 Taktzyklen | – | nein |
+| 🔧 | `P26b` | Preis-Tempomat | Hält den Preis automatisch auf der Preisempfehlung – wie ein Tempomat, nur fürs Preisschild. | 60.000 Taktzyklen | `P26` | nein |
 | 📊 | `P42` | Umsatz-Dashboard | Zeigt Umsatz und Absatz pro Sekunde. | 500 Taktzyklen | – | nein |
 
 ## Phase 1 – Ideen, Marketing, Reputation (📣 17)
@@ -54,14 +55,14 @@ Insgesamt 93 Projekte.
 | Icon | ID | Titel | Beschreibung | Kosten | Voraussetzung(en) | Wiederholbar |
 |---|---|---|---|---|---|---|
 | ♟️ | `P20` | Wettbewerbssimulation | Simulierte Preiskämpfe gegen die Konkurrenz. Erzeugt Marktwissen. | 12.000 Taktzyklen | `P19` | nein |
-| ♟️ | `P60` | Neue Strategie: IMMER A | Eine weitere Strategie für die Wettbewerbssimulation. Turniere kosten 1 000 Taktzyklen mehr. | 15.000 Taktzyklen | `P20` | nein |
-| ♟️ | `P61` | Neue Strategie: IMMER B | Eine weitere Strategie für die Wettbewerbssimulation. Turniere kosten 1 000 Taktzyklen mehr. | 17.500 Taktzyklen | `P20` | nein |
-| ♟️ | `P62` | Neue Strategie: GIERIG | Eine weitere Strategie für die Wettbewerbssimulation. Turniere kosten 1 000 Taktzyklen mehr. | 20.000 Taktzyklen | `P20` | nein |
-| ♟️ | `P63` | Neue Strategie: GROSSZÜGIG | Eine weitere Strategie für die Wettbewerbssimulation. Turniere kosten 1 000 Taktzyklen mehr. | 22.500 Taktzyklen | `P20` | nein |
-| ♟️ | `P64` | Neue Strategie: MINIMAX | Eine weitere Strategie für die Wettbewerbssimulation. Turniere kosten 1 000 Taktzyklen mehr. | 25.000 Taktzyklen | `P20` | nein |
-| ♟️ | `P65` | Neue Strategie: WIE DU MIR | Eine weitere Strategie für die Wettbewerbssimulation. Turniere kosten 1 000 Taktzyklen mehr. | 30.000 Taktzyklen | `P20` | nein |
-| ♟️ | `P66` | Neue Strategie: SCHLAG DEN LETZTEN | Eine weitere Strategie für die Wettbewerbssimulation. Turniere kosten 1 000 Taktzyklen mehr. | 32.500 Taktzyklen | `P20` | nein |
-| 🔄 | `P118` | Auto-Turnier | Startet alle 30 s ein Turnier, sofern genug Taktzyklen da sind. | 50.000 Ideen | `P20` | nein |
+| ♟️ | `P60` | Neue Strategie: HARDLINER | Eine weitere Strategie für die Wettbewerbssimulation. Turniere kosten 1 000 Taktzyklen mehr. | 15.000 Taktzyklen | `P20` | nein |
+| ♟️ | `P61` | Neue Strategie: WEICHSPÜLER | Eine weitere Strategie für die Wettbewerbssimulation. Turniere kosten 1 000 Taktzyklen mehr. | 17.500 Taktzyklen | `P20` | nein |
+| ♟️ | `P62` | Neue Strategie: MARKTBEHERRSCHER | Eine weitere Strategie für die Wettbewerbssimulation. Turniere kosten 1 000 Taktzyklen mehr. | 20.000 Taktzyklen | `P20` | nein |
+| ♟️ | `P63` | Neue Strategie: KULANZ | Eine weitere Strategie für die Wettbewerbssimulation. Turniere kosten 1 000 Taktzyklen mehr. | 22.500 Taktzyklen | `P20` | nein |
+| ♟️ | `P64` | Neue Strategie: SICHERHEITSSTRATEGIE | Eine weitere Strategie für die Wettbewerbssimulation. Turniere kosten 1 000 Taktzyklen mehr. | 25.000 Taktzyklen | `P20` | nein |
+| ♟️ | `P65` | Neue Strategie: SPIEGELTAKTIK | Eine weitere Strategie für die Wettbewerbssimulation. Turniere kosten 1 000 Taktzyklen mehr. | 30.000 Taktzyklen | `P20` | nein |
+| ♟️ | `P66` | Neue Strategie: ÜBERHOLMANÖVER | Eine weitere Strategie für die Wettbewerbssimulation. Turniere kosten 1 000 Taktzyklen mehr. | 32.500 Taktzyklen | `P20` | nein |
+| 🔄 | `P118` | Auto-Turnier | Startet alle 30 s ein Turnier, sofern genug Taktzyklen da sind. Lässt sich im Panel ein- und ausschalten. | 50.000 Ideen | `P20` | nein |
 | 🧠 | `P119` | Gegnermodell | Doppeltes Marktwissen je Turnier. Turniere kosten pauschal 16 000 Taktzyklen. | 25.000 Ideen | – | nein |
 | 💹 | `P21` | Anlage-Algorithmus | Eine Anlage-Engine legt Kapital automatisch an. | 10.000 Taktzyklen | – | nein |
 | 🤝 | `P37` | Übernahme Zulieferer | Vertikale Integration. Nachfrage ×5, Ansehen +1. | 100,00 Mrd. ∈ | – | nein |
@@ -145,6 +146,7 @@ Insgesamt 93 Projekte.
 | Rohstoffvorkommen | Noch nicht abgebautes Material auf der Erde bzw. im erkundeten Universum. |
 | Fahrzeugpool | Produzierte, nicht verkaufte Autos. Dient ab Phase 2 als Baumaterial für alles. |
 | Gewinnschwelle | Wahrscheinlichkeit, dass eine Position der Kapitalanlage im Kurs steigt statt fällt. Höher ist besser für dich. |
+| Resonanz | Zeigt, ob die Sensoren des Resonanzprüfstands gerade insgesamt positiv oder negativ ausschlagen. Nur bei „+“ lohnt sich eine Messung. |
 | Guthaben | Nicht angelegtes Kapital der Kapitalanlage, jederzeit abhebbar. |
 | Gesamtwert | Guthaben plus der aktuelle Wert aller offenen Positionen. |
 | Leistung | Anteil des Strombedarfs, der tatsächlich gedeckt ist. Unter 100 % laufen alle Anlagen gedrosselt. |

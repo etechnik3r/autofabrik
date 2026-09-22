@@ -12,10 +12,13 @@ export const FLAG_NAMES = [
   'lines', // P22
   'autoBuyAvailable', // P26
   'autoBuy', // Schalter
+  'autoPriceAvailable', // P26b
+  'autoPrice', // Schalter
   'revenue', // P42
   'treasury', // P21
   'strategy', // P20
-  'autoTourney', // P118
+  'autoTourneyAvailable', // P118
+  'autoTourney', // Schalter
   'quantum', // P50
   'power', // P127
   'mining', // P41

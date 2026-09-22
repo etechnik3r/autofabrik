@@ -31,8 +31,14 @@ export const salesPanel = definePanel({
     p.stat('Lager', (s) => fmtNum(s.stock));
     p.stat('Preis je Auto', (s) => fmtMoney(s.price));
     p.group('row', undefined, (g) => {
-      g.button('−', { type: 'price', delta: -1 }, { title: 'Preis −1 k∈' });
-      g.button('+', { type: 'price', delta: 1 }, { title: 'Preis +1 k∈' });
+      g.button('−', { type: 'price', delta: -1 }, { title: 'Preis −1 k∈', enabled: (s) => !s.flags.autoPrice });
+      g.button('+', { type: 'price', delta: 1 }, { title: 'Preis +1 k∈', enabled: (s) => !s.flags.autoPrice });
+      const cruise = g.button((s) => `🎚️ Tempomat: ${s.flags.autoPrice ? 'an' : 'aus'}`, { type: 'toggleAutoPrice' }, {
+        visible: (s) => s.flags.autoPriceAvailable,
+        title: 'Hält den Preis automatisch auf der Preisempfehlung',
+        cls: 'btn toggle',
+      });
+      g.bind((s) => cruise.classList.toggle('on', s.flags.autoPrice));
     });
     p.stat('Marktnachfrage', (s) => fmtPct(s.demand * 10));
     p.stat('Erwarteter Absatz', (s) => `${fmtRate(expectedSales(s.demand, p.game.b))} Autos/s`);

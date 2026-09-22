@@ -5,15 +5,17 @@ import { log } from './messages';
 import { rand } from './rng';
 import type { GameState, TourneyResult } from './state';
 
+// Namen der Verhaltensarchetypen im Turnier, an typische Automarken-Strategien angelehnt.
+// Die Logik dahinter (move()) bleibt unverändert, es ändert sich nur die Beschriftung.
 export const STRATEGY_NAMES = [
-  'ZUFALL',
-  'IMMER A',
-  'IMMER B',
-  'GIERIG',
-  'GROSSZÜGIG',
-  'MINIMAX',
-  'WIE DU MIR',
-  'SCHLAG DEN LETZTEN',
+  'BAUCHGEFÜHL', // vorher ZUFALL
+  'HARDLINER', // vorher IMMER A
+  'WEICHSPÜLER', // vorher IMMER B
+  'MARKTBEHERRSCHER', // vorher GIERIG
+  'KULANZ', // vorher GROSSZÜGIG
+  'SICHERHEITSSTRATEGIE', // vorher MINIMAX
+  'SPIEGELTAKTIK', // vorher WIE DU MIR
+  'ÜBERHOLMANÖVER', // vorher SCHLAG DEN LETZTEN
 ] as const;
 
 const ACTION_PAIRS: [string, string][] = [

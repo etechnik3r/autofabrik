@@ -4,7 +4,7 @@ import { conflicts } from './conflict';
 import { checkEnd, updateEnd } from './end';
 import { updateFleetCompute } from './fleet';
 import { checkMilestones } from './messages';
-import { buyParts, checkReputation, fluctuatePartsPrice, sell, updateDemand, updateStats } from './phase1';
+import { applyAutoPrice, buyParts, checkReputation, fluctuatePartsPrice, sell, updateDemand, updateStats } from './phase1';
 import { gigaProduction, mineOre, smelt } from './phase2';
 import { drift, explore, hazards, seedBuild, seedReplicate } from './phase3';
 import { updatePower } from './power';
@@ -66,6 +66,7 @@ function slowTick(s: GameState, b: Balance): void {
   if (s.stats.secTimer >= 10) {
     s.stats.secTimer = 0;
     updateStats(s);
+    applyAutoPrice(s, b);
   }
 }
 

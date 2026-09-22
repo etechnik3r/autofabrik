@@ -512,6 +512,19 @@ body {
   font: 12px var(--mono);
 }
 
+.positions {
+  /* Feste Spaltenbreiten (siehe colgroup in systems.ts): sonst berechnet der Browser die
+     Spaltenbreiten bei jeder Kursänderung neu, je nach Ziffernanzahl der Zahlen – das sah
+     wie ein leichtes Zittern der ganzen Tabelle aus. */
+  table-layout: fixed;
+}
+
+.positions td {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .positions td,
 .matrix td,
 .matrix th {
@@ -548,23 +561,51 @@ body {
   font-size: 12px;
 }
 
-/* ---------- Quanten ---------- */
-.chips {
+/* ---------- Resonanzprüfstand ---------- */
+/* Bipolarer Balken statt einfacher Farbfläche: Füllung wächst ab der Mittellinie nach oben
+   (positive Resonanz, grün) oder nach unten (Gegenschwingung, rot) – zeigt Richtung und
+   Stärke auf einen Blick, nicht nur eine Opazität ohne erkennbares Vorzeichen. */
+.sensors {
   display: grid;
   grid-template-columns: repeat(10, 1fr);
   gap: 4px;
+  cursor: help;
 }
 
-.chip {
-  aspect-ratio: 1;
+.sensor-track {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  background: var(--panel-2);
+  border: 1px solid var(--line);
   border-radius: 3px;
-  background: var(--accent);
+  overflow: hidden;
 }
 
-.chip.off {
+.sensor-track::after {
+  content: '';
+  position: absolute;
+  inset: 50% 0 auto 0;
+  height: 1px;
+  background: var(--muted);
+}
+
+.sensor-track.off {
   background: transparent;
-  border: 1px dashed var(--line);
-  opacity: 1;
+  border-style: dashed;
+}
+
+.sensor-fill {
+  position: absolute;
+  left: 15%;
+  right: 15%;
+  top: 50%;
+  height: 0;
+  background: var(--good);
+  border-radius: 2px;
+}
+
+.sensor-fill.neg {
+  background: var(--bad);
 }
 
 /* ---------- Zahnrad und Einstellungsmenü ---------- */
