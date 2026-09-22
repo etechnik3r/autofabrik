@@ -115,6 +115,8 @@ definePanel({ id: 'sales', title: 'Vertrieb', visible: s => s.phase === 1,
 
 Die Projektliste wird nach ID gediffed. Neu erschienene Karten bleiben 30 Spielsekunden lang farbig gerahmt – gesteuert über `shownAt` im Zustand (nicht über eine CSS-Animation), damit die verbleibende Zeit auch nach einem Neuladen korrekt weiterzählt statt neu zu beginnen.
 
+**Feste Zeilenzahl gegen Layout-Sprünge:** Listen mit schwankender Länge (z. B. die Kapitalanlage-Positionen, 0 bis `maxPositions`) rendern immer die maximale Anzahl Zeilen und füllen fehlende mit einem Platzhalter (`<tr class="empty">`). Sonst springt die Panelhöhe bei jeder Änderung sichtbar – das gilt als Vorlage für jede künftige Liste mit ähnlich schwankender Länge.
+
 **Icons und Tooltips:** `icons.ts` ordnet jeder Projekt-ID und jedem Panel ein passendes Unicode-Emoji zu (mit Fallback über die Projektgruppe), reine Eye-Candy ohne Spiellogik. `glossary.ts` hält Kurzerklärungen für Fachbegriffe; `Builder.stat()` setzt automatisch einen `title`-Tooltip, wenn die Beschriftung im Glossar steht.
 
 **Farbschemen:** Alle Panel-Farben sind CSS-Variablen auf `:root`. `theme.ts` setzt `data-theme` auf `<html>` (`system` | `light` | `dark` | `wolfsburg` | `getriebe`), die Auswahl steht im Zahnrad-Menü und wird in `localStorage` gemerkt. `system` folgt `prefers-color-scheme`, alle anderen Werte erzwingen ein festes Schema.

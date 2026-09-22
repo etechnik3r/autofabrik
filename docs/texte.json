@@ -352,7 +352,7 @@
       "group": "marke",
       "icon": "🚦",
       "title": "Unfallfreie Straßen",
-      "description": "Die Flotte löst ein gesellschaftliches Problem. Ansehen +10, Treasury-Gewinnschwelle +1 %.",
+      "description": "Die Flotte löst ein gesellschaftliches Problem. Ansehen +10, Gewinnschwelle der Kapitalanlage +1 %.",
       "text": "25.000 Taktzyklen",
       "dynamic": false,
       "deps": [
@@ -365,7 +365,7 @@
       "group": "marke",
       "icon": "🚧",
       "title": "Stau-Auflösung",
-      "description": "Die Flotte löst ein gesellschaftliches Problem. Ansehen +12, Treasury-Gewinnschwelle +1 %.",
+      "description": "Die Flotte löst ein gesellschaftliches Problem. Ansehen +12, Gewinnschwelle der Kapitalanlage +1 %.",
       "text": "30.000 Taktzyklen + 5.000 Marktwissen",
       "dynamic": false,
       "deps": [
@@ -378,7 +378,7 @@
       "group": "marke",
       "icon": "🍃",
       "title": "Klimaneutrale Flotte",
-      "description": "Die Flotte löst ein gesellschaftliches Problem. Ansehen +15, Treasury-Gewinnschwelle +1 %.",
+      "description": "Die Flotte löst ein gesellschaftliches Problem. Ansehen +15, Gewinnschwelle der Kapitalanlage +1 %.",
       "text": "50.000 Taktzyklen + 1.500 Marktwissen",
       "dynamic": false,
       "deps": [
@@ -391,7 +391,7 @@
       "group": "marke",
       "icon": "🅿️",
       "title": "Parkplatzsuche abgeschafft",
-      "description": "Die Flotte löst ein gesellschaftliches Problem. Ansehen +20, Treasury-Gewinnschwelle +1 %.",
+      "description": "Die Flotte löst ein gesellschaftliches Problem. Ansehen +20, Gewinnschwelle der Kapitalanlage +1 %.",
       "text": "20.000 Taktzyklen",
       "dynamic": false,
       "deps": [
@@ -555,7 +555,7 @@
       "id": "P21",
       "group": "systeme",
       "icon": "💹",
-      "title": "Treasury-Algorithmus",
+      "title": "Anlage-Algorithmus",
       "description": "Eine Anlage-Engine legt Kapital automatisch an.",
       "text": "10.000 Taktzyklen",
       "dynamic": false,
@@ -589,9 +589,9 @@
     {
       "id": "P50",
       "group": "systeme",
-      "icon": "⚛️",
-      "title": "Quantenrechner",
-      "description": "Ein Qubit-Chip, dessen Überlagerung Taktzyklen erzeugen – oder kosten – kann.",
+      "icon": "📳",
+      "title": "Resonanzprüfstand",
+      "description": "Ein Schwingungssensor, dessen Resonanzmuster Taktzyklen liefert – oder kostet.",
       "text": "10.000 Taktzyklen",
       "dynamic": false,
       "deps": [],
@@ -600,9 +600,9 @@
     {
       "id": "P51",
       "group": "systeme",
-      "icon": "⚛️",
-      "title": "Qubit-Chip",
-      "description": "Ein weiterer Chip für den Quantenrechner.",
+      "icon": "📳",
+      "title": "Weiterer Sensor",
+      "description": "Ein weiterer Sensor für den Resonanzprüfstand.",
       "text": "{ops:b.quantum.chipBaseCost+b.quantum.chipCostStep*timesBought(s,\"P51\")}",
       "dynamic": true,
       "deps": [
@@ -1119,8 +1119,8 @@
       "id": "P214",
       "group": "ende",
       "icon": "🔧",
-      "title": "Demontage: Quantenrechner",
-      "description": "Quantenrechner werden abgeschaltet und zerlegt. Es bleiben 100 Teilesätze übrig.",
+      "title": "Demontage: Resonanzprüfstand",
+      "description": "Resonanzprüfstand werden abgeschaltet und zerlegt. Es bleiben 100 Teilesätze übrig.",
       "text": "100.000 Taktzyklen",
       "dynamic": false,
       "deps": [
@@ -1166,7 +1166,7 @@
     },
     {
       "term": "Marktwissen",
-      "text": "Belohnung aus der Wettbewerbssimulation. Zahlungsmittel für Treasury-Upgrades, Autonomie und weitere Systeme."
+      "text": "Belohnung aus der Wettbewerbssimulation. Zahlungsmittel für Upgrades der Kapitalanlage, Autonomie und weitere Systeme."
     },
     {
       "term": "Ansehen",
@@ -1202,11 +1202,11 @@
     },
     {
       "term": "Gewinnschwelle",
-      "text": "Wahrscheinlichkeit, dass eine Treasury-Position im Kurs steigt statt fällt. Höher ist besser für dich."
+      "text": "Wahrscheinlichkeit, dass eine Position der Kapitalanlage im Kurs steigt statt fällt. Höher ist besser für dich."
     },
     {
       "term": "Guthaben",
-      "text": "Nicht angelegtes Kapital in der Treasury, jederzeit abhebbar."
+      "text": "Nicht angelegtes Kapital der Kapitalanlage, jederzeit abhebbar."
     },
     {
       "term": "Gesamtwert",

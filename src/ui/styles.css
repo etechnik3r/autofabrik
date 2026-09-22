@@ -163,10 +163,10 @@ body {
   position: relative;
   display: grid;
   grid-template-columns: auto auto 1fr auto;
-  gap: 16px 32px;
+  gap: 10px 32px;
   align-items: start;
-  padding-bottom: 16px;
-  margin-bottom: 16px;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
   border-bottom: 1px solid var(--line);
 }
 
@@ -202,7 +202,7 @@ body {
   padding: 0;
   font-size: 12px;
   color: var(--muted);
-  min-height: 5.5em;
+  min-height: 3.3em; /* Platz für 3 Zeilen, siehe slice(-3) in app.ts */
 }
 
 .ticker li:first-child {
@@ -227,7 +227,7 @@ body {
 .col {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 10px;
   min-width: 0;
 }
 
@@ -236,7 +236,7 @@ body {
   border: 1px solid var(--line);
   border-radius: 6px;
   box-shadow: var(--shadow);
-  padding: 12px 14px 14px;
+  padding: 9px 12px 10px;
 }
 
 .panel.appear {
@@ -254,7 +254,7 @@ body {
   display: flex;
   align-items: center;
   gap: 6px;
-  margin: 0 0 8px;
+  margin: 0 0 6px;
   font-size: 12px;
   font-weight: 700;
   text-transform: uppercase;
@@ -275,13 +275,15 @@ body {
 }
 
 .body > * + * {
-  margin-top: 6px;
+  margin-top: 3px;
 }
 
 .stat {
   display: flex;
   justify-content: space-between;
+  align-items: baseline;
   gap: 12px;
+  line-height: 1.25;
 }
 
 .stat.has-info {
@@ -326,7 +328,7 @@ body {
 .building,
 .attr,
 .sub {
-  padding-top: 6px;
+  padding-top: 4px;
   border-top: 1px dashed var(--line);
 }
 
@@ -435,7 +437,7 @@ body {
 .projects {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 4px;
 }
 
 .project {
@@ -443,7 +445,7 @@ body {
   gap: 2px;
   text-align: left;
   width: 100%;
-  padding: 8px 10px;
+  padding: 6px 9px;
 }
 
 .project .phead {
@@ -521,6 +523,12 @@ body {
 .positions td:first-child,
 .matrix th {
   text-align: left;
+}
+
+.positions tr.empty td {
+  text-align: center;
+  color: var(--muted);
+  opacity: 0.4;
 }
 
 .ranking {

@@ -258,7 +258,7 @@ function societyProject(id: string, title: string, cost: { ops: number; insight?
   return {
     id,
     title,
-    description: `Die Flotte löst ein gesellschaftliches Problem. Ansehen +${rep}, Treasury-Gewinnschwelle +1 %.`,
+    description: `Die Flotte löst ein gesellschaftliches Problem. Ansehen +${rep}, Gewinnschwelle der Kapitalanlage +1 %.`,
     group: 'marke',
     cost,
     trigger: (s) => bought(s, 'P27'),
@@ -316,7 +316,7 @@ const systems: ProjectDef[] = [
   },
   {
     id: 'P21',
-    title: 'Treasury-Algorithmus',
+    title: 'Anlage-Algorithmus',
     description: 'Eine Anlage-Engine legt Kapital automatisch an.',
     group: 'systeme',
     cost: { ops: 10_000 },
@@ -349,8 +349,8 @@ const systems: ProjectDef[] = [
   },
   {
     id: 'P50',
-    title: 'Quantenrechner',
-    description: 'Ein Qubit-Chip, dessen Überlagerung Taktzyklen erzeugen – oder kosten – kann.',
+    title: 'Resonanzprüfstand',
+    description: 'Ein Schwingungssensor, dessen Resonanzmuster Taktzyklen liefert – oder kostet.',
     group: 'systeme',
     cost: { ops: 10_000 },
     trigger: (s) => s.cores >= 5,
@@ -361,8 +361,8 @@ const systems: ProjectDef[] = [
   },
   {
     id: 'P51',
-    title: 'Qubit-Chip',
-    description: 'Ein weiterer Chip für den Quantenrechner.',
+    title: 'Weiterer Sensor',
+    description: 'Ein weiterer Sensor für den Resonanzprüfstand.',
     group: 'systeme',
     cost: (s, b) => ({ ops: b.quantum.chipBaseCost + b.quantum.chipCostStep * timesBought(s, 'P51') }),
     trigger: (s, b) => bought(s, 'P50') && s.quantum.chips < b.quantum.chips,

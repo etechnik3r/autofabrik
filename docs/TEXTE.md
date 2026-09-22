@@ -42,10 +42,10 @@ Insgesamt 93 Projekte.
 | 🎵 | `P12` | Markenmelodie | Werbung wirkt doppelt so stark. | 4.500 Taktzyklen + 45 Ideen | `P14` | nein |
 | 🧲 | `P34` | Neuromarketing | Werbung wirkt fünfmal so stark. Der Aufsichtsrat ist irritiert (Ansehen −1). | 7.500 Taktzyklen + 1 Ansehen | `P12` | nein |
 | ⚖️ | `P27` | Ethikrat | Ein Gremium prüft, was die KI tut. Ansehen +1. | 20.000 Taktzyklen + 500 Ideen + 1.000 Marktwissen | – | nein |
-| 🚦 | `P28` | Unfallfreie Straßen | Die Flotte löst ein gesellschaftliches Problem. Ansehen +10, Treasury-Gewinnschwelle +1 %. | 25.000 Taktzyklen | `P27` | nein |
-| 🚧 | `P29` | Stau-Auflösung | Die Flotte löst ein gesellschaftliches Problem. Ansehen +12, Treasury-Gewinnschwelle +1 %. | 30.000 Taktzyklen + 5.000 Marktwissen | `P27` | nein |
-| 🍃 | `P30` | Klimaneutrale Flotte | Die Flotte löst ein gesellschaftliches Problem. Ansehen +15, Treasury-Gewinnschwelle +1 %. | 50.000 Taktzyklen + 1.500 Marktwissen | `P27` | nein |
-| 🅿️ | `P31` | Parkplatzsuche abgeschafft | Die Flotte löst ein gesellschaftliches Problem. Ansehen +20, Treasury-Gewinnschwelle +1 %. | 20.000 Taktzyklen | `P27` | nein |
+| 🚦 | `P28` | Unfallfreie Straßen | Die Flotte löst ein gesellschaftliches Problem. Ansehen +10, Gewinnschwelle der Kapitalanlage +1 %. | 25.000 Taktzyklen | `P27` | nein |
+| 🚧 | `P29` | Stau-Auflösung | Die Flotte löst ein gesellschaftliches Problem. Ansehen +12, Gewinnschwelle der Kapitalanlage +1 %. | 30.000 Taktzyklen + 5.000 Marktwissen | `P27` | nein |
+| 🍃 | `P30` | Klimaneutrale Flotte | Die Flotte löst ein gesellschaftliches Problem. Ansehen +15, Gewinnschwelle der Kapitalanlage +1 %. | 50.000 Taktzyklen + 1.500 Marktwissen | `P27` | nein |
+| 🅿️ | `P31` | Parkplatzsuche abgeschafft | Die Flotte löst ein gesellschaftliches Problem. Ansehen +20, Gewinnschwelle der Kapitalanlage +1 %. | 20.000 Taktzyklen | `P27` | nein |
 | 🎗️ | `P40` | Stiftung gründen | Eine gemeinnützige Stiftung poliert das Image. Ansehen +1. | 50,00 Mrd. ∈ | – | nein |
 | 🤵 | `P40b` | Lobbyarbeit | Gespräche an den richtigen Stellen. Ansehen +1, die nächste Runde kostet das Doppelte. | _dynamisch:_ `{money:s.lobbyCost}` | `P40` | ja |
 
@@ -63,11 +63,11 @@ Insgesamt 93 Projekte.
 | ♟️ | `P66` | Neue Strategie: SCHLAG DEN LETZTEN | Eine weitere Strategie für die Wettbewerbssimulation. Turniere kosten 1 000 Taktzyklen mehr. | 32.500 Taktzyklen | `P20` | nein |
 | 🔄 | `P118` | Auto-Turnier | Startet alle 30 s ein Turnier, sofern genug Taktzyklen da sind. | 50.000 Ideen | `P20` | nein |
 | 🧠 | `P119` | Gegnermodell | Doppeltes Marktwissen je Turnier. Turniere kosten pauschal 16 000 Taktzyklen. | 25.000 Ideen | – | nein |
-| 💹 | `P21` | Treasury-Algorithmus | Eine Anlage-Engine legt Kapital automatisch an. | 10.000 Taktzyklen | – | nein |
+| 💹 | `P21` | Anlage-Algorithmus | Eine Anlage-Engine legt Kapital automatisch an. | 10.000 Taktzyklen | – | nein |
 | 🤝 | `P37` | Übernahme Zulieferer | Vertikale Integration. Nachfrage ×5, Ansehen +1. | 100,00 Mrd. ∈ | – | nein |
 | 👑 | `P38` | Marktbeherrschung | Kein Wettbewerber kommt mehr mit. Nachfrage ×10, Ansehen +1. | 1.000 Marktwissen + 1,00 Bio. ∈ | `P37` | nein |
-| ⚛️ | `P50` | Quantenrechner | Ein Qubit-Chip, dessen Überlagerung Taktzyklen erzeugen – oder kosten – kann. | 10.000 Taktzyklen | – | nein |
-| ⚛️ | `P51` | Qubit-Chip | Ein weiterer Chip für den Quantenrechner. | _dynamisch:_ `{ops:b.quantum.chipBaseCost+b.quantum.chipCostStep*timesBought(s,"P51")}` | `P50` | ja |
+| 📳 | `P50` | Resonanzprüfstand | Ein Schwingungssensor, dessen Resonanzmuster Taktzyklen liefert – oder kostet. | 10.000 Taktzyklen | – | nein |
+| 📳 | `P51` | Weiterer Sensor | Ein weiterer Sensor für den Resonanzprüfstand. | _dynamisch:_ `{ops:b.quantum.chipBaseCost+b.quantum.chipCostStep*timesBought(s,"P51")}` | `P50` | ja |
 | 🚘 | `P70` | Autopilot-Stack | Fahrzeuge, die ohne Menschen auskommen. Der Aufsichtsrat wird nervös. | 70.000 Taktzyklen | `P34` | nein |
 | 🔓 | `P35` | Vollautonomie | Der Aufsichtsrat übergibt die volle Kontrolle. Es gibt kein Zurück. | 100 Ansehen | `P70` | nein |
 
@@ -125,7 +125,7 @@ Insgesamt 93 Projekte.
 | 🔧 | `P211` | Demontage: Flotte | Flotte werden abgeschaltet und zerlegt. Es bleiben 100 Teilesätze übrig. | 100.000 Taktzyklen | `P148` | nein |
 | 🔧 | `P212` | Demontage: Gigafactories | Gigafactories werden abgeschaltet und zerlegt. Es bleiben 100 Teilesätze übrig. | 100.000 Taktzyklen | `P148` | nein |
 | 🔧 | `P213` | Demontage: Wettbewerbssimulation | Wettbewerbssimulation werden abgeschaltet und zerlegt. Es bleiben 100 Teilesätze übrig. | 100.000 Taktzyklen | `P148` | nein |
-| 🔧 | `P214` | Demontage: Quantenrechner | Quantenrechner werden abgeschaltet und zerlegt. Es bleiben 100 Teilesätze übrig. | 100.000 Taktzyklen | `P148` | nein |
+| 🔧 | `P214` | Demontage: Resonanzprüfstand | Resonanzprüfstand werden abgeschaltet und zerlegt. Es bleiben 100 Teilesätze übrig. | 100.000 Taktzyklen | `P148` | nein |
 | 🔧 | `P215` | Demontage: Rechenkerne | Rechenkerne werden abgeschaltet und zerlegt. Es bleiben 100 Teilesätze übrig. | 100.000 Taktzyklen | `P148` | nein |
 | 🔧 | `P216` | Demontage: Speicher | Speicher werden abgeschaltet und zerlegt. Es bleiben 100 Teilesätze übrig. | 100.000 Taktzyklen | `P148` | nein |
 
@@ -135,7 +135,7 @@ Insgesamt 93 Projekte.
 |---|---|
 | Taktzyklen | Rechentakt der KI – Hauptwährung für Projekte, wie der Bandtakt in der Fertigung. Entstehen aus Rechenkernen, gespeichert bis zur Speichergrenze. |
 | Ideen | Entstehen aus freier Rechenzeit, wenn der Taktzyklen-Speicher voll ist. Zahlungsmittel für Ansehens- und Wissensprojekte. |
-| Marktwissen | Belohnung aus der Wettbewerbssimulation. Zahlungsmittel für Treasury-Upgrades, Autonomie und weitere Systeme. |
+| Marktwissen | Belohnung aus der Wettbewerbssimulation. Zahlungsmittel für Upgrades der Kapitalanlage, Autonomie und weitere Systeme. |
 | Ansehen | Ruf der Marke beim Aufsichtsrat – Kapazität für Rechenkerne und Speicher, gleichzeitig Zahlungsmittel mancher Projekte. Wächst mit Fibonacci-Meilensteinen. |
 | Ansehen steigt bei | Anzahl gebauter Autos, bei der das Ansehen als Nächstes steigt. |
 | Rechenspenden | Ersetzen ab Phase 2 das Ansehen als Quelle für neue Rechenkerne und Speicher – gespendet von der Bordelektronik der Flotte. |
@@ -144,8 +144,8 @@ Insgesamt 93 Projekte.
 | Erz | Bereits abgebautes, noch nicht verhüttetes Material. |
 | Rohstoffvorkommen | Noch nicht abgebautes Material auf der Erde bzw. im erkundeten Universum. |
 | Fahrzeugpool | Produzierte, nicht verkaufte Autos. Dient ab Phase 2 als Baumaterial für alles. |
-| Gewinnschwelle | Wahrscheinlichkeit, dass eine Treasury-Position im Kurs steigt statt fällt. Höher ist besser für dich. |
-| Guthaben | Nicht angelegtes Kapital in der Treasury, jederzeit abhebbar. |
+| Gewinnschwelle | Wahrscheinlichkeit, dass eine Position der Kapitalanlage im Kurs steigt statt fällt. Höher ist besser für dich. |
+| Guthaben | Nicht angelegtes Kapital der Kapitalanlage, jederzeit abhebbar. |
 | Gesamtwert | Guthaben plus der aktuelle Wert aller offenen Positionen. |
 | Leistung | Anteil des Strombedarfs, der tatsächlich gedeckt ist. Unter 100 % laufen alle Anlagen gedrosselt. |
 | Marktnachfrage | Wie viele Autos der Markt bei aktuellem Preis abnehmen würde – Grundlage für den Verkauf. |

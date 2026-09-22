@@ -8,11 +8,26 @@ Versionsnummern werden noch nicht vergeben (Projekt vor dem ersten Release).
 ## [Unveröffentlicht]
 
 ### Geändert
+- „Treasury“ → **„Kapitalanlage“** (Panel, Projekttitel P21, Glossar) – klareres deutsches Wort
+  für dieselbe Anlage-Engine.
+- „Quantenrechner“ → **„Resonanzprüfstand“**, passend zur Automobilbranche: Die Wellenüberlagerung
+  der bisherigen „Qubit-Chips“ entspricht genau der Resonanzmessung an einem physischen
+  Schwingungsprüfstand. „Qubit-Chip“ → „Weiterer Sensor“, Button „Berechnen“ → „Messung starten“,
+  Stat „Überlagerung“ → „Resonanz“, Icon ⚛️ → 📳. Betrifft Panel, Projekte P50/P51, die
+  Demontage-Stufe im Ende und die Textübersicht.
 - Anzeigenamen zweier Spielbegriffe an die Automobilbranche angepasst (nur sichtbarer Text,
   interne Feldnamen unverändert): **„Ops“ → „Taktzyklen“** (Rechentakt der KI – passt sowohl
   zu Taktfrequenz als auch zum Bandtakt der Fertigung) und **„Reputation“ → „Ansehen“**
   (Ruf der Marke beim Aufsichtsrat). Betrifft Panels, Projektkosten, Projektbeschreibungen,
   Ticker-Meldungen und das Glossar.
+
+### Behoben
+- Die Kapitalanlage-Positionstabelle zeigte je nach Anzahl offener Positionen 0 bis 5 Zeilen,
+  wodurch das ganze Panel bei jedem Kauf/Verkauf sichtbar in der Höhe sprang. Sie rendert jetzt
+  immer alle 5 Zeilen (leere als Platzhalter „–“), die Höhe bleibt konstant.
+- Spaltenlayout wirkte durch viel Leerraum unnötig scroll-lastig: Innenabstände der Panels,
+  Zeilenabstände zwischen Werten und der Abstand zwischen Panels wurden verkleinert. Der
+  Nachrichtenticker im Kopf zeigt jetzt 3 statt 5 Zeilen – spart oben zusätzlich Platz.
 - Spielname von „FLIESSBAND“ auf **Autofabrik** vereinheitlicht (Titel, Kopfbereich, Abspann,
   README, `package.json`). Die ursprüngliche Spielspezifikation bleibt als historisches
   Dokument unverändert.

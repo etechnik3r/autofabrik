@@ -90,7 +90,7 @@ export function mountApp(root: HTMLElement, game: Game): void {
   const renderHeader = (s: GameState) => {
     phase.textContent = `Phase ${s.phase} · ${PHASE_NAMES[s.phase]} · ${fmtTime(playSeconds(s, game.b))}`;
     carsValue.textContent = fmtNum(s.cars);
-    const last = s.messages.slice(-5).reverse();
+    const last = s.messages.slice(-3).reverse();
     const key = last.map((m) => m.tick).join(',') + s.messages.length;
     if (key !== tickerKey) {
       tickerKey = key;

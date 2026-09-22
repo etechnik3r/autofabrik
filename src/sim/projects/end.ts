@@ -48,7 +48,7 @@ const DISMANTLE: [string, (s: GameState) => void][] = [
     },
   ],
   [
-    'Quantenrechner',
+    'Resonanzprüfstand',
     (s) => {
       s.flags.quantum = false;
       s.quantum.chips = 0;

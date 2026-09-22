@@ -14,7 +14,7 @@ const RISKS: [Risk, string][] = [
 
 export const treasuryPanel = definePanel({
   id: 'treasury',
-  title: 'Treasury',
+  title: 'Kapitalanlage',
   column: 3,
   visible: (s) => s.phase === 1 && s.flags.treasury,
   build(p) {
@@ -31,11 +31,16 @@ export const treasuryPanel = definePanel({
         g.bind((s) => btn.classList.toggle('on', s.treasury.risk === risk));
       }
     });
+    // Immer b.treasury.maxPositions Zeilen rendern (leere als Platzhalter), sonst springt die
+    // Panelhöhe bei jedem Kauf/Verkauf einer Position sichtbar auf und ab.
     const table = p.add(h('table', 'positions'));
     p.bind((s) => {
-      const rows = s.treasury.positions
-        .map((x) => `<tr><td>${x.name}</td><td>${fmtNum(x.qty)} ×</td><td>${fmtMoney(x.price)}</td><td>${fmtMoney(x.price * x.qty)}</td></tr>`)
-        .join('');
+      const rows = Array.from({ length: b.treasury.maxPositions }, (_, i) => {
+        const x = s.treasury.positions[i];
+        return x
+          ? `<tr><td>${x.name}</td><td>${fmtNum(x.qty)} ×</td><td>${fmtMoney(x.price)}</td><td>${fmtMoney(x.price * x.qty)}</td></tr>`
+          : '<tr class="empty"><td colspan="4">–</td></tr>';
+      }).join('');
       if (table.dataset.html !== rows) {
         table.innerHTML = rows;
         table.dataset.html = rows;
@@ -95,7 +100,7 @@ export const strategyPanel = definePanel({
 
 export const quantumPanel = definePanel({
   id: 'quantum',
-  title: 'Quantenrechner',
+  title: 'Resonanzprüfstand',
   column: 2,
   visible: (s) => s.flags.quantum,
   build(p) {
@@ -110,8 +115,8 @@ export const quantumPanel = definePanel({
         cells[i].style.opacity = active ? String(0.15 + 0.85 * Math.max(0, chipValue(s, i))) : '';
       }
     });
-    p.button('Berechnen', { type: 'quantum' }, { cls: 'btn primary' });
-    p.stat('Überlagerung', (s) => (quantumSum(s, b) >= 0 ? '+' : '−'));
+    p.button('Messung starten', { type: 'quantum' }, { cls: 'btn primary' });
+    p.stat('Resonanz', (s) => (quantumSum(s, b) >= 0 ? '+' : '−'));
     p.stat('Letztes Ergebnis', (s) => (s.quantum.last === null ? '–' : `${s.quantum.last > 0 ? '+' : ''}${fmtNum(s.quantum.last)} Taktzyklen`));
   },
 });
