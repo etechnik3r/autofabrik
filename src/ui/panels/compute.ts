@@ -15,8 +15,8 @@ export const computePanel = definePanel({
   visible: (s) => s.flags.compute,
   build(p) {
     const b = p.game.b;
-    p.stat('Reputation', (s) => fmtNum(s.rep), (s) => s.phase === 1);
-    p.stat('Nächste Reputation bei', (s) => `${fmtNum(s.nextRep)} Autos`, (s) => s.phase === 1);
+    p.stat('Ansehen', (s) => fmtNum(s.rep), (s) => s.phase === 1);
+    p.stat('Ansehen steigt bei', (s) => `${fmtNum(s.nextRep)} Autos`, (s) => s.phase === 1);
     p.stat('Rechenspenden', (s) => fmtNum(s.fleet.gifts), (s) => s.phase > 1);
     p.stat('Rechenkerne', (s) => fmtNum(s.cores));
     p.stat('Speicher', (s) => fmtNum(s.storage));
@@ -24,7 +24,7 @@ export const computePanel = definePanel({
       g.button('+ Rechenkern', { type: 'addCore' });
       g.button('+ Speicher', { type: 'addStorage' });
     });
-    p.stat('Ops', (s) => `${fmtNum(s.ops)} / ${fmtNum(opsCapacity(s, b))}`);
+    p.stat('Taktzyklen', (s) => `${fmtNum(s.ops)} / ${fmtNum(opsCapacity(s, b))}`);
     p.bar((s) => s.ops / opsCapacity(s, b));
     p.stat('Ideen', (s) => fmtNum(s.ideas), (s) => s.flags.ideas);
     p.stat('Marktwissen', (s) => fmtNum(s.insight), (s) => s.flags.strategy || s.insight > 0);
@@ -32,10 +32,10 @@ export const computePanel = definePanel({
 });
 
 const COST_PARTS: [keyof Cost, (x: number) => string][] = [
-  ['ops', (x) => `${fmtNum(x)} Ops`],
+  ['ops', (x) => `${fmtNum(x)} Taktzyklen`],
   ['ideas', (x) => `${fmtNum(x)} Ideen`],
   ['insight', (x) => `${fmtNum(x)} Marktwissen`],
-  ['rep', (x) => `${fmtNum(x)} Reputation`],
+  ['rep', (x) => `${fmtNum(x)} Ansehen`],
   ['money', (x) => fmtMoney(x)],
   ['pool', (x) => `${fmtNum(x)} Autos`],
   ['energy', (x) => `${fmtNum(x)} MWt`],

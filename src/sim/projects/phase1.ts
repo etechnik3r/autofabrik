@@ -166,7 +166,7 @@ function repProject(id: string, title: string, ideas: number, description: strin
   return {
     id,
     title,
-    description: `${description} Reputation +1.`,
+    description: `${description} Ansehen +1.`,
     group: 'marke',
     cost: { ideas },
     trigger: (s) => p1(s) && s.flags.ideas && s.ideas >= ideas,
@@ -211,7 +211,7 @@ const brand: ProjectDef[] = [
   {
     id: 'P34',
     title: 'Neuromarketing',
-    description: 'Werbung wirkt fünfmal so stark. Der Aufsichtsrat ist irritiert (Reputation −1).',
+    description: 'Werbung wirkt fünfmal so stark. Der Aufsichtsrat ist irritiert (Ansehen −1).',
     group: 'marke',
     cost: { ops: 7_500, rep: 1 },
     trigger: (s) => bought(s, 'P12'),
@@ -220,7 +220,7 @@ const brand: ProjectDef[] = [
   {
     id: 'P27',
     title: 'Ethikrat',
-    description: 'Ein Gremium prüft, was die KI tut. Reputation +1.',
+    description: 'Ein Gremium prüft, was die KI tut. Ansehen +1.',
     group: 'marke',
     cost: { ideas: 500, insight: 1_000, ops: 20_000 },
     trigger: (s) => p1(s) && s.insight >= 1,
@@ -233,7 +233,7 @@ const brand: ProjectDef[] = [
   {
     id: 'P40',
     title: 'Stiftung gründen',
-    description: 'Eine gemeinnützige Stiftung poliert das Image. Reputation +1.',
+    description: 'Eine gemeinnützige Stiftung poliert das Image. Ansehen +1.',
     group: 'marke',
     cost: { money: 50_000_000 },
     trigger: (s) => p1(s) && s.rep >= 85 && s.rep < 100 && s.cars >= 101e6,
@@ -242,7 +242,7 @@ const brand: ProjectDef[] = [
   {
     id: 'P40b',
     title: 'Lobbyarbeit',
-    description: 'Gespräche an den richtigen Stellen. Reputation +1, die nächste Runde kostet das Doppelte.',
+    description: 'Gespräche an den richtigen Stellen. Ansehen +1, die nächste Runde kostet das Doppelte.',
     group: 'marke',
     cost: (s) => ({ money: s.lobbyCost }),
     trigger: (s) => p1(s) && bought(s, 'P40') && s.rep < 100,
@@ -258,7 +258,7 @@ function societyProject(id: string, title: string, cost: { ops: number; insight?
   return {
     id,
     title,
-    description: `Die Flotte löst ein gesellschaftliches Problem. Reputation +${rep}, Treasury-Gewinnschwelle +1 %.`,
+    description: `Die Flotte löst ein gesellschaftliches Problem. Ansehen +${rep}, Treasury-Gewinnschwelle +1 %.`,
     group: 'marke',
     cost,
     trigger: (s) => bought(s, 'P27'),
@@ -275,7 +275,7 @@ const STRATEGY_COSTS = [15_000, 17_500, 20_000, 22_500, 25_000, 30_000, 32_500];
 const strategyProjects: ProjectDef[] = STRATEGY_COSTS.map((ops, k) => ({
   id: `P6${k}`,
   title: `Neue Strategie: ${STRATEGY_NAMES[k + 1]}`,
-  description: 'Eine weitere Strategie für die Wettbewerbssimulation. Turniere kosten 1 000 Ops mehr.',
+  description: 'Eine weitere Strategie für die Wettbewerbssimulation. Turniere kosten 1 000 Taktzyklen mehr.',
   group: 'systeme' as const,
   cost: { ops },
   trigger: (s) => (k === 0 ? bought(s, 'P20') : bought(s, `P6${k - 1}`)),
@@ -296,7 +296,7 @@ const systems: ProjectDef[] = [
   {
     id: 'P118',
     title: 'Auto-Turnier',
-    description: 'Startet alle 30 s ein Turnier, sofern genug Ops da sind.',
+    description: 'Startet alle 30 s ein Turnier, sofern genug Taktzyklen da sind.',
     group: 'systeme',
     cost: { ideas: 50_000 },
     trigger: (s) => bought(s, 'P20') && s.rep >= 90,
@@ -305,7 +305,7 @@ const systems: ProjectDef[] = [
   {
     id: 'P119',
     title: 'Gegnermodell',
-    description: 'Doppeltes Marktwissen je Turnier. Turniere kosten pauschal 16 000 Ops.',
+    description: 'Doppeltes Marktwissen je Turnier. Turniere kosten pauschal 16 000 Taktzyklen.',
     group: 'systeme',
     cost: { ideas: 25_000 },
     trigger: (s) => s.strategy.unlocked >= STRATEGY_NAMES.length,
@@ -326,7 +326,7 @@ const systems: ProjectDef[] = [
   {
     id: 'P37',
     title: 'Übernahme Zulieferer',
-    description: 'Vertikale Integration. Nachfrage ×5, Reputation +1.',
+    description: 'Vertikale Integration. Nachfrage ×5, Ansehen +1.',
     group: 'systeme',
     cost: { money: 100_000_000 },
     trigger: (s) => p1(s) && treasuryValue(s) >= 1_000_000,
@@ -338,7 +338,7 @@ const systems: ProjectDef[] = [
   {
     id: 'P38',
     title: 'Marktbeherrschung',
-    description: 'Kein Wettbewerber kommt mehr mit. Nachfrage ×10, Reputation +1.',
+    description: 'Kein Wettbewerber kommt mehr mit. Nachfrage ×10, Ansehen +1.',
     group: 'systeme',
     cost: { insight: 1_000, money: 1_000_000_000 },
     trigger: (s) => p1(s) && bought(s, 'P37'),
@@ -350,7 +350,7 @@ const systems: ProjectDef[] = [
   {
     id: 'P50',
     title: 'Quantenrechner',
-    description: 'Ein Qubit-Chip, dessen Überlagerung Ops erzeugen – oder kosten – kann.',
+    description: 'Ein Qubit-Chip, dessen Überlagerung Taktzyklen erzeugen – oder kosten – kann.',
     group: 'systeme',
     cost: { ops: 10_000 },
     trigger: (s) => s.cores >= 5,

@@ -8,6 +8,11 @@ Versionsnummern werden noch nicht vergeben (Projekt vor dem ersten Release).
 ## [Unveröffentlicht]
 
 ### Geändert
+- Anzeigenamen zweier Spielbegriffe an die Automobilbranche angepasst (nur sichtbarer Text,
+  interne Feldnamen unverändert): **„Ops“ → „Taktzyklen“** (Rechentakt der KI – passt sowohl
+  zu Taktfrequenz als auch zum Bandtakt der Fertigung) und **„Reputation“ → „Ansehen“**
+  (Ruf der Marke beim Aufsichtsrat). Betrifft Panels, Projektkosten, Projektbeschreibungen,
+  Ticker-Meldungen und das Glossar.
 - Spielname von „FLIESSBAND“ auf **Autofabrik** vereinheitlicht (Titel, Kopfbereich, Abspann,
   README, `package.json`). Die ursprüngliche Spielspezifikation bleibt als historisches
   Dokument unverändert.

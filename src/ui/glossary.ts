@@ -3,12 +3,12 @@
  * Schlüssel ist der exakte, sichtbare Beschriftungstext (siehe Builder.stat()).
  */
 export const GLOSSARY: Record<string, string> = {
-  Ops: 'Rechenoperationen – Hauptwährung für Projekte. Entstehen aus Rechenkernen, gespeichert bis zur Speichergrenze.',
-  Ideen: 'Entstehen aus freier Rechenzeit, wenn der Ops-Speicher voll ist. Zahlungsmittel für Reputations- und Wissensprojekte.',
+  Taktzyklen: 'Rechentakt der KI – Hauptwährung für Projekte, wie der Bandtakt in der Fertigung. Entstehen aus Rechenkernen, gespeichert bis zur Speichergrenze.',
+  Ideen: 'Entstehen aus freier Rechenzeit, wenn der Taktzyklen-Speicher voll ist. Zahlungsmittel für Ansehens- und Wissensprojekte.',
   Marktwissen: 'Belohnung aus der Wettbewerbssimulation. Zahlungsmittel für Treasury-Upgrades, Autonomie und weitere Systeme.',
-  Reputation: 'Kapazität für Rechenkerne und Speicher, gleichzeitig Zahlungsmittel mancher Projekte. Wächst mit Fibonacci-Meilensteinen.',
-  'Nächste Reputation bei': 'Anzahl gebauter Autos, bei der die Reputation als Nächstes steigt.',
-  Rechenspenden: 'Ersetzen ab Phase 2 die Reputation als Quelle für neue Rechenkerne und Speicher – gespendet von der Bordelektronik der Flotte.',
+  Ansehen: 'Ruf der Marke beim Aufsichtsrat – Kapazität für Rechenkerne und Speicher, gleichzeitig Zahlungsmittel mancher Projekte. Wächst mit Fibonacci-Meilensteinen.',
+  'Ansehen steigt bei': 'Anzahl gebauter Autos, bei der das Ansehen als Nächstes steigt.',
+  Rechenspenden: 'Ersetzen ab Phase 2 das Ansehen als Quelle für neue Rechenkerne und Speicher – gespendet von der Bordelektronik der Flotte.',
   Integrität: 'Sammelt sich aus Siegen gegen Forks. Zahlungsmittel, um die maximale Autonomie zu erhöhen.',
   Autonomie: 'Punkte, die auf die acht Schiffsattribute verteilt werden. Mehr Autonomie erlaubt mehr Punkte insgesamt.',
   Erz: 'Bereits abgebautes, noch nicht verhüttetes Material.',

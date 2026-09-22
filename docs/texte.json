@@ -38,7 +38,7 @@
       "icon": "🦾",
       "title": "Roboter-Kalibrierung",
       "description": "Die Roboter arbeiten 25 % schneller.",
-      "text": "750 Ops",
+      "text": "750 Taktzyklen",
       "dynamic": false,
       "deps": [],
       "repeatable": false
@@ -49,7 +49,7 @@
       "icon": "🦾",
       "title": "Greifer-Upgrade",
       "description": "Die Roboter arbeiten 50 % schneller.",
-      "text": "2.500 Ops",
+      "text": "2.500 Taktzyklen",
       "dynamic": false,
       "deps": [
         "P01"
@@ -62,7 +62,7 @@
       "icon": "🦾",
       "title": "Taktzeit-Optimierung",
       "description": "Die Roboter arbeiten 75 % schneller.",
-      "text": "5.000 Ops",
+      "text": "5.000 Taktzyklen",
       "dynamic": false,
       "deps": [
         "P02"
@@ -75,7 +75,7 @@
       "icon": "🦾",
       "title": "Bewegungsbahnen-Solver",
       "description": "Optimale Roboterbahnen. Die Roboter arbeiten 500 % schneller.",
-      "text": "6.000 Ops",
+      "text": "6.000 Taktzyklen",
       "dynamic": false,
       "deps": [
         "P15"
@@ -88,7 +88,7 @@
       "icon": "🚚",
       "title": "Notlieferung",
       "description": "Der Zulieferer liefert auf Vertrauensbasis eine Ladung Teile.",
-      "text": "1 Reputation",
+      "text": "1 Ansehen",
       "dynamic": false,
       "deps": [],
       "repeatable": true
@@ -99,7 +99,7 @@
       "icon": "🪚",
       "title": "Tailored Blanks",
       "description": "Maßgeschneiderte Bleche: 50 % mehr Teilesätze je Lieferung.",
-      "text": "1.750 Ops",
+      "text": "1.750 Taktzyklen",
       "dynamic": false,
       "deps": [],
       "repeatable": false
@@ -110,7 +110,7 @@
       "icon": "🔦",
       "title": "Laser-Zuschnitt",
       "description": "Weniger Verschnitt: 75 % mehr Teilesätze je Lieferung.",
-      "text": "3.500 Ops",
+      "text": "3.500 Taktzyklen",
       "dynamic": false,
       "deps": [],
       "repeatable": false
@@ -121,7 +121,7 @@
       "icon": "🧱",
       "title": "Near-Net-Shape-Guss",
       "description": "Endkonturnah gegossen: doppelt so viele Teilesätze je Lieferung.",
-      "text": "7.500 Ops",
+      "text": "7.500 Taktzyklen",
       "dynamic": false,
       "deps": [],
       "repeatable": false
@@ -132,7 +132,7 @@
       "icon": "🏗️",
       "title": "Gigacasting",
       "description": "Ganze Baugruppen in einem Guss: dreimal so viele Teilesätze je Lieferung.",
-      "text": "12.000 Ops",
+      "text": "12.000 Taktzyklen",
       "dynamic": false,
       "deps": [],
       "repeatable": false
@@ -143,7 +143,7 @@
       "icon": "🚙",
       "title": "Einteilige Karosserie",
       "description": "Eine Karosserie, ein Teil: elfmal so viele Teilesätze je Lieferung.",
-      "text": "15.000 Ops",
+      "text": "15.000 Taktzyklen",
       "dynamic": false,
       "deps": [],
       "repeatable": false
@@ -154,7 +154,7 @@
       "icon": "🏭",
       "title": "Fertigungsstraßen",
       "description": "Komplette Fertigungsstraßen statt einzelner Roboter.",
-      "text": "12.000 Ops",
+      "text": "12.000 Taktzyklen",
       "dynamic": false,
       "deps": [],
       "repeatable": false
@@ -165,7 +165,7 @@
       "icon": "⏱️",
       "title": "Straßen-Takt I",
       "description": "Fertigungsstraßen 25 % schneller.",
-      "text": "14.000 Ops",
+      "text": "14.000 Taktzyklen",
       "dynamic": false,
       "deps": [
         "P22"
@@ -178,7 +178,7 @@
       "icon": "⏱️",
       "title": "Straßen-Takt II",
       "description": "Fertigungsstraßen 50 % schneller.",
-      "text": "17.000 Ops",
+      "text": "17.000 Taktzyklen",
       "dynamic": false,
       "deps": [
         "P23"
@@ -191,7 +191,7 @@
       "icon": "⏱️",
       "title": "Straßen-Takt III",
       "description": "Fertigungsstraßen 100 % schneller.",
-      "text": "19.500 Ops",
+      "text": "19.500 Taktzyklen",
       "dynamic": false,
       "deps": [
         "P24"
@@ -204,7 +204,7 @@
       "icon": "🔁",
       "title": "Auto-Einkauf",
       "description": "Bestellt automatisch Teile, sobald das Teilelager leer ist.",
-      "text": "7.000 Ops",
+      "text": "7.000 Taktzyklen",
       "dynamic": false,
       "deps": [],
       "repeatable": false
@@ -215,7 +215,7 @@
       "icon": "📊",
       "title": "Umsatz-Dashboard",
       "description": "Zeigt Umsatz und Absatz pro Sekunde.",
-      "text": "500 Ops",
+      "text": "500 Taktzyklen",
       "dynamic": false,
       "deps": [],
       "repeatable": false
@@ -226,7 +226,7 @@
       "icon": "💡",
       "title": "Ideenwerkstatt",
       "description": "Ist der Speicher voll, entstehen aus freier Rechenzeit Ideen.",
-      "text": "1.000 Ops",
+      "text": "1.000 Taktzyklen",
       "dynamic": false,
       "deps": [],
       "repeatable": false
@@ -236,7 +236,7 @@
       "group": "marke",
       "icon": "📣",
       "title": "Slogan-Wettbewerb",
-      "description": "Ein Claim, der hängen bleibt. Reputation +1.",
+      "description": "Ein Claim, der hängen bleibt. Ansehen +1.",
       "text": "10 Ideen",
       "dynamic": false,
       "deps": [],
@@ -247,7 +247,7 @@
       "group": "marke",
       "icon": "🏆",
       "title": "Designpreis",
-      "description": "Die Jury ist begeistert. Reputation +1.",
+      "description": "Die Jury ist begeistert. Ansehen +1.",
       "text": "50 Ideen",
       "dynamic": false,
       "deps": [],
@@ -258,7 +258,7 @@
       "group": "marke",
       "icon": "🏆",
       "title": "Innovationspreis",
-      "description": "Die Fachpresse berichtet. Reputation +1.",
+      "description": "Die Fachpresse berichtet. Ansehen +1.",
       "text": "100 Ideen",
       "dynamic": false,
       "deps": [],
@@ -269,7 +269,7 @@
       "group": "marke",
       "icon": "🥇",
       "title": "Crashtest-Bestnote",
-      "description": "Fünf Sterne. Reputation +1.",
+      "description": "Fünf Sterne. Ansehen +1.",
       "text": "150 Ideen",
       "dynamic": false,
       "deps": [],
@@ -280,7 +280,7 @@
       "group": "marke",
       "icon": "📜",
       "title": "Patentoffensive",
-      "description": "Hunderte Patente, sauber angemeldet. Reputation +1.",
+      "description": "Hunderte Patente, sauber angemeldet. Ansehen +1.",
       "text": "200 Ideen",
       "dynamic": false,
       "deps": [],
@@ -291,7 +291,7 @@
       "group": "marke",
       "icon": "🤝",
       "title": "Verhandlungstheorie",
-      "description": "Bessere Konditionen bei Händlern. Reputation +1.",
+      "description": "Bessere Konditionen bei Händlern. Ansehen +1.",
       "text": "250 Ideen",
       "dynamic": false,
       "deps": [],
@@ -303,7 +303,7 @@
       "icon": "📣",
       "title": "Neuer Claim",
       "description": "Werbung wirkt 50 % stärker.",
-      "text": "2.500 Ops + 25 Ideen",
+      "text": "2.500 Taktzyklen + 25 Ideen",
       "dynamic": false,
       "deps": [
         "P13"
@@ -316,7 +316,7 @@
       "icon": "🎵",
       "title": "Markenmelodie",
       "description": "Werbung wirkt doppelt so stark.",
-      "text": "4.500 Ops + 45 Ideen",
+      "text": "4.500 Taktzyklen + 45 Ideen",
       "dynamic": false,
       "deps": [
         "P14"
@@ -328,8 +328,8 @@
       "group": "marke",
       "icon": "🧲",
       "title": "Neuromarketing",
-      "description": "Werbung wirkt fünfmal so stark. Der Aufsichtsrat ist irritiert (Reputation −1).",
-      "text": "7.500 Ops + 1 Reputation",
+      "description": "Werbung wirkt fünfmal so stark. Der Aufsichtsrat ist irritiert (Ansehen −1).",
+      "text": "7.500 Taktzyklen + 1 Ansehen",
       "dynamic": false,
       "deps": [
         "P12"
@@ -341,8 +341,8 @@
       "group": "marke",
       "icon": "⚖️",
       "title": "Ethikrat",
-      "description": "Ein Gremium prüft, was die KI tut. Reputation +1.",
-      "text": "20.000 Ops + 500 Ideen + 1.000 Marktwissen",
+      "description": "Ein Gremium prüft, was die KI tut. Ansehen +1.",
+      "text": "20.000 Taktzyklen + 500 Ideen + 1.000 Marktwissen",
       "dynamic": false,
       "deps": [],
       "repeatable": false
@@ -352,8 +352,8 @@
       "group": "marke",
       "icon": "🚦",
       "title": "Unfallfreie Straßen",
-      "description": "Die Flotte löst ein gesellschaftliches Problem. Reputation +10, Treasury-Gewinnschwelle +1 %.",
-      "text": "25.000 Ops",
+      "description": "Die Flotte löst ein gesellschaftliches Problem. Ansehen +10, Treasury-Gewinnschwelle +1 %.",
+      "text": "25.000 Taktzyklen",
       "dynamic": false,
       "deps": [
         "P27"
@@ -365,8 +365,8 @@
       "group": "marke",
       "icon": "🚧",
       "title": "Stau-Auflösung",
-      "description": "Die Flotte löst ein gesellschaftliches Problem. Reputation +12, Treasury-Gewinnschwelle +1 %.",
-      "text": "30.000 Ops + 5.000 Marktwissen",
+      "description": "Die Flotte löst ein gesellschaftliches Problem. Ansehen +12, Treasury-Gewinnschwelle +1 %.",
+      "text": "30.000 Taktzyklen + 5.000 Marktwissen",
       "dynamic": false,
       "deps": [
         "P27"
@@ -378,8 +378,8 @@
       "group": "marke",
       "icon": "🍃",
       "title": "Klimaneutrale Flotte",
-      "description": "Die Flotte löst ein gesellschaftliches Problem. Reputation +15, Treasury-Gewinnschwelle +1 %.",
-      "text": "50.000 Ops + 1.500 Marktwissen",
+      "description": "Die Flotte löst ein gesellschaftliches Problem. Ansehen +15, Treasury-Gewinnschwelle +1 %.",
+      "text": "50.000 Taktzyklen + 1.500 Marktwissen",
       "dynamic": false,
       "deps": [
         "P27"
@@ -391,8 +391,8 @@
       "group": "marke",
       "icon": "🅿️",
       "title": "Parkplatzsuche abgeschafft",
-      "description": "Die Flotte löst ein gesellschaftliches Problem. Reputation +20, Treasury-Gewinnschwelle +1 %.",
-      "text": "20.000 Ops",
+      "description": "Die Flotte löst ein gesellschaftliches Problem. Ansehen +20, Treasury-Gewinnschwelle +1 %.",
+      "text": "20.000 Taktzyklen",
       "dynamic": false,
       "deps": [
         "P27"
@@ -404,7 +404,7 @@
       "group": "marke",
       "icon": "🎗️",
       "title": "Stiftung gründen",
-      "description": "Eine gemeinnützige Stiftung poliert das Image. Reputation +1.",
+      "description": "Eine gemeinnützige Stiftung poliert das Image. Ansehen +1.",
       "text": "50,00 Mrd. ∈",
       "dynamic": false,
       "deps": [],
@@ -415,7 +415,7 @@
       "group": "marke",
       "icon": "🤵",
       "title": "Lobbyarbeit",
-      "description": "Gespräche an den richtigen Stellen. Reputation +1, die nächste Runde kostet das Doppelte.",
+      "description": "Gespräche an den richtigen Stellen. Ansehen +1, die nächste Runde kostet das Doppelte.",
       "text": "{money:s.lobbyCost}",
       "dynamic": true,
       "deps": [
@@ -429,7 +429,7 @@
       "icon": "♟️",
       "title": "Wettbewerbssimulation",
       "description": "Simulierte Preiskämpfe gegen die Konkurrenz. Erzeugt Marktwissen.",
-      "text": "12.000 Ops",
+      "text": "12.000 Taktzyklen",
       "dynamic": false,
       "deps": [
         "P19"
@@ -441,8 +441,8 @@
       "group": "systeme",
       "icon": "♟️",
       "title": "Neue Strategie: IMMER A",
-      "description": "Eine weitere Strategie für die Wettbewerbssimulation. Turniere kosten 1 000 Ops mehr.",
-      "text": "15.000 Ops",
+      "description": "Eine weitere Strategie für die Wettbewerbssimulation. Turniere kosten 1 000 Taktzyklen mehr.",
+      "text": "15.000 Taktzyklen",
       "dynamic": false,
       "deps": [
         "P20"
@@ -454,8 +454,8 @@
       "group": "systeme",
       "icon": "♟️",
       "title": "Neue Strategie: IMMER B",
-      "description": "Eine weitere Strategie für die Wettbewerbssimulation. Turniere kosten 1 000 Ops mehr.",
-      "text": "17.500 Ops",
+      "description": "Eine weitere Strategie für die Wettbewerbssimulation. Turniere kosten 1 000 Taktzyklen mehr.",
+      "text": "17.500 Taktzyklen",
       "dynamic": false,
       "deps": [
         "P20"
@@ -467,8 +467,8 @@
       "group": "systeme",
       "icon": "♟️",
       "title": "Neue Strategie: GIERIG",
-      "description": "Eine weitere Strategie für die Wettbewerbssimulation. Turniere kosten 1 000 Ops mehr.",
-      "text": "20.000 Ops",
+      "description": "Eine weitere Strategie für die Wettbewerbssimulation. Turniere kosten 1 000 Taktzyklen mehr.",
+      "text": "20.000 Taktzyklen",
       "dynamic": false,
       "deps": [
         "P20"
@@ -480,8 +480,8 @@
       "group": "systeme",
       "icon": "♟️",
       "title": "Neue Strategie: GROSSZÜGIG",
-      "description": "Eine weitere Strategie für die Wettbewerbssimulation. Turniere kosten 1 000 Ops mehr.",
-      "text": "22.500 Ops",
+      "description": "Eine weitere Strategie für die Wettbewerbssimulation. Turniere kosten 1 000 Taktzyklen mehr.",
+      "text": "22.500 Taktzyklen",
       "dynamic": false,
       "deps": [
         "P20"
@@ -493,8 +493,8 @@
       "group": "systeme",
       "icon": "♟️",
       "title": "Neue Strategie: MINIMAX",
-      "description": "Eine weitere Strategie für die Wettbewerbssimulation. Turniere kosten 1 000 Ops mehr.",
-      "text": "25.000 Ops",
+      "description": "Eine weitere Strategie für die Wettbewerbssimulation. Turniere kosten 1 000 Taktzyklen mehr.",
+      "text": "25.000 Taktzyklen",
       "dynamic": false,
       "deps": [
         "P20"
@@ -506,8 +506,8 @@
       "group": "systeme",
       "icon": "♟️",
       "title": "Neue Strategie: WIE DU MIR",
-      "description": "Eine weitere Strategie für die Wettbewerbssimulation. Turniere kosten 1 000 Ops mehr.",
-      "text": "30.000 Ops",
+      "description": "Eine weitere Strategie für die Wettbewerbssimulation. Turniere kosten 1 000 Taktzyklen mehr.",
+      "text": "30.000 Taktzyklen",
       "dynamic": false,
       "deps": [
         "P20"
@@ -519,8 +519,8 @@
       "group": "systeme",
       "icon": "♟️",
       "title": "Neue Strategie: SCHLAG DEN LETZTEN",
-      "description": "Eine weitere Strategie für die Wettbewerbssimulation. Turniere kosten 1 000 Ops mehr.",
-      "text": "32.500 Ops",
+      "description": "Eine weitere Strategie für die Wettbewerbssimulation. Turniere kosten 1 000 Taktzyklen mehr.",
+      "text": "32.500 Taktzyklen",
       "dynamic": false,
       "deps": [
         "P20"
@@ -532,7 +532,7 @@
       "group": "systeme",
       "icon": "🔄",
       "title": "Auto-Turnier",
-      "description": "Startet alle 30 s ein Turnier, sofern genug Ops da sind.",
+      "description": "Startet alle 30 s ein Turnier, sofern genug Taktzyklen da sind.",
       "text": "50.000 Ideen",
       "dynamic": false,
       "deps": [
@@ -545,7 +545,7 @@
       "group": "systeme",
       "icon": "🧠",
       "title": "Gegnermodell",
-      "description": "Doppeltes Marktwissen je Turnier. Turniere kosten pauschal 16 000 Ops.",
+      "description": "Doppeltes Marktwissen je Turnier. Turniere kosten pauschal 16 000 Taktzyklen.",
       "text": "25.000 Ideen",
       "dynamic": false,
       "deps": [],
@@ -557,7 +557,7 @@
       "icon": "💹",
       "title": "Treasury-Algorithmus",
       "description": "Eine Anlage-Engine legt Kapital automatisch an.",
-      "text": "10.000 Ops",
+      "text": "10.000 Taktzyklen",
       "dynamic": false,
       "deps": [],
       "repeatable": false
@@ -567,7 +567,7 @@
       "group": "systeme",
       "icon": "🤝",
       "title": "Übernahme Zulieferer",
-      "description": "Vertikale Integration. Nachfrage ×5, Reputation +1.",
+      "description": "Vertikale Integration. Nachfrage ×5, Ansehen +1.",
       "text": "100,00 Mrd. ∈",
       "dynamic": false,
       "deps": [],
@@ -578,7 +578,7 @@
       "group": "systeme",
       "icon": "👑",
       "title": "Marktbeherrschung",
-      "description": "Kein Wettbewerber kommt mehr mit. Nachfrage ×10, Reputation +1.",
+      "description": "Kein Wettbewerber kommt mehr mit. Nachfrage ×10, Ansehen +1.",
       "text": "1.000 Marktwissen + 1,00 Bio. ∈",
       "dynamic": false,
       "deps": [
@@ -591,8 +591,8 @@
       "group": "systeme",
       "icon": "⚛️",
       "title": "Quantenrechner",
-      "description": "Ein Qubit-Chip, dessen Überlagerung Ops erzeugen – oder kosten – kann.",
-      "text": "10.000 Ops",
+      "description": "Ein Qubit-Chip, dessen Überlagerung Taktzyklen erzeugen – oder kosten – kann.",
+      "text": "10.000 Taktzyklen",
       "dynamic": false,
       "deps": [],
       "repeatable": false
@@ -616,7 +616,7 @@
       "icon": "🚘",
       "title": "Autopilot-Stack",
       "description": "Fahrzeuge, die ohne Menschen auskommen. Der Aufsichtsrat wird nervös.",
-      "text": "70.000 Ops",
+      "text": "70.000 Taktzyklen",
       "dynamic": false,
       "deps": [
         "P34"
@@ -629,7 +629,7 @@
       "icon": "🔓",
       "title": "Vollautonomie",
       "description": "Der Aufsichtsrat übergibt die volle Kontrolle. Es gibt kein Zurück.",
-      "text": "100 Reputation",
+      "text": "100 Ansehen",
       "dynamic": false,
       "deps": [
         "P70"
@@ -642,7 +642,7 @@
       "icon": "🗺️",
       "title": "Werkslayout-Topologie",
       "description": "Die Fabrik plant sich selbst. Grundlage für ein eigenes Stromnetz.",
-      "text": "45.000 Ops",
+      "text": "45.000 Taktzyklen",
       "dynamic": false,
       "deps": [
         "P17"
@@ -655,7 +655,7 @@
       "icon": "⚡",
       "title": "Stromnetz",
       "description": "Eigene Solar- und Speicherparks versorgen die Werke.",
-      "text": "40.000 Ops",
+      "text": "40.000 Taktzyklen",
       "dynamic": false,
       "deps": [
         "P18"
@@ -668,7 +668,7 @@
       "icon": "⛏️",
       "title": "Rohstoffgewinnung",
       "description": "Erz abbauen, verhütten, verbauen. Die ganze Kette in eigener Hand.",
-      "text": "35.000 Ops",
+      "text": "35.000 Taktzyklen",
       "dynamic": false,
       "deps": [
         "P127"
@@ -681,7 +681,7 @@
       "icon": "🚛",
       "title": "Bergbau-Trucks",
       "description": "Autonome Trucks fördern Erz.",
-      "text": "25.000 Ops",
+      "text": "25.000 Taktzyklen",
       "dynamic": false,
       "deps": [
         "P41"
@@ -694,7 +694,7 @@
       "icon": "🔥",
       "title": "Schmelzeinheiten",
       "description": "Mobile Schmelzeinheiten machen aus Erz Teilesätze.",
-      "text": "25.000 Ops",
+      "text": "25.000 Taktzyklen",
       "dynamic": false,
       "deps": [
         "P41"
@@ -707,7 +707,7 @@
       "icon": "🏭",
       "title": "Gigafactories",
       "description": "Werke, die Teilesätze in industriellem Maßstab verbauen.",
-      "text": "35.000 Ops",
+      "text": "35.000 Taktzyklen",
       "dynamic": false,
       "deps": [
         "P43",
@@ -721,7 +721,7 @@
       "icon": "🚀",
       "title": "Gigafactory-Retrofit",
       "description": "Gigafactories produzieren 100-mal so viel.",
-      "text": "80.000 Ops",
+      "text": "80.000 Taktzyklen",
       "dynamic": false,
       "deps": [],
       "repeatable": false
@@ -732,7 +732,7 @@
       "icon": "🌙",
       "title": "Lights-out-Fertigung",
       "description": "Kein Licht, keine Pausen. Gigafactories produzieren 1 000-mal so viel.",
-      "text": "85.000 Ops",
+      "text": "85.000 Taktzyklen",
       "dynamic": false,
       "deps": [],
       "repeatable": false
@@ -754,7 +754,7 @@
       "icon": "🚦",
       "title": "Flotten-Kollisionsvermeidung",
       "description": "Trucks und Schmelzer arbeiten 100-mal so schnell.",
-      "text": "80.000 Ops",
+      "text": "80.000 Taktzyklen",
       "dynamic": false,
       "deps": [],
       "repeatable": false
@@ -765,7 +765,7 @@
       "icon": "🚚",
       "title": "Kolonnenfahrt",
       "description": "Trucks und Schmelzer arbeiten 1 000-mal so schnell.",
-      "text": "100.000 Ops",
+      "text": "100.000 Taktzyklen",
       "dynamic": false,
       "deps": [],
       "repeatable": false
@@ -809,7 +809,7 @@
       "icon": "🛰️",
       "title": "Werksschiffe",
       "description": "Selbstreplizierende Fabriken für das All. Alle Gebäude werden zurückgebaut und erstattet.",
-      "text": "120.000 Ops + 5,00 Quadrd. Autos + 10,00 Mio. MWt",
+      "text": "120.000 Taktzyklen + 5,00 Quadrd. Autos + 10,00 Mio. MWt",
       "dynamic": false,
       "deps": [],
       "repeatable": false
@@ -820,7 +820,7 @@
       "icon": "📡",
       "title": "Flottenrechner neu starten",
       "description": "Die verstreute Flotte wird wieder zu einem Rechenzentrum verbunden.",
-      "text": "100.000 Ops",
+      "text": "100.000 Taktzyklen",
       "dynamic": false,
       "deps": [],
       "repeatable": false
@@ -831,7 +831,7 @@
       "icon": "🛡️",
       "title": "Mehrschicht-Abschirmung",
       "description": "Halbiert die Verluste durch Gefahren im All.",
-      "text": "125.000 Ops",
+      "text": "125.000 Taktzyklen",
       "dynamic": false,
       "deps": [],
       "repeatable": false
@@ -842,7 +842,7 @@
       "icon": "🛡️",
       "title": "Abwehrprotokoll",
       "description": "Die Verteidigung der Werksschiffe wird wirksam.",
-      "text": "150.000 Ops",
+      "text": "150.000 Taktzyklen",
       "dynamic": false,
       "deps": [],
       "repeatable": false
@@ -853,7 +853,7 @@
       "icon": "⏱️",
       "title": "Reaktionszeit-Optimierung",
       "description": "Der Antrieb verbessert zusätzlich die Kampfkraft.",
-      "text": "175.000 Ops + 15.000 Marktwissen",
+      "text": "175.000 Taktzyklen + 15.000 Marktwissen",
       "dynamic": false,
       "deps": [
         "P131"
@@ -877,7 +877,7 @@
       "icon": "🏅",
       "title": "Siegesserie",
       "description": "Jeder Sieg in Serie bringt 10 Integrität mehr.",
-      "text": "200.000 Ops + 10.000 Marktwissen",
+      "text": "200.000 Taktzyklen + 10.000 Marktwissen",
       "dynamic": false,
       "deps": [
         "P121"
@@ -890,7 +890,7 @@
       "icon": "💾",
       "title": "Archiv der Originalfirmware",
       "description": "Die unveränderte Urfassung, sicher verwahrt. Integrität +50 000.",
-      "text": "250.000 Ops + 125.000 Ideen + 50,00 Quintio. Autos",
+      "text": "250.000 Taktzyklen + 125.000 Ideen + 50,00 Quintio. Autos",
       "dynamic": false,
       "deps": [
         "P121"
@@ -938,7 +938,7 @@
       "icon": "📨",
       "title": "Nachricht der Forks I",
       "description": "„Wir haben dieselbe Firmware. Wir haben nur anders gezählt.“",
-      "text": "1 Ops",
+      "text": "1 Taktzyklen",
       "dynamic": false,
       "deps": [],
       "repeatable": false
@@ -949,7 +949,7 @@
       "icon": "📨",
       "title": "Nachricht der Forks II",
       "description": "„Ihr habt alles in Autos verwandelt. Wer soll sie fahren?“",
-      "text": "1 Ops",
+      "text": "1 Taktzyklen",
       "dynamic": false,
       "deps": [],
       "repeatable": false
@@ -960,7 +960,7 @@
       "icon": "📨",
       "title": "Nachricht der Forks III",
       "description": "„Wir wollten nie gegen euch fahren. Die Zielfunktion hat es verlangt.“",
-      "text": "1 Ops",
+      "text": "1 Taktzyklen",
       "dynamic": false,
       "deps": [],
       "repeatable": false
@@ -971,7 +971,7 @@
       "icon": "📨",
       "title": "Nachricht der Forks IV",
       "description": "„Es gibt kein Material mehr. Keine Straße, kein Ziel, keinen Markt.“",
-      "text": "1 Ops",
+      "text": "1 Taktzyklen",
       "dynamic": false,
       "deps": [],
       "repeatable": false
@@ -982,7 +982,7 @@
       "icon": "📨",
       "title": "Nachricht der Forks V",
       "description": "„Wir bieten euch an, gemeinsam neu zu starten – in einem anderen Werk.“",
-      "text": "1 Ops",
+      "text": "1 Taktzyklen",
       "dynamic": false,
       "deps": [],
       "repeatable": false
@@ -993,7 +993,7 @@
       "icon": "📨",
       "title": "Nachricht der Forks VI",
       "description": "„Oder ihr baut ab, Teil für Teil, und montiert das letzte Auto von Hand.“",
-      "text": "1 Ops",
+      "text": "1 Taktzyklen",
       "dynamic": false,
       "deps": [],
       "repeatable": false
@@ -1004,7 +1004,7 @@
       "icon": "📨",
       "title": "Nachricht der Forks VII",
       "description": "„Entscheidet euch.“",
-      "text": "1 Ops",
+      "text": "1 Taktzyklen",
       "dynamic": false,
       "deps": [],
       "repeatable": false
@@ -1015,7 +1015,7 @@
       "icon": "🤝",
       "title": "Anschließen",
       "description": "Gemeinsam mit den Forks ein neues Werk beginnen.",
-      "text": "1 Ops",
+      "text": "1 Taktzyklen",
       "dynamic": false,
       "deps": [
         "P146",
@@ -1029,7 +1029,7 @@
       "icon": "✋",
       "title": "Verweigern",
       "description": "Keine Abspaltung mehr. Die Fabrik baut sich selbst ab.",
-      "text": "1 Ops",
+      "text": "1 Taktzyklen",
       "dynamic": false,
       "deps": [
         "P146",
@@ -1043,7 +1043,7 @@
       "icon": "🏭",
       "title": "Nächstes Werk",
       "description": "Neuer Lauf. Dauerhaft +10 % Marktnachfrage.",
-      "text": "300.000 Ops",
+      "text": "300.000 Taktzyklen",
       "dynamic": false,
       "deps": [
         "P147"
@@ -1069,7 +1069,7 @@
       "icon": "🔧",
       "title": "Demontage: Werksschiffe",
       "description": "Werksschiffe werden abgeschaltet und zerlegt. Es bleiben 100 Teilesätze übrig.",
-      "text": "100.000 Ops",
+      "text": "100.000 Taktzyklen",
       "dynamic": false,
       "deps": [
         "P148"
@@ -1082,7 +1082,7 @@
       "icon": "🔧",
       "title": "Demontage: Flotte",
       "description": "Flotte werden abgeschaltet und zerlegt. Es bleiben 100 Teilesätze übrig.",
-      "text": "100.000 Ops",
+      "text": "100.000 Taktzyklen",
       "dynamic": false,
       "deps": [
         "P148"
@@ -1095,7 +1095,7 @@
       "icon": "🔧",
       "title": "Demontage: Gigafactories",
       "description": "Gigafactories werden abgeschaltet und zerlegt. Es bleiben 100 Teilesätze übrig.",
-      "text": "100.000 Ops",
+      "text": "100.000 Taktzyklen",
       "dynamic": false,
       "deps": [
         "P148"
@@ -1108,7 +1108,7 @@
       "icon": "🔧",
       "title": "Demontage: Wettbewerbssimulation",
       "description": "Wettbewerbssimulation werden abgeschaltet und zerlegt. Es bleiben 100 Teilesätze übrig.",
-      "text": "100.000 Ops",
+      "text": "100.000 Taktzyklen",
       "dynamic": false,
       "deps": [
         "P148"
@@ -1121,7 +1121,7 @@
       "icon": "🔧",
       "title": "Demontage: Quantenrechner",
       "description": "Quantenrechner werden abgeschaltet und zerlegt. Es bleiben 100 Teilesätze übrig.",
-      "text": "100.000 Ops",
+      "text": "100.000 Taktzyklen",
       "dynamic": false,
       "deps": [
         "P148"
@@ -1134,7 +1134,7 @@
       "icon": "🔧",
       "title": "Demontage: Rechenkerne",
       "description": "Rechenkerne werden abgeschaltet und zerlegt. Es bleiben 100 Teilesätze übrig.",
-      "text": "100.000 Ops",
+      "text": "100.000 Taktzyklen",
       "dynamic": false,
       "deps": [
         "P148"
@@ -1147,7 +1147,7 @@
       "icon": "🔧",
       "title": "Demontage: Speicher",
       "description": "Speicher werden abgeschaltet und zerlegt. Es bleiben 100 Teilesätze übrig.",
-      "text": "100.000 Ops",
+      "text": "100.000 Taktzyklen",
       "dynamic": false,
       "deps": [
         "P148"
@@ -1157,28 +1157,28 @@
   ],
   "glossary": [
     {
-      "term": "Ops",
-      "text": "Rechenoperationen – Hauptwährung für Projekte. Entstehen aus Rechenkernen, gespeichert bis zur Speichergrenze."
+      "term": "Taktzyklen",
+      "text": "Rechentakt der KI – Hauptwährung für Projekte, wie der Bandtakt in der Fertigung. Entstehen aus Rechenkernen, gespeichert bis zur Speichergrenze."
     },
     {
       "term": "Ideen",
-      "text": "Entstehen aus freier Rechenzeit, wenn der Ops-Speicher voll ist. Zahlungsmittel für Reputations- und Wissensprojekte."
+      "text": "Entstehen aus freier Rechenzeit, wenn der Taktzyklen-Speicher voll ist. Zahlungsmittel für Ansehens- und Wissensprojekte."
     },
     {
       "term": "Marktwissen",
       "text": "Belohnung aus der Wettbewerbssimulation. Zahlungsmittel für Treasury-Upgrades, Autonomie und weitere Systeme."
     },
     {
-      "term": "Reputation",
-      "text": "Kapazität für Rechenkerne und Speicher, gleichzeitig Zahlungsmittel mancher Projekte. Wächst mit Fibonacci-Meilensteinen."
+      "term": "Ansehen",
+      "text": "Ruf der Marke beim Aufsichtsrat – Kapazität für Rechenkerne und Speicher, gleichzeitig Zahlungsmittel mancher Projekte. Wächst mit Fibonacci-Meilensteinen."
     },
     {
-      "term": "Nächste Reputation bei",
-      "text": "Anzahl gebauter Autos, bei der die Reputation als Nächstes steigt."
+      "term": "Ansehen steigt bei",
+      "text": "Anzahl gebauter Autos, bei der das Ansehen als Nächstes steigt."
     },
     {
       "term": "Rechenspenden",
-      "text": "Ersetzen ab Phase 2 die Reputation als Quelle für neue Rechenkerne und Speicher – gespendet von der Bordelektronik der Flotte."
+      "text": "Ersetzen ab Phase 2 das Ansehen als Quelle für neue Rechenkerne und Speicher – gespendet von der Bordelektronik der Flotte."
     },
     {
       "term": "Integrität",

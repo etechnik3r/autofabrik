@@ -64,7 +64,7 @@ export const strategyPanel = definePanel({
       }
       if (select.value !== String(s.strategy.selected)) select.value = String(s.strategy.selected);
     });
-    p.button((s) => `Turnier starten (${fmtNum(tourneyCost(s, b))} Ops)`, { type: 'runTourney' });
+    p.button((s) => `Turnier starten (${fmtNum(tourneyCost(s, b))} Taktzyklen)`, { type: 'runTourney' });
     p.text((s) => (s.flags.autoTourney ? 'Auto-Turnier aktiv (alle 30 s).' : ''), 'hint');
     const result = p.add(h('div', 'tourney'));
     p.bind((s) => {
@@ -112,6 +112,6 @@ export const quantumPanel = definePanel({
     });
     p.button('Berechnen', { type: 'quantum' }, { cls: 'btn primary' });
     p.stat('Überlagerung', (s) => (quantumSum(s, b) >= 0 ? '+' : '−'));
-    p.stat('Letztes Ergebnis', (s) => (s.quantum.last === null ? '–' : `${s.quantum.last > 0 ? '+' : ''}${fmtNum(s.quantum.last)} Ops`));
+    p.stat('Letztes Ergebnis', (s) => (s.quantum.last === null ? '–' : `${s.quantum.last > 0 ? '+' : ''}${fmtNum(s.quantum.last)} Taktzyklen`));
   },
 });

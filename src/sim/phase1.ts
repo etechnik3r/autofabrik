@@ -73,6 +73,6 @@ export function checkReputation(s: GameState, b: Balance): void {
     s.nextRep = b.reputation.scale * n;
     s.fibA = s.fibB;
     s.fibB = n;
-    log(s, `Der Aufsichtsrat ist zufrieden. Reputation +1 (jetzt ${s.rep}).`);
+    log(s, `Der Aufsichtsrat ist zufrieden. Ansehen +1 (jetzt ${s.rep}).`);
   }
 }
