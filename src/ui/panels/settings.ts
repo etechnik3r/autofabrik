@@ -1,3 +1,4 @@
+import { isPreviewLocked, setPreviewLocked } from '../cheats';
 import { Builder, h } from '../dom';
 import { isScientific, setScientific } from '../format';
 import { MAX_SPEED, MIN_SPEED, type Game } from '../game';
@@ -8,14 +9,19 @@ const SETTINGS_KEY = 'autofabrik.settings';
 interface Settings {
   scientific: boolean;
   theme: ThemeId;
+  previewLocked: boolean;
 }
 
 function readSettings(): Settings {
   try {
     const s = JSON.parse(localStorage.getItem(SETTINGS_KEY) ?? '{}');
-    return { scientific: !!s.scientific, theme: typeof s.theme === 'string' && isThemeId(s.theme) ? s.theme : 'system' };
+    return {
+      scientific: !!s.scientific,
+      theme: typeof s.theme === 'string' && isThemeId(s.theme) ? s.theme : 'system',
+      previewLocked: !!s.previewLocked,
+    };
   } catch {
-    return { scientific: false, theme: 'system' };
+    return { scientific: false, theme: 'system', previewLocked: false };
   }
 }
 
@@ -27,11 +33,12 @@ function writeSettings(patch: Partial<Settings>): void {
   }
 }
 
-/** Beim Start aufrufen: Zahlenformat und Farbschema aus dem vorigen Besuch übernehmen. */
+/** Beim Start aufrufen: Zahlenformat, Farbschema und Cheat-Zone aus dem vorigen Besuch übernehmen. */
 export function loadSettings(): void {
   const s = readSettings();
   setScientific(s.scientific);
   applyTheme(s.theme);
+  setPreviewLocked(s.previewLocked);
 }
 
 /**
@@ -77,11 +84,13 @@ export function buildSettings(builder: Builder, game: Game, close: () => void): 
     r.command('Importieren', () => say(game.importSave(area.value) ? 'Spielstand geladen.' : 'Ungültiger Spielstand.'));
   });
 
-  builder.heading('Geschwindigkeit');
+  builder.heading('Cheat-Zone');
   builder.text(
-    `Nur bei ×${MIN_SPEED} läuft wirklich ein „echtes“ Spiel. Höhere Werte beschleunigen die Simulation testweise, um die Mechanik schnell durchzuklicken – gedacht zum Testen, nicht zum eigentlichen Spielen.`,
+    `Werkzeuge zum Testen, kein normales Spielerlebnis. Nur bei ×${MIN_SPEED} Geschwindigkeit und ohne Projekt-Vorschau läuft wirklich ein „echtes“ Spiel.`,
     'hint',
   );
+
+  builder.text('Geschwindigkeit: beschleunigt die Simulation testweise, um die Mechanik schnell durchzuklicken.', 'hint');
   const speedRow = builder.add(h('label', 'slider'));
   speedRow.append(`×${MIN_SPEED}`);
   const speedInput = speedRow.appendChild(document.createElement('input'));
@@ -98,6 +107,17 @@ export function buildSettings(builder: Builder, game: Game, close: () => void): 
     speedLabel.textContent =
       game.speed === MIN_SPEED ? `Aktuell: ×${MIN_SPEED} (echtes Spieltempo)` : `Aktuell: ×${game.speed} (Testmodus, kein echtes Spieltempo)`;
   });
+
+  builder.text('Projekt-Vorschau: zeigt noch nicht freigeschaltete Projekte grau in der Projektliste, ohne sie kaufbar zu machen.', 'hint');
+  const previewBtn = builder.command(
+    () => `Projekt-Vorschau: ${isPreviewLocked() ? 'an' : 'aus'}`,
+    () => {
+      setPreviewLocked(!isPreviewLocked());
+      writeSettings({ previewLocked: isPreviewLocked() });
+    },
+    'btn toggle',
+  );
+  builder.bind(() => previewBtn.classList.toggle('on', isPreviewLocked()));
 
   builder.heading('Zurücksetzen');
   builder.command(

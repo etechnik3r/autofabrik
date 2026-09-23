@@ -1,6 +1,7 @@
 import { opsCapacity } from '../../sim/formulas';
 import { allProjects, canBuyProject, costOf } from '../../sim/projects';
 import type { Cost, ProjectDef } from '../../sim/projects/types';
+import { isPreviewLocked } from '../cheats';
 import { definePanel, h } from '../dom';
 import { fmtMoney, fmtNum } from '../format';
 import { projectIcon } from '../icons';
@@ -66,7 +67,10 @@ export const projectsPanel = definePanel({
 
     p.bind((s) => {
       const visible = allProjects.filter((d) => s.projects[d.id]?.status === 1);
-      const ids = new Set(visible.map((d) => d.id));
+      // Cheat-Zone „Projekt-Vorschau“: noch nicht ausgelöste Projekte zusätzlich grau anzeigen,
+      // ohne sie kaufbar zu machen – reines Test-/Vorschau-Werkzeug, kein normales Spiel-Feature.
+      const locked = isPreviewLocked() ? allProjects.filter((d) => (s.projects[d.id]?.status ?? 0) === 0) : [];
+      const ids = new Set([...visible, ...locked].map((d) => d.id));
       for (const [id, c] of cards) {
         if (!ids.has(id)) {
           c.el.remove();
@@ -88,6 +92,7 @@ export const projectsPanel = definePanel({
           c = { el, cost, def, tag: '', isNew: false };
           cards.set(def.id, c);
         }
+        c.el.classList.remove('locked');
         const tag = `(${priceTag(costOf(s, b, def))})`;
         if (tag !== c.tag) c.cost.textContent = c.tag = tag;
         const disabled = !canBuyProject(s, b, def.id) || p.game.busy;
@@ -96,7 +101,25 @@ export const projectsPanel = definePanel({
         const isNew = (s.tick - shownAt) * b.tick.fastMs < NEW_HIGHLIGHT_MS;
         if (isNew !== c.isNew) c.el.classList.toggle('new', (c.isNew = isNew));
       }
-      empty.hidden = visible.length > 0;
+      for (const def of locked) {
+        let c = cards.get(def.id);
+        if (!c) {
+          const el = h('button', 'project locked');
+          el.type = 'button';
+          el.disabled = true;
+          const head = el.appendChild(h('span', 'phead'));
+          head.appendChild(h('span', 'picon', projectIcon(def.id, def.group)));
+          head.appendChild(h('span', 'ptitle', def.title));
+          const cost = el.appendChild(h('span', 'pcost', 'noch nicht freigeschaltet'));
+          el.appendChild(h('span', 'pdesc', def.description));
+          list.append(el);
+          c = { el, cost, def, tag: '', isNew: false };
+          cards.set(def.id, c);
+        }
+        c.el.classList.add('locked');
+        c.el.disabled = true;
+      }
+      empty.hidden = visible.length > 0 || locked.length > 0;
     });
   },
 });

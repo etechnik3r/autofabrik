@@ -11,6 +11,10 @@ Versionsnummern werden noch nicht vergeben (Projekt vor dem ersten Release).
 - Geschwindigkeitsregler (×1–×60) im Zahnrad-Menü, löst den bisherigen Ein/Aus-Entwicklermodus
   ab. Mit Hinweistext, dass nur bei ×1 wirklich ein „echtes“ Spiel läuft – höhere Werte sind
   ausdrücklich zum schnellen Testen der Mechanik gedacht.
+- Neues Kapitel „Cheat-Zone“ im Zahnrad-Menü, das den Geschwindigkeitsregler und eine neue
+  „Projekt-Vorschau“ bündelt: Ist sie aktiviert, zeigt die Projektliste zusätzlich noch nicht
+  freigeschaltete Projekte gestrichelt und blass an (nicht kaufbar), sodass man vorab sehen kann,
+  was als Nächstes kommt.
 
 ### Geändert
 - Der Zähler „Autos gebaut“ im Kopfbereich zeigt jetzt die volle Ziffernfolge (`fmtFull`) statt

@@ -494,6 +494,17 @@ body {
   border-radius: 3px;
 }
 
+/* Cheat-Zone „Projekt-Vorschau“: noch nicht freigeschaltete Projekte, gestrichelt und blass. */
+.project.locked {
+  border-style: dashed;
+  opacity: 0.5;
+}
+
+.project.locked .pcost {
+  color: var(--muted);
+  font-style: italic;
+}
+
 @keyframes pulse {
   0%,
   100% {
