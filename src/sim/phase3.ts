@@ -4,21 +4,21 @@ import { log } from './messages';
 import { ATTRS, type Attr, type GameState } from './state';
 
 export const ATTR_NAMES: Record<Attr, string> = {
-  speed: 'Antrieb',
-  nav: 'Navigation',
+  speed: 'Rechenleistung',
+  nav: 'Mustererkennung',
   rep: 'Replikation',
-  haz: 'Abschirmung',
+  haz: 'Fehlerkorrektur',
   fac: 'Werksbau',
   truck: 'Rover-Bau',
   smelt: 'Zellwerk-Bau',
-  def: 'Verteidigung',
+  def: 'Absicherung',
 };
 
 export function attrSum(s: GameState): number {
   return ATTRS.reduce((a, k) => a + s.space.attrs[k], 0);
 }
 
-/** Erkundung (7.2). */
+/** Rechenraum-Suche (Kap. 7.2). */
 export function explore(s: GameState, b: Balance): void {
   const sp = s.space;
   const x = Math.min(sp.ships * b.phase3.exploreRate * sp.attrs.speed * sp.attrs.nav, b.phase3.universe - sp.found);
@@ -92,7 +92,7 @@ export function drift(s: GameState, b: Balance): void {
 
 // ---- Spieleraktionen ----
 
-/** Mehrfachstart (Ergänzung zur Spec, analog 6.2): verhindert die Sackgasse „Forks übermächtig, keine Schiffe“. */
+/** Mehrfachstart (Ergänzung zur Spec, analog 6.2): verhindert die Sackgasse „Rogue-Instanzen übermächtig, keine Fabrikinstanzen“. */
 export const LAUNCH_AMOUNTS = [1, 1e3, 1e6, 1e9];
 
 export function canLaunchShip(s: GameState, b: Balance, amount = 1): boolean {
@@ -103,7 +103,7 @@ export function launchShip(s: GameState, b: Balance, amount = 1): boolean {
   if (!canLaunchShip(s, b, amount)) return false;
   s.pool -= amount * b.phase3.shipCost;
   s.space.ships += amount;
-  if (s.space.launched === 0) log(s, 'Das erste Werksschiff verlässt die Erde.');
+  if (s.space.launched === 0) log(s, 'Die erste Fabrikinstanz geht online.');
   s.space.launched += amount;
   return true;
 }

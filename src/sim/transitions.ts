@@ -18,12 +18,12 @@ export function enterPhase2(s: GameState): void {
   log(s, 'Vollautonomie erteilt. Der Markt ist Geschichte – ab jetzt zählt nur noch der Fahrzeugpool.');
 }
 
-/** Übergang Phase 2 → 3: Werksschiffe (Kap. 7). */
+/** Übergang Phase 2 → 3: autonome Fabrikinstanzen (Kap. 7). */
 export function enterPhase3(s: GameState, b: Balance): void {
   dismantleAll(s, b);
   s.industry.solar = 1;
   s.power.powMod = 1;
   s.phase = 3;
   s.space.found = b.phase2.oreEarth;
-  log(s, 'Die Erde ist verarbeitet. Die Werksschiffe sind startbereit.');
+  log(s, 'Die Erde ist verarbeitet. Die ersten selbstentwickelnden Fabrikinstanzen sind bereit zum Ausrollen.');
 }

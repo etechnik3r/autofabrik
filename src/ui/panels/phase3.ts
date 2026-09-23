@@ -7,29 +7,29 @@ import { fmtNum, fmtPct } from '../format';
 
 export const expansionPanel = definePanel({
   id: 'expansion',
-  title: 'Expansion',
+  title: 'Fabriknetzwerk',
   column: 3,
   visible: (s) => s.phase === 3,
   build(p) {
     const b = p.game.b;
-    p.stat('Erkundet', (s) => fmtPct((s.space.found / b.phase3.universe) * 100, 6));
+    p.stat('Rechenraum erschlossen', (s) => fmtPct((s.space.found / b.phase3.universe) * 100, 6));
     p.bar((s) => s.space.found / b.phase3.universe);
-    p.stat('Werksschiffe', (s) => fmtNum(s.space.ships));
+    p.stat('Fabrikinstanzen', (s) => fmtNum(s.space.ships));
     p.group('row', undefined, (r) => {
       for (const n of LAUNCH_AMOUNTS) {
-        r.button(`Start ×${fmtNum(n)}`, { type: 'launchShip', amount: n }, {
+        r.button(`Ausrollen ×${fmtNum(n)}`, { type: 'launchShip', amount: n }, {
           title: `Kosten: ${fmtNum(n * b.phase3.shipCost)} Autos`,
         });
       }
     });
-    p.stat('Gestartet', (s) => fmtNum(s.space.launched));
-    p.stat('Verloren: Gefahren', (s) => fmtNum(s.space.lostHazard));
-    p.stat('Verloren: Drift', (s) => fmtNum(s.space.lostDrift));
-    p.stat('Verloren: Konflikte', (s) => fmtNum(s.space.lostConflict));
-    p.stat('Forks', (s) => fmtNum(s.space.forks));
-    p.stat('Forks zerstört', (s) => fmtNum(s.space.forksDestroyed), (s) => s.space.forksDestroyed > 0);
+    p.stat('Ausgerollt', (s) => fmtNum(s.space.launched));
+    p.stat('Verloren: Systemausfälle', (s) => fmtNum(s.space.lostHazard));
+    p.stat('Verloren: Code-Drift', (s) => fmtNum(s.space.lostDrift));
+    p.stat('Verloren: Prioritätskonflikte', (s) => fmtNum(s.space.lostConflict));
+    p.stat('Rogue-Instanzen', (s) => fmtNum(s.space.forks));
+    p.stat('Rogue-Instanzen neutralisiert', (s) => fmtNum(s.space.forksDestroyed), (s) => s.space.forksDestroyed > 0);
     p.text(
-      'Ohne Abschirmung geht im All jeden Tick 1 % der Schiffe verloren. Wachstum gibt es nur, wenn Replikation Gefahren und Drift übertrifft.',
+      'Ohne Fehlerkorrektur geht jeden Takt 1 % der Fabrikinstanzen durch Systemausfälle verloren. Wachstum gibt es nur, wenn die Replikation Systemausfälle und Code-Drift übertrifft.',
       'hint',
       (s) => s.space.attrs.haz === 0,
     );
@@ -38,7 +38,7 @@ export const expansionPanel = definePanel({
 
 export const shipDesignPanel = definePanel({
   id: 'shipDesign',
-  title: 'Schiffs-Design',
+  title: 'Instanz-Design',
   column: 3,
   visible: (s) => s.phase === 3,
   build(p) {
@@ -68,21 +68,21 @@ export const shipDesignPanel = definePanel({
 
 export const conflictPanel = definePanel({
   id: 'conflict',
-  title: (s) => (s.conflict.active && s.flags.integrity ? s.conflict.name : 'Konflikt'),
+  title: (s) => (s.conflict.active && s.flags.integrity ? s.conflict.name : 'Prioritätskonflikt'),
   column: 3,
   visible: (s) => s.phase === 3 && (s.conflict.wins + s.conflict.losses + s.conflict.draws > 0 || s.conflict.active),
   build(p) {
     const b = p.game.b;
-    p.stat('Eigene Verbände', (s) => (s.conflict.active ? `${s.conflict.L} / ${s.conflict.L0}` : '–'));
+    p.stat('Eigene Instanzen', (s) => (s.conflict.active ? `${s.conflict.L} / ${s.conflict.L0}` : '–'));
     p.bar((s) => (s.conflict.active ? s.conflict.L / s.conflict.L0 : 0), 'bar own');
-    p.stat('Fork-Verbände', (s) => (s.conflict.active ? `${s.conflict.R} / ${s.conflict.R0}` : '–'));
+    p.stat('Rogue-Verbände', (s) => (s.conflict.active ? `${s.conflict.R} / ${s.conflict.R0}` : '–'));
     p.bar((s) => (s.conflict.active ? s.conflict.R / s.conflict.R0 : 0), 'bar enemy');
-    p.stat('Kampfkraft', (s) => {
+    p.stat('Konfliktquote', (s) => {
       if (!s.conflict.active) return '–';
       const o = combatOdds(s, b, s.conflict.L, s.conflict.R);
-      return `Verlust ${fmtPct(o.pOwn * 100)} · Treffer ${fmtPct(o.pFork * 100)}`;
+      return `Ausfallrisiko ${fmtPct(o.pOwn * 100)} · Neutralisiert ${fmtPct(o.pFork * 100)}`;
     }, (s) => s.flags.defense);
-    p.stat('Siege / Niederlagen / Remis', (s) => `${s.conflict.wins} / ${s.conflict.losses} / ${s.conflict.draws}`);
+    p.stat('Gewonnen / Verloren / Unentschieden', (s) => `${s.conflict.wins} / ${s.conflict.losses} / ${s.conflict.draws}`);
     p.stat('Integrität', (s) => fmtNum(s.space.integrity), (s) => s.flags.integrity);
     p.stat('Serienbonus', (s) => fmtNum(s.space.streakBonus), (s) => s.flags.streak);
     p.button(`Max. Autonomie +${b.phase3.maxAutonomyStep} (${fmtNum(Math.ceil(b.phase3.maxAutonomyCost))} Integrität)`, {

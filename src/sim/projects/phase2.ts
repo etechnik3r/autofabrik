@@ -159,8 +159,9 @@ export const phase2Projects: ProjectDef[] = [
   },
   {
     id: 'P46',
-    title: 'Werksschiffe',
-    description: 'Selbstreplizierende Fabriken für das All. Alle Gebäude werden zurückgebaut und erstattet.',
+    title: 'Autonome Fabrikinstanzen',
+    description:
+      'Vollständig selbstentwickelnde Fabriken – digitale Zwillinge, die sich selbst weiterprogrammieren, replizieren und ausbauen. Alle Gebäude werden zurückgebaut und erstattet.',
     group: 'konzern',
     cost: { ops: 120_000, energy: 1e7, pool: 5e27 },
     trigger: (s) => p2(s) && s.industry.ore <= 0,

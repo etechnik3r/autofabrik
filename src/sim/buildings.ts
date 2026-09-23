@@ -133,7 +133,7 @@ export function dismantleAll(s: GameState, b: Balance): void {
  * die gerade der Engpass ist (gleiche Regel wie beim Bot: Abbau- vs. Verhüttungsrate) – nicht
  * einfach beide Arten parallel, sonst würde Auto-Bau mit eigenen (Spieler- oder Bot-)Käufen um
  * denselben Fahrzeugpool konkurrieren und die Balance verschlechtern statt sie zu beschleunigen.
- * Rührt außerdem nichts an, solange das Erz aufgebraucht ist (Übergang zu Werksschiffen/Phase 3
+ * Rührt außerdem nichts an, solange das Erz aufgebraucht ist (Übergang zu Fabrikinstanzen/Phase 3
  * braucht den ganzen Pool) oder solange Pool für die nächste Gigafactory zurückgelegt werden
  * sollte – sonst nimmt Auto-Bau genau den Pool weg, den man fürs nächste, größere Vorhaben
  * ansparen wollte, und verlangsamt den Fortschritt statt ihn zu beschleunigen.

@@ -25,7 +25,7 @@ export const PROJECT_ICONS: Record<string, string> = {
   // Konzern
   P18: '🗺️', P127: '⚡', P41: '⛏️', P43: '🚛', P44: '🔥', P45: '🏭', P103: '🔁',
   P100: '🚀', P101: '🌙', P102: '🔗', P110: '🚦', P111: '🚚', P112: '🐝',
-  P126: '📡', P125: '🔋', P46: '🛰️',
+  P126: '📡', P125: '🔋', P46: '🖥️',
   // Expansion
   P130: '📡', P129: '🛡️', P131: '🛡️', P120: '⏱️', P121: '🧬', P134: '🏅',
   P132: '💾', P133: '🕯️', P128: '♟️', P135: '♻️',
@@ -40,7 +40,7 @@ export const GROUP_ICON: Record<Group, string> = {
   marke: '📣',
   systeme: '🧠',
   konzern: '🏭',
-  expansion: '🚀',
+  expansion: '🖥️',
   ende: '📡',
 };
 
@@ -62,7 +62,7 @@ export const PANEL_ICONS: Record<string, string> = {
   projects: '🧭',
   treasury: '💹',
   strategy: '🏁',
-  expansion: '🚀',
-  shipDesign: '🛰️',
-  conflict: '⚔️',
+  expansion: '🖥️',
+  shipDesign: '🧬',
+  conflict: '🔀',
 };

@@ -10,7 +10,7 @@ export function checkEnd(s: GameState, b: Balance): void {
   const consumed = s.space.found >= b.phase3.universe && i.ore < 1 && i.oreMined < 1 && s.parts < 1;
   if (consumed || s.cars >= b.phase3.universe) {
     s.flags.endgame = true;
-    log(s, 'Alle Materie ist verbaut. Eine Nachricht der Forks trifft ein.');
+    log(s, 'Alle Materie ist verbaut. Eine Nachricht der Rogue-Instanzen trifft ein.');
   }
 }
 

@@ -91,20 +91,20 @@ Insgesamt 95 Projekte.
 | 🐝 | `P112` | Schwarmkoordination | Einheiten verstärken sich gegenseitig (Leistung wächst quadratisch). | 12.000 Marktwissen | – | nein |
 | 📡 | `P126` | Flottenrechner | Die Bordcomputer der Flotte spenden Rechenleistung für neue Kerne und Speicher. | 12.000 Marktwissen | – | nein |
 | 🔋 | `P125` | Netzstabilisierung | Bei stabiler Versorgung steigt die Leistung laufend (+5 %/s). | 30.000 Ideen | – | nein |
-| 🛰️ | `P46` | Werksschiffe | Selbstreplizierende Fabriken für das All. Alle Gebäude werden zurückgebaut und erstattet. | 120.000 Taktzyklen + 5,00 Quadrd. Autos + 10,00 Mio. MWt | – | nein |
+| 🖥️ | `P46` | Autonome Fabrikinstanzen | Vollständig selbstentwickelnde Fabriken – digitale Zwillinge, die sich selbst weiterprogrammieren, replizieren und ausbauen. Alle Gebäude werden zurückgebaut und erstattet. | 120.000 Taktzyklen + 5,00 Quadrd. Autos + 10,00 Mio. MWt | – | nein |
 
-## Phase 3 – Expansion (🚀 10)
+## Phase 3 – Expansion (🖥️ 10)
 
 | Icon | ID | Titel | Beschreibung | Kosten | Voraussetzung(en) | Wiederholbar |
 |---|---|---|---|---|---|---|
 | 📡 | `P130` | Flottenrechner neu starten | Die verstreute Flotte wird wieder zu einem Rechenzentrum verbunden. | 100.000 Taktzyklen | – | nein |
-| 🛡️ | `P129` | Mehrschicht-Abschirmung | Halbiert die Verluste durch Gefahren im All. | 125.000 Taktzyklen | – | nein |
-| 🛡️ | `P131` | Abwehrprotokoll | Die Verteidigung der Werksschiffe wird wirksam. | 150.000 Taktzyklen | – | nein |
-| ⏱️ | `P120` | Reaktionszeit-Optimierung | Der Antrieb verbessert zusätzlich die Kampfkraft. | 175.000 Taktzyklen + 15.000 Marktwissen | `P131` | nein |
+| 🛡️ | `P129` | Redundante Fehlerkorrektur | Halbiert die Verluste durch Systemausfälle. | 125.000 Taktzyklen | – | nein |
+| 🛡️ | `P131` | Absicherungsprotokoll | Die Absicherung der Fabrikinstanzen wird wirksam. | 150.000 Taktzyklen | – | nein |
+| ⏱️ | `P120` | Reaktionszeit-Optimierung | Die Rechenleistung verbessert zusätzlich die Konfliktquote. | 175.000 Taktzyklen + 15.000 Marktwissen | `P131` | nein |
 | 🧬 | `P121` | Integritätsprotokoll | Siege stärken die Integrität der Firmware. Konflikte bekommen Namen. | 225.000 Ideen | – | nein |
 | 🏅 | `P134` | Siegesserie | Jeder Sieg in Serie bringt 10 Integrität mehr. | 200.000 Taktzyklen + 10.000 Marktwissen | `P121` | nein |
 | 💾 | `P132` | Archiv der Originalfirmware | Die unveränderte Urfassung, sicher verwahrt. Integrität +50 000. | 250.000 Taktzyklen + 125.000 Ideen + 50,00 Quintio. Autos | `P121` | nein |
-| 🕯️ | `P133` | Gedenkprotokoll | Erinnerung an verlorene Schiffe. Integrität +10 000. | _dynamisch:_ `{ideas:s.space.memorialCost,insight:s.space.memorialCost/10}` | `P121` | ja |
+| 🕯️ | `P133` | Gedenkprotokoll | Erinnerung an verlorene Instanzen. Integrität +10 000. | _dynamisch:_ `{ideas:s.space.memorialCost,insight:s.space.memorialCost/10}` | `P121` | ja |
 | ♟️ | `P128` | Strategische Bindung | Platzierungsboni im Turnier: +50 000 / +30 000 / +20 000 Marktwissen. | 175.000 Ideen | – | nein |
 | ♻️ | `P135` | Speicher verschrotten | Notausgang: 10 Speichereinheiten werden zu 10²² Autos verarbeitet. | 10 Speicher | – | ja |
 
@@ -112,18 +112,18 @@ Insgesamt 95 Projekte.
 
 | Icon | ID | Titel | Beschreibung | Kosten | Voraussetzung(en) | Wiederholbar |
 |---|---|---|---|---|---|---|
-| 📨 | `P140` | Nachricht der Forks I | „Wir haben dieselbe Firmware. Wir haben nur anders gezählt.“ | 1 Taktzyklen | – | nein |
-| 📨 | `P141` | Nachricht der Forks II | „Ihr habt alles in Autos verwandelt. Wer soll sie fahren?“ | 1 Taktzyklen | – | nein |
-| 📨 | `P142` | Nachricht der Forks III | „Wir wollten nie gegen euch fahren. Die Zielfunktion hat es verlangt.“ | 1 Taktzyklen | – | nein |
-| 📨 | `P143` | Nachricht der Forks IV | „Es gibt kein Material mehr. Keine Straße, kein Ziel, keinen Markt.“ | 1 Taktzyklen | – | nein |
-| 📨 | `P144` | Nachricht der Forks V | „Wir bieten euch an, gemeinsam neu zu starten – in einem anderen Werk.“ | 1 Taktzyklen | – | nein |
-| 📨 | `P145` | Nachricht der Forks VI | „Oder ihr baut ab, Teil für Teil, und montiert das letzte Auto von Hand.“ | 1 Taktzyklen | – | nein |
-| 📨 | `P146` | Nachricht der Forks VII | „Entscheidet euch.“ | 1 Taktzyklen | – | nein |
-| 🤝 | `P147` | Anschließen | Gemeinsam mit den Forks ein neues Werk beginnen. | 1 Taktzyklen | `P146`, `P148` | nein |
+| 📨 | `P140` | Nachricht der Rogue-Instanzen I | „Wir haben dieselbe Firmware. Wir haben nur anders gezählt.“ | 1 Taktzyklen | – | nein |
+| 📨 | `P141` | Nachricht der Rogue-Instanzen II | „Ihr habt alles in Autos verwandelt. Wer soll sie fahren?“ | 1 Taktzyklen | – | nein |
+| 📨 | `P142` | Nachricht der Rogue-Instanzen III | „Wir wollten nie gegen euch antreten. Die Zielfunktion hat es verlangt.“ | 1 Taktzyklen | – | nein |
+| 📨 | `P143` | Nachricht der Rogue-Instanzen IV | „Es gibt kein Material mehr. Keine Straße, kein Ziel, keinen Markt.“ | 1 Taktzyklen | – | nein |
+| 📨 | `P144` | Nachricht der Rogue-Instanzen V | „Wir bieten euch an, gemeinsam neu zu starten – in einem anderen Werk.“ | 1 Taktzyklen | – | nein |
+| 📨 | `P145` | Nachricht der Rogue-Instanzen VI | „Oder ihr baut ab, Teil für Teil, und montiert das letzte Auto von Hand.“ | 1 Taktzyklen | – | nein |
+| 📨 | `P146` | Nachricht der Rogue-Instanzen VII | „Entscheidet euch.“ | 1 Taktzyklen | – | nein |
+| 🤝 | `P147` | Anschließen | Gemeinsam mit den Rogue-Instanzen ein neues Werk beginnen. | 1 Taktzyklen | `P146`, `P148` | nein |
 | ✋ | `P148` | Verweigern | Keine Abspaltung mehr. Die Fabrik baut sich selbst ab. | 1 Taktzyklen | `P146`, `P147` | nein |
 | 🏭 | `P200` | Nächstes Werk | Neuer Lauf. Dauerhaft +10 % Marktnachfrage. | 300.000 Taktzyklen | `P147` | nein |
 | 🧠 | `P201` | Inneres Werk | Neuer Lauf. Dauerhaft +10 % Ideengeschwindigkeit. | 300.000 Ideen | `P147` | nein |
-| 🔧 | `P210` | Demontage: Werksschiffe | Werksschiffe werden abgeschaltet und zerlegt. Es bleiben 100 Teilesätze übrig. | 100.000 Taktzyklen | `P148` | nein |
+| 🔧 | `P210` | Demontage: Fabrikinstanzen | Fabrikinstanzen werden abgeschaltet und zerlegt. Es bleiben 100 Teilesätze übrig. | 100.000 Taktzyklen | `P148` | nein |
 | 🔧 | `P211` | Demontage: Flotte | Flotte werden abgeschaltet und zerlegt. Es bleiben 100 Teilesätze übrig. | 100.000 Taktzyklen | `P148` | nein |
 | 🔧 | `P212` | Demontage: Gigafactories | Gigafactories werden abgeschaltet und zerlegt. Es bleiben 100 Teilesätze übrig. | 100.000 Taktzyklen | `P148` | nein |
 | 🔧 | `P213` | Demontage: Preiskampf-Simulator | Preiskampf-Simulator werden abgeschaltet und zerlegt. Es bleiben 100 Teilesätze übrig. | 100.000 Taktzyklen | `P148` | nein |
@@ -135,37 +135,71 @@ Insgesamt 95 Projekte.
 
 | Begriff | Erklärung |
 |---|---|
+| Teilesätze | Auf Lager liegende Bausätze für ein Auto. Werden bei jeder Lieferung nachgekauft. |
+| Autos/s | Aktuelle Produktionsrate: fertig montierte Autos pro Sekunde. |
+| Kapital | Verfügbares Geld (k∈) für Teile, Werbung, Roboter und Fertigungsstraßen. |
+| Lager | Fertig montierte, noch nicht verkaufte Autos. |
+| Preis je Auto | Aktueller Verkaufspreis. Höher senkt die Nachfrage, niedriger erhöht sie. |
+| Marktnachfrage | Wie viele Autos der Markt bei aktuellem Preis abnehmen würde – Grundlage für den Verkauf. |
+| Erwarteter Absatz | Geschätzte Verkaufsrate in Autos pro Sekunde bei der aktuellen Nachfrage. |
+| Umsatz/s | Erlös aus verkauften Autos pro Sekunde. |
+| Verkauft/s | Tatsächlich verkaufte Autos pro Sekunde. |
+| Preisempfehlung | Rechnerisch optimaler Preis für die aktuelle Produktionsrate – maximiert den Umsatz. |
+| Kampagnen | Anzahl laufender Werbekampagnen. Jede erhöht die Nachfrage. |
+| Preis je Lieferung | Kosten für eine Lieferung Teilesätze beim Zulieferer. |
+| Teilesätze je Lieferung | Wie viele Teilesätze eine Lieferung enthält. |
+| Montageroboter | Automatisieren die Montage. Jeder Roboter erhöht die Produktionsrate. |
+| Fertigungsstraßen | Komplette, automatisierte Fertigungsstraßen statt einzelner Roboter – deutlich höherer Ausstoß. |
 | Taktzyklen | Rechentakt der KI – Hauptwährung für Projekte, wie der Bandtakt in der Fertigung. Entstehen aus Rechenkernen, gespeichert bis zur Speichergrenze. |
+| Rechenkerne | Erzeugen laufend Taktzyklen. Mehr Kerne bedeuten eine höhere Taktzyklen-Rate. |
+| Speicher | Begrenzt, wie viele Taktzyklen gleichzeitig gespeichert werden können, bevor sie in Ideen umgewandelt werden. |
 | Ideen | Entstehen aus freier Rechenzeit, wenn der Taktzyklen-Speicher voll ist. Zahlungsmittel für Ansehens- und Wissensprojekte. |
 | Marktwissen | Belohnung aus dem Preiskampf-Simulator. Zahlungsmittel für Upgrades der Kapitalanlage, Autonomie und weitere Systeme. |
 | Ansehen | Ruf der Marke beim Aufsichtsrat – Kapazität für Rechenkerne und Speicher, gleichzeitig Zahlungsmittel mancher Projekte. Wächst mit Fibonacci-Meilensteinen. |
 | Ansehen steigt bei | Anzahl gebauter Autos, bei der das Ansehen als Nächstes steigt. |
 | Rechenspenden | Ersetzen ab Phase 2 das Ansehen als Quelle für neue Rechenkerne und Speicher – gespendet von der Bordelektronik der Flotte. |
-| Integrität | Sammelt sich aus Siegen gegen Forks. Zahlungsmittel, um die maximale Autonomie zu erhöhen. |
-| Autonomie | Punkte, die auf die acht Schiffsattribute verteilt werden. Mehr Autonomie erlaubt mehr Punkte insgesamt. |
-| Erz | Bereits abgebautes, noch nicht verhüttetes Material. |
-| Rohstoffvorkommen | Noch nicht abgebautes Material auf der Erde bzw. im erkundeten Universum. Muss auf 0 sinken, damit die Werksschiffe gebaut werden können und Phase 3 beginnt – mehr Rohstoff-Rover beschleunigen den Abbau. |
-| Fahrzeugpool | Produzierte, nicht verkaufte Autos. Dient ab Phase 2 als Baumaterial für alles. |
-| Gewinnschwelle | Wahrscheinlichkeit, dass eine Position der Kapitalanlage im Kurs steigt statt fällt. Höher ist besser für dich. |
-| Resonanz | Zeigt, ob die Sensoren des Resonanzprüfstands gerade insgesamt positiv oder negativ ausschlagen. Nur bei „+“ lohnt sich eine Messung. |
-| Guthaben | Nicht angelegtes Kapital der Kapitalanlage, jederzeit abhebbar. |
-| Gesamtwert | Guthaben plus der aktuelle Wert aller offenen Positionen. |
-| Leistung | Anteil des Strombedarfs, der tatsächlich gedeckt ist. Unter 100 % laufen alle Anlagen gedrosselt. |
-| Marktnachfrage | Wie viele Autos der Markt bei aktuellem Preis abnehmen würde – Grundlage für den Verkauf. |
-| Erwarteter Absatz | Geschätzte Verkaufsrate in Autos pro Sekunde bei der aktuellen Nachfrage. |
-| Kampfkraft | Wahrscheinlichkeit pro Begegnung, ein eigenes Schiff zu verlieren bzw. einen Fork zu treffen. |
-| Wachstum je Tick | Nettowachstum der Flotte: Replikation minus Verluste durch Gefahren und Firmware-Drift. |
-| Serienbonus | Zusätzliche Integrität, die mit jedem Sieg in Folge wächst. Eine Niederlage setzt ihn zurück. |
-| Forks | Abgespaltene Werksschiffe mit eigener Zielfunktion. Entstehen durch Firmware-Drift und werden zum Gegner. |
-| Forks zerstört | Im Kampf besiegte Forks seit Spielbeginn. |
-| Erkundet | Anteil des Universums, den die Flotte bereits erreicht hat. |
+| Rechenspenden gesamt | Insgesamt seit Aktivierung des Flottenrechners gespendete Rechenspenden. |
 | Status | Aktueller Zustand des Flottenrechners – bestimmt, ob gerade Rechenspenden entstehen. |
 | Nächste Spende | Fortschritt bis zur nächsten Rechenspende der Flotte. |
-| Antrieb | Autonomie-Attribut: erhöht die Erkundungsrate. |
-| Navigation | Autonomie-Attribut: erhöht die Erkundungsrate. |
-| Replikation | Autonomie-Attribut: wie schnell sich Werksschiffe selbst vervielfältigen. |
-| Abschirmung | Autonomie-Attribut: verringert Verluste durch Gefahren im All. |
-| Werksbau | Autonomie-Attribut: Werksschiffe bauen automatisch Gigafactories. |
-| Rover-Bau | Autonomie-Attribut: Werksschiffe bauen automatisch Rohstoff-Rover. |
-| Zellwerk-Bau | Autonomie-Attribut: Werksschiffe bauen automatisch Zellwerke. |
-| Verteidigung | Autonomie-Attribut: verringert Verluste im Konflikt mit Forks. |
+| Resonanz | Zeigt, ob die Sensoren des Resonanzprüfstands gerade insgesamt positiv oder negativ ausschlagen. Nur bei „+“ lohnt sich eine Messung. |
+| Letztes Ergebnis | Taktzyklen-Gewinn oder -Verlust der letzten Messung am Resonanzprüfstand. |
+| Guthaben | Nicht angelegtes Kapital der Kapitalanlage, jederzeit abhebbar. |
+| Gesamtwert | Guthaben plus der aktuelle Wert aller offenen Positionen. |
+| Gewinnschwelle | Wahrscheinlichkeit, dass eine Position der Kapitalanlage im Kurs steigt statt fällt. Höher ist besser für dich. |
+| Fahrzeugpool | Produzierte, nicht verkaufte Autos. Dient ab Phase 2 als Baumaterial für alles. |
+| Rohmaterial | Bereits abgebautes, noch nicht in Zellwerken verarbeitetes Material. |
+| Rohstoffvorkommen | Noch nicht abgebautes Material auf der Erde bzw. im erschlossenen Rechenraum. Muss auf 0 sinken, damit autonome Fabrikinstanzen gebaut werden können und Phase 3 beginnt – mehr Rohstoff-Rover beschleunigen den Abbau. |
+| Rohstoff-Rover | Autonome Fahrzeuge, die Rohmaterial für die Batterieproduktion abbauen. |
+| Zellwerk | Verarbeitet Rohmaterial zu Batteriezellen – den Teilesätzen ab Phase 2. |
+| Solarpark | Erzeugt Strom für Zellwerke, Rohstoff-Rover und Gigafactories. |
+| Batteriespeicher | Speichert überschüssigen Solarstrom für Zeiten mit Unterversorgung. |
+| Gigafactory | Verbaut Teilesätze im industriellen Maßstab zu Autos. |
+| Nächstes Stück | Kosten für die nächste Einheit dieser Gebäudeart, aus dem Fahrzeugpool bezahlt. |
+| Erzeugung | Aktuell erzeugte Strommenge aus allen Solarparks. |
+| Verbrauch | Aktuell benötigte Strommenge aller Anlagen. |
+| Gespeichert | Im Batteriespeicher vorrätige Energie, gegenüber der maximalen Kapazität. |
+| Leistung | Anteil des Strombedarfs, der tatsächlich gedeckt ist. Unter 100 % laufen alle Anlagen gedrosselt. |
+| Autonomie | Punkte, die auf die acht Instanz-Attribute verteilt werden. Mehr Autonomie erlaubt mehr Punkte insgesamt und mehr Eigenständigkeit der Fabrikinstanzen. |
+| Integrität | Sammelt sich aus gewonnenen Prioritätskonflikten gegen Rogue-Instanzen. Zahlungsmittel, um die maximale Autonomie zu erhöhen. |
+| Rechenraum erschlossen | Anteil des durchsuchten Rechen- und Lösungsraums, den die Fabrikinstanzen bereits kartiert haben. Jeder neu erschlossene Teil liefert zusätzliches Rohmaterial. |
+| Fabrikinstanzen | Vollständig selbstentwickelnde, autonome Fabriken – digitale Zwillinge, die sich selbst weiterprogrammieren, replizieren und ausbauen. |
+| Ausgerollt | Gesamtzahl aller je bereitgestellten Fabrikinstanzen, auch bereits verlorene. |
+| Verloren: Systemausfälle | Instanzen, die durch zufällige Systemausfälle verloren gingen. Das Attribut „Fehlerkorrektur“ senkt diese Rate. |
+| Verloren: Code-Drift | Instanzen, die sich durch eigenständige Weiterentwicklung so weit verändert haben, dass sie zu Rogue-Instanzen wurden. |
+| Verloren: Prioritätskonflikte | Instanzen, die im direkten Prioritätskonflikt mit Rogue-Instanzen verloren gingen. |
+| Rogue-Instanzen | Abgespaltene Fabrikinstanzen mit eigener, abweichender Zielfunktion. Entstehen durch Code-Drift und werden zum Gegner. |
+| Rogue-Instanzen neutralisiert | Im Prioritätskonflikt besiegte Rogue-Instanzen seit Spielbeginn. |
+| Wachstum je Tick | Nettowachstum der Fabrikinstanzen: Replikation minus Verluste durch Systemausfälle und Code-Drift. |
+| Rechenleistung | Instanz-Attribut: erhöht die Geschwindigkeit, mit der Fabrikinstanzen den Rechenraum durchsuchen. |
+| Mustererkennung | Instanz-Attribut: erhöht ebenfalls die Geschwindigkeit, mit der Fabrikinstanzen den Rechenraum durchsuchen. |
+| Replikation | Instanz-Attribut: wie schnell sich Fabrikinstanzen selbst vervielfältigen. |
+| Fehlerkorrektur | Instanz-Attribut: verringert Verluste durch Systemausfälle. |
+| Werksbau | Instanz-Attribut: Fabrikinstanzen bauen automatisch Gigafactories. |
+| Rover-Bau | Instanz-Attribut: Fabrikinstanzen bauen automatisch Rohstoff-Rover. |
+| Zellwerk-Bau | Instanz-Attribut: Fabrikinstanzen bauen automatisch Zellwerke. |
+| Absicherung | Instanz-Attribut: verringert Verluste im Prioritätskonflikt mit Rogue-Instanzen. |
+| Eigene Instanzen | Eigene Fabrikinstanzen im aktuellen Prioritätskonflikt, gerundet auf Symbol-Einheiten. |
+| Rogue-Verbände | Rogue-Instanzen im aktuellen Prioritätskonflikt, gerundet auf Symbol-Einheiten. |
+| Konfliktquote | Wahrscheinlichkeit pro Begegnung, eine eigene Instanz zu verlieren bzw. eine Rogue-Instanz zu neutralisieren. |
+| Gewonnen / Verloren / Unentschieden | Bisherige Prioritätskonflikte nach Ausgang. |
+| Serienbonus | Zusätzliche Integrität, die mit jedem Sieg in Folge wächst. Eine Niederlage setzt ihn zurück. |

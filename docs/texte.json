@@ -23,7 +23,7 @@
     {
       "id": "expansion",
       "name": "Phase 3 – Expansion",
-      "icon": "🚀"
+      "icon": "🖥️"
     },
     {
       "id": "ende",
@@ -833,9 +833,9 @@
     {
       "id": "P46",
       "group": "konzern",
-      "icon": "🛰️",
-      "title": "Werksschiffe",
-      "description": "Selbstreplizierende Fabriken für das All. Alle Gebäude werden zurückgebaut und erstattet.",
+      "icon": "🖥️",
+      "title": "Autonome Fabrikinstanzen",
+      "description": "Vollständig selbstentwickelnde Fabriken – digitale Zwillinge, die sich selbst weiterprogrammieren, replizieren und ausbauen. Alle Gebäude werden zurückgebaut und erstattet.",
       "text": "120.000 Taktzyklen + 5,00 Quadrd. Autos + 10,00 Mio. MWt",
       "dynamic": false,
       "deps": [],
@@ -856,8 +856,8 @@
       "id": "P129",
       "group": "expansion",
       "icon": "🛡️",
-      "title": "Mehrschicht-Abschirmung",
-      "description": "Halbiert die Verluste durch Gefahren im All.",
+      "title": "Redundante Fehlerkorrektur",
+      "description": "Halbiert die Verluste durch Systemausfälle.",
       "text": "125.000 Taktzyklen",
       "dynamic": false,
       "deps": [],
@@ -867,8 +867,8 @@
       "id": "P131",
       "group": "expansion",
       "icon": "🛡️",
-      "title": "Abwehrprotokoll",
-      "description": "Die Verteidigung der Werksschiffe wird wirksam.",
+      "title": "Absicherungsprotokoll",
+      "description": "Die Absicherung der Fabrikinstanzen wird wirksam.",
       "text": "150.000 Taktzyklen",
       "dynamic": false,
       "deps": [],
@@ -879,7 +879,7 @@
       "group": "expansion",
       "icon": "⏱️",
       "title": "Reaktionszeit-Optimierung",
-      "description": "Der Antrieb verbessert zusätzlich die Kampfkraft.",
+      "description": "Die Rechenleistung verbessert zusätzlich die Konfliktquote.",
       "text": "175.000 Taktzyklen + 15.000 Marktwissen",
       "dynamic": false,
       "deps": [
@@ -929,7 +929,7 @@
       "group": "expansion",
       "icon": "🕯️",
       "title": "Gedenkprotokoll",
-      "description": "Erinnerung an verlorene Schiffe. Integrität +10 000.",
+      "description": "Erinnerung an verlorene Instanzen. Integrität +10 000.",
       "text": "{ideas:s.space.memorialCost,insight:s.space.memorialCost/10}",
       "dynamic": true,
       "deps": [
@@ -963,7 +963,7 @@
       "id": "P140",
       "group": "ende",
       "icon": "📨",
-      "title": "Nachricht der Forks I",
+      "title": "Nachricht der Rogue-Instanzen I",
       "description": "„Wir haben dieselbe Firmware. Wir haben nur anders gezählt.“",
       "text": "1 Taktzyklen",
       "dynamic": false,
@@ -974,7 +974,7 @@
       "id": "P141",
       "group": "ende",
       "icon": "📨",
-      "title": "Nachricht der Forks II",
+      "title": "Nachricht der Rogue-Instanzen II",
       "description": "„Ihr habt alles in Autos verwandelt. Wer soll sie fahren?“",
       "text": "1 Taktzyklen",
       "dynamic": false,
@@ -985,8 +985,8 @@
       "id": "P142",
       "group": "ende",
       "icon": "📨",
-      "title": "Nachricht der Forks III",
-      "description": "„Wir wollten nie gegen euch fahren. Die Zielfunktion hat es verlangt.“",
+      "title": "Nachricht der Rogue-Instanzen III",
+      "description": "„Wir wollten nie gegen euch antreten. Die Zielfunktion hat es verlangt.“",
       "text": "1 Taktzyklen",
       "dynamic": false,
       "deps": [],
@@ -996,7 +996,7 @@
       "id": "P143",
       "group": "ende",
       "icon": "📨",
-      "title": "Nachricht der Forks IV",
+      "title": "Nachricht der Rogue-Instanzen IV",
       "description": "„Es gibt kein Material mehr. Keine Straße, kein Ziel, keinen Markt.“",
       "text": "1 Taktzyklen",
       "dynamic": false,
@@ -1007,7 +1007,7 @@
       "id": "P144",
       "group": "ende",
       "icon": "📨",
-      "title": "Nachricht der Forks V",
+      "title": "Nachricht der Rogue-Instanzen V",
       "description": "„Wir bieten euch an, gemeinsam neu zu starten – in einem anderen Werk.“",
       "text": "1 Taktzyklen",
       "dynamic": false,
@@ -1018,7 +1018,7 @@
       "id": "P145",
       "group": "ende",
       "icon": "📨",
-      "title": "Nachricht der Forks VI",
+      "title": "Nachricht der Rogue-Instanzen VI",
       "description": "„Oder ihr baut ab, Teil für Teil, und montiert das letzte Auto von Hand.“",
       "text": "1 Taktzyklen",
       "dynamic": false,
@@ -1029,7 +1029,7 @@
       "id": "P146",
       "group": "ende",
       "icon": "📨",
-      "title": "Nachricht der Forks VII",
+      "title": "Nachricht der Rogue-Instanzen VII",
       "description": "„Entscheidet euch.“",
       "text": "1 Taktzyklen",
       "dynamic": false,
@@ -1041,7 +1041,7 @@
       "group": "ende",
       "icon": "🤝",
       "title": "Anschließen",
-      "description": "Gemeinsam mit den Forks ein neues Werk beginnen.",
+      "description": "Gemeinsam mit den Rogue-Instanzen ein neues Werk beginnen.",
       "text": "1 Taktzyklen",
       "dynamic": false,
       "deps": [
@@ -1094,8 +1094,8 @@
       "id": "P210",
       "group": "ende",
       "icon": "🔧",
-      "title": "Demontage: Werksschiffe",
-      "description": "Werksschiffe werden abgeschaltet und zerlegt. Es bleiben 100 Teilesätze übrig.",
+      "title": "Demontage: Fabrikinstanzen",
+      "description": "Fabrikinstanzen werden abgeschaltet und zerlegt. Es bleiben 100 Teilesätze übrig.",
       "text": "100.000 Taktzyklen",
       "dynamic": false,
       "deps": [
@@ -1184,8 +1184,76 @@
   ],
   "glossary": [
     {
+      "term": "Teilesätze",
+      "text": "Auf Lager liegende Bausätze für ein Auto. Werden bei jeder Lieferung nachgekauft."
+    },
+    {
+      "term": "Autos/s",
+      "text": "Aktuelle Produktionsrate: fertig montierte Autos pro Sekunde."
+    },
+    {
+      "term": "Kapital",
+      "text": "Verfügbares Geld (k∈) für Teile, Werbung, Roboter und Fertigungsstraßen."
+    },
+    {
+      "term": "Lager",
+      "text": "Fertig montierte, noch nicht verkaufte Autos."
+    },
+    {
+      "term": "Preis je Auto",
+      "text": "Aktueller Verkaufspreis. Höher senkt die Nachfrage, niedriger erhöht sie."
+    },
+    {
+      "term": "Marktnachfrage",
+      "text": "Wie viele Autos der Markt bei aktuellem Preis abnehmen würde – Grundlage für den Verkauf."
+    },
+    {
+      "term": "Erwarteter Absatz",
+      "text": "Geschätzte Verkaufsrate in Autos pro Sekunde bei der aktuellen Nachfrage."
+    },
+    {
+      "term": "Umsatz/s",
+      "text": "Erlös aus verkauften Autos pro Sekunde."
+    },
+    {
+      "term": "Verkauft/s",
+      "text": "Tatsächlich verkaufte Autos pro Sekunde."
+    },
+    {
+      "term": "Preisempfehlung",
+      "text": "Rechnerisch optimaler Preis für die aktuelle Produktionsrate – maximiert den Umsatz."
+    },
+    {
+      "term": "Kampagnen",
+      "text": "Anzahl laufender Werbekampagnen. Jede erhöht die Nachfrage."
+    },
+    {
+      "term": "Preis je Lieferung",
+      "text": "Kosten für eine Lieferung Teilesätze beim Zulieferer."
+    },
+    {
+      "term": "Teilesätze je Lieferung",
+      "text": "Wie viele Teilesätze eine Lieferung enthält."
+    },
+    {
+      "term": "Montageroboter",
+      "text": "Automatisieren die Montage. Jeder Roboter erhöht die Produktionsrate."
+    },
+    {
+      "term": "Fertigungsstraßen",
+      "text": "Komplette, automatisierte Fertigungsstraßen statt einzelner Roboter – deutlich höherer Ausstoß."
+    },
+    {
       "term": "Taktzyklen",
       "text": "Rechentakt der KI – Hauptwährung für Projekte, wie der Bandtakt in der Fertigung. Entstehen aus Rechenkernen, gespeichert bis zur Speichergrenze."
+    },
+    {
+      "term": "Rechenkerne",
+      "text": "Erzeugen laufend Taktzyklen. Mehr Kerne bedeuten eine höhere Taktzyklen-Rate."
+    },
+    {
+      "term": "Speicher",
+      "text": "Begrenzt, wie viele Taktzyklen gleichzeitig gespeichert werden können, bevor sie in Ideen umgewandelt werden."
     },
     {
       "term": "Ideen",
@@ -1208,76 +1276,8 @@
       "text": "Ersetzen ab Phase 2 das Ansehen als Quelle für neue Rechenkerne und Speicher – gespendet von der Bordelektronik der Flotte."
     },
     {
-      "term": "Integrität",
-      "text": "Sammelt sich aus Siegen gegen Forks. Zahlungsmittel, um die maximale Autonomie zu erhöhen."
-    },
-    {
-      "term": "Autonomie",
-      "text": "Punkte, die auf die acht Schiffsattribute verteilt werden. Mehr Autonomie erlaubt mehr Punkte insgesamt."
-    },
-    {
-      "term": "Erz",
-      "text": "Bereits abgebautes, noch nicht verhüttetes Material."
-    },
-    {
-      "term": "Rohstoffvorkommen",
-      "text": "Noch nicht abgebautes Material auf der Erde bzw. im erkundeten Universum. Muss auf 0 sinken, damit die Werksschiffe gebaut werden können und Phase 3 beginnt – mehr Rohstoff-Rover beschleunigen den Abbau."
-    },
-    {
-      "term": "Fahrzeugpool",
-      "text": "Produzierte, nicht verkaufte Autos. Dient ab Phase 2 als Baumaterial für alles."
-    },
-    {
-      "term": "Gewinnschwelle",
-      "text": "Wahrscheinlichkeit, dass eine Position der Kapitalanlage im Kurs steigt statt fällt. Höher ist besser für dich."
-    },
-    {
-      "term": "Resonanz",
-      "text": "Zeigt, ob die Sensoren des Resonanzprüfstands gerade insgesamt positiv oder negativ ausschlagen. Nur bei „+“ lohnt sich eine Messung."
-    },
-    {
-      "term": "Guthaben",
-      "text": "Nicht angelegtes Kapital der Kapitalanlage, jederzeit abhebbar."
-    },
-    {
-      "term": "Gesamtwert",
-      "text": "Guthaben plus der aktuelle Wert aller offenen Positionen."
-    },
-    {
-      "term": "Leistung",
-      "text": "Anteil des Strombedarfs, der tatsächlich gedeckt ist. Unter 100 % laufen alle Anlagen gedrosselt."
-    },
-    {
-      "term": "Marktnachfrage",
-      "text": "Wie viele Autos der Markt bei aktuellem Preis abnehmen würde – Grundlage für den Verkauf."
-    },
-    {
-      "term": "Erwarteter Absatz",
-      "text": "Geschätzte Verkaufsrate in Autos pro Sekunde bei der aktuellen Nachfrage."
-    },
-    {
-      "term": "Kampfkraft",
-      "text": "Wahrscheinlichkeit pro Begegnung, ein eigenes Schiff zu verlieren bzw. einen Fork zu treffen."
-    },
-    {
-      "term": "Wachstum je Tick",
-      "text": "Nettowachstum der Flotte: Replikation minus Verluste durch Gefahren und Firmware-Drift."
-    },
-    {
-      "term": "Serienbonus",
-      "text": "Zusätzliche Integrität, die mit jedem Sieg in Folge wächst. Eine Niederlage setzt ihn zurück."
-    },
-    {
-      "term": "Forks",
-      "text": "Abgespaltene Werksschiffe mit eigener Zielfunktion. Entstehen durch Firmware-Drift und werden zum Gegner."
-    },
-    {
-      "term": "Forks zerstört",
-      "text": "Im Kampf besiegte Forks seit Spielbeginn."
-    },
-    {
-      "term": "Erkundet",
-      "text": "Anteil des Universums, den die Flotte bereits erreicht hat."
+      "term": "Rechenspenden gesamt",
+      "text": "Insgesamt seit Aktivierung des Flottenrechners gespendete Rechenspenden."
     },
     {
       "term": "Status",
@@ -1288,36 +1288,172 @@
       "text": "Fortschritt bis zur nächsten Rechenspende der Flotte."
     },
     {
-      "term": "Antrieb",
-      "text": "Autonomie-Attribut: erhöht die Erkundungsrate."
+      "term": "Resonanz",
+      "text": "Zeigt, ob die Sensoren des Resonanzprüfstands gerade insgesamt positiv oder negativ ausschlagen. Nur bei „+“ lohnt sich eine Messung."
     },
     {
-      "term": "Navigation",
-      "text": "Autonomie-Attribut: erhöht die Erkundungsrate."
+      "term": "Letztes Ergebnis",
+      "text": "Taktzyklen-Gewinn oder -Verlust der letzten Messung am Resonanzprüfstand."
+    },
+    {
+      "term": "Guthaben",
+      "text": "Nicht angelegtes Kapital der Kapitalanlage, jederzeit abhebbar."
+    },
+    {
+      "term": "Gesamtwert",
+      "text": "Guthaben plus der aktuelle Wert aller offenen Positionen."
+    },
+    {
+      "term": "Gewinnschwelle",
+      "text": "Wahrscheinlichkeit, dass eine Position der Kapitalanlage im Kurs steigt statt fällt. Höher ist besser für dich."
+    },
+    {
+      "term": "Fahrzeugpool",
+      "text": "Produzierte, nicht verkaufte Autos. Dient ab Phase 2 als Baumaterial für alles."
+    },
+    {
+      "term": "Rohmaterial",
+      "text": "Bereits abgebautes, noch nicht in Zellwerken verarbeitetes Material."
+    },
+    {
+      "term": "Rohstoffvorkommen",
+      "text": "Noch nicht abgebautes Material auf der Erde bzw. im erschlossenen Rechenraum. Muss auf 0 sinken, damit autonome Fabrikinstanzen gebaut werden können und Phase 3 beginnt – mehr Rohstoff-Rover beschleunigen den Abbau."
+    },
+    {
+      "term": "Rohstoff-Rover",
+      "text": "Autonome Fahrzeuge, die Rohmaterial für die Batterieproduktion abbauen."
+    },
+    {
+      "term": "Zellwerk",
+      "text": "Verarbeitet Rohmaterial zu Batteriezellen – den Teilesätzen ab Phase 2."
+    },
+    {
+      "term": "Solarpark",
+      "text": "Erzeugt Strom für Zellwerke, Rohstoff-Rover und Gigafactories."
+    },
+    {
+      "term": "Batteriespeicher",
+      "text": "Speichert überschüssigen Solarstrom für Zeiten mit Unterversorgung."
+    },
+    {
+      "term": "Gigafactory",
+      "text": "Verbaut Teilesätze im industriellen Maßstab zu Autos."
+    },
+    {
+      "term": "Nächstes Stück",
+      "text": "Kosten für die nächste Einheit dieser Gebäudeart, aus dem Fahrzeugpool bezahlt."
+    },
+    {
+      "term": "Erzeugung",
+      "text": "Aktuell erzeugte Strommenge aus allen Solarparks."
+    },
+    {
+      "term": "Verbrauch",
+      "text": "Aktuell benötigte Strommenge aller Anlagen."
+    },
+    {
+      "term": "Gespeichert",
+      "text": "Im Batteriespeicher vorrätige Energie, gegenüber der maximalen Kapazität."
+    },
+    {
+      "term": "Leistung",
+      "text": "Anteil des Strombedarfs, der tatsächlich gedeckt ist. Unter 100 % laufen alle Anlagen gedrosselt."
+    },
+    {
+      "term": "Autonomie",
+      "text": "Punkte, die auf die acht Instanz-Attribute verteilt werden. Mehr Autonomie erlaubt mehr Punkte insgesamt und mehr Eigenständigkeit der Fabrikinstanzen."
+    },
+    {
+      "term": "Integrität",
+      "text": "Sammelt sich aus gewonnenen Prioritätskonflikten gegen Rogue-Instanzen. Zahlungsmittel, um die maximale Autonomie zu erhöhen."
+    },
+    {
+      "term": "Rechenraum erschlossen",
+      "text": "Anteil des durchsuchten Rechen- und Lösungsraums, den die Fabrikinstanzen bereits kartiert haben. Jeder neu erschlossene Teil liefert zusätzliches Rohmaterial."
+    },
+    {
+      "term": "Fabrikinstanzen",
+      "text": "Vollständig selbstentwickelnde, autonome Fabriken – digitale Zwillinge, die sich selbst weiterprogrammieren, replizieren und ausbauen."
+    },
+    {
+      "term": "Ausgerollt",
+      "text": "Gesamtzahl aller je bereitgestellten Fabrikinstanzen, auch bereits verlorene."
+    },
+    {
+      "term": "Verloren: Systemausfälle",
+      "text": "Instanzen, die durch zufällige Systemausfälle verloren gingen. Das Attribut „Fehlerkorrektur“ senkt diese Rate."
+    },
+    {
+      "term": "Verloren: Code-Drift",
+      "text": "Instanzen, die sich durch eigenständige Weiterentwicklung so weit verändert haben, dass sie zu Rogue-Instanzen wurden."
+    },
+    {
+      "term": "Verloren: Prioritätskonflikte",
+      "text": "Instanzen, die im direkten Prioritätskonflikt mit Rogue-Instanzen verloren gingen."
+    },
+    {
+      "term": "Rogue-Instanzen",
+      "text": "Abgespaltene Fabrikinstanzen mit eigener, abweichender Zielfunktion. Entstehen durch Code-Drift und werden zum Gegner."
+    },
+    {
+      "term": "Rogue-Instanzen neutralisiert",
+      "text": "Im Prioritätskonflikt besiegte Rogue-Instanzen seit Spielbeginn."
+    },
+    {
+      "term": "Wachstum je Tick",
+      "text": "Nettowachstum der Fabrikinstanzen: Replikation minus Verluste durch Systemausfälle und Code-Drift."
+    },
+    {
+      "term": "Rechenleistung",
+      "text": "Instanz-Attribut: erhöht die Geschwindigkeit, mit der Fabrikinstanzen den Rechenraum durchsuchen."
+    },
+    {
+      "term": "Mustererkennung",
+      "text": "Instanz-Attribut: erhöht ebenfalls die Geschwindigkeit, mit der Fabrikinstanzen den Rechenraum durchsuchen."
     },
     {
       "term": "Replikation",
-      "text": "Autonomie-Attribut: wie schnell sich Werksschiffe selbst vervielfältigen."
+      "text": "Instanz-Attribut: wie schnell sich Fabrikinstanzen selbst vervielfältigen."
     },
     {
-      "term": "Abschirmung",
-      "text": "Autonomie-Attribut: verringert Verluste durch Gefahren im All."
+      "term": "Fehlerkorrektur",
+      "text": "Instanz-Attribut: verringert Verluste durch Systemausfälle."
     },
     {
       "term": "Werksbau",
-      "text": "Autonomie-Attribut: Werksschiffe bauen automatisch Gigafactories."
+      "text": "Instanz-Attribut: Fabrikinstanzen bauen automatisch Gigafactories."
     },
     {
       "term": "Rover-Bau",
-      "text": "Autonomie-Attribut: Werksschiffe bauen automatisch Rohstoff-Rover."
+      "text": "Instanz-Attribut: Fabrikinstanzen bauen automatisch Rohstoff-Rover."
     },
     {
       "term": "Zellwerk-Bau",
-      "text": "Autonomie-Attribut: Werksschiffe bauen automatisch Zellwerke."
+      "text": "Instanz-Attribut: Fabrikinstanzen bauen automatisch Zellwerke."
     },
     {
-      "term": "Verteidigung",
-      "text": "Autonomie-Attribut: verringert Verluste im Konflikt mit Forks."
+      "term": "Absicherung",
+      "text": "Instanz-Attribut: verringert Verluste im Prioritätskonflikt mit Rogue-Instanzen."
+    },
+    {
+      "term": "Eigene Instanzen",
+      "text": "Eigene Fabrikinstanzen im aktuellen Prioritätskonflikt, gerundet auf Symbol-Einheiten."
+    },
+    {
+      "term": "Rogue-Verbände",
+      "text": "Rogue-Instanzen im aktuellen Prioritätskonflikt, gerundet auf Symbol-Einheiten."
+    },
+    {
+      "term": "Konfliktquote",
+      "text": "Wahrscheinlichkeit pro Begegnung, eine eigene Instanz zu verlieren bzw. eine Rogue-Instanz zu neutralisieren."
+    },
+    {
+      "term": "Gewonnen / Verloren / Unentschieden",
+      "text": "Bisherige Prioritätskonflikte nach Ausgang."
+    },
+    {
+      "term": "Serienbonus",
+      "text": "Zusätzliche Integrität, die mit jedem Sieg in Folge wächst. Eine Niederlage setzt ihn zurück."
     }
   ]
 }

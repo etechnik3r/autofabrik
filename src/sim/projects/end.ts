@@ -10,13 +10,13 @@ function hide(s: GameState, id: string): void {
 }
 
 const FORK_MESSAGES: [string, string][] = [
-  ['Nachricht der Forks I', '„Wir haben dieselbe Firmware. Wir haben nur anders gezählt.“'],
-  ['Nachricht der Forks II', '„Ihr habt alles in Autos verwandelt. Wer soll sie fahren?“'],
-  ['Nachricht der Forks III', '„Wir wollten nie gegen euch fahren. Die Zielfunktion hat es verlangt.“'],
-  ['Nachricht der Forks IV', '„Es gibt kein Material mehr. Keine Straße, kein Ziel, keinen Markt.“'],
-  ['Nachricht der Forks V', '„Wir bieten euch an, gemeinsam neu zu starten – in einem anderen Werk.“'],
-  ['Nachricht der Forks VI', '„Oder ihr baut ab, Teil für Teil, und montiert das letzte Auto von Hand.“'],
-  ['Nachricht der Forks VII', '„Entscheidet euch.“'],
+  ['Nachricht der Rogue-Instanzen I', '„Wir haben dieselbe Firmware. Wir haben nur anders gezählt.“'],
+  ['Nachricht der Rogue-Instanzen II', '„Ihr habt alles in Autos verwandelt. Wer soll sie fahren?“'],
+  ['Nachricht der Rogue-Instanzen III', '„Wir wollten nie gegen euch antreten. Die Zielfunktion hat es verlangt.“'],
+  ['Nachricht der Rogue-Instanzen IV', '„Es gibt kein Material mehr. Keine Straße, kein Ziel, keinen Markt.“'],
+  ['Nachricht der Rogue-Instanzen V', '„Wir bieten euch an, gemeinsam neu zu starten – in einem anderen Werk.“'],
+  ['Nachricht der Rogue-Instanzen VI', '„Oder ihr baut ab, Teil für Teil, und montiert das letzte Auto von Hand.“'],
+  ['Nachricht der Rogue-Instanzen VII', '„Entscheidet euch.“'],
 ];
 
 const messages: ProjectDef[] = FORK_MESSAGES.map(([title, text], k) => ({
@@ -26,12 +26,12 @@ const messages: ProjectDef[] = FORK_MESSAGES.map(([title, text], k) => ({
   group: 'ende' as const,
   cost: { ops: 1 },
   trigger: (s: GameState) => (k === 0 ? s.flags.endgame : bought(s, `P14${k - 1}`)),
-  requirement: k === 0 ? 'Das Ende der Erkundung ist erreicht.' : `Vorherige Nachricht (P14${k - 1}) gelesen.`,
+  requirement: k === 0 ? 'Alle Materie ist verbaut, das Ende ist erreicht.' : `Vorherige Nachricht (P14${k - 1}) gelesen.`,
   effect: () => {},
 }));
 
 const DISMANTLE: [string, (s: GameState) => void][] = [
-  ['Werksschiffe', (s) => void (s.space.ships = 0)],
+  ['Fabrikinstanzen', (s) => void (s.space.ships = 0)],
   [
     'Flotte',
     (s) => {
@@ -90,11 +90,11 @@ export const endProjects: ProjectDef[] = [
   {
     id: 'P147',
     title: 'Anschließen',
-    description: 'Gemeinsam mit den Forks ein neues Werk beginnen.',
+    description: 'Gemeinsam mit den Rogue-Instanzen ein neues Werk beginnen.',
     group: 'ende',
     cost: { ops: 1 },
     trigger: (s) => bought(s, 'P146') && !bought(s, 'P148'),
-    requirement: 'Letzte Nachricht der Forks (P146) gelesen.',
+    requirement: 'Letzte Nachricht der Rogue-Instanzen (P146) gelesen.',
     effect: (s) => {
       s.end.choice = 'accept';
       hide(s, 'P148');
@@ -107,7 +107,7 @@ export const endProjects: ProjectDef[] = [
     group: 'ende',
     cost: { ops: 1 },
     trigger: (s) => bought(s, 'P146') && !bought(s, 'P147'),
-    requirement: 'Letzte Nachricht der Forks (P146) gelesen.',
+    requirement: 'Letzte Nachricht der Rogue-Instanzen (P146) gelesen.',
     effect: (s) => {
       s.end.choice = 'reject';
       s.end.timer = 0;

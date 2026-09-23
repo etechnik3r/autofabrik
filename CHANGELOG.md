@@ -7,6 +7,22 @@ Versionsnummern werden noch nicht vergeben (Projekt vor dem ersten Release).
 
 ## [Unveröffentlicht]
 
+### Geändert
+- Phase 3 („Expansion“) von Weltraum-Werksschiffen und Kampf gegen „Forks“ auf **vollständig
+  selbstentwickelnde, autonome Fabrikinstanzen** umgestellt – passend zur durchgängigen
+  KI-Fabrik-Storyline statt eines Weltraum-Bruchs: Werksschiffe → **Fabrikinstanzen** (digitale
+  Zwillinge, die sich selbst weiterprogrammieren, replizieren und ausbauen), Firmware-Drift/Forks
+  → **Code-Drift/Rogue-Instanzen** (abweichende Zielfunktion durch Selbstprogrammierung),
+  Konflikt/Kampfkraft → **Prioritätskonflikt/Konfliktquote**, Erkundung des Universums →
+  **Rechenraum-Suche**. Attribute umbenannt: Antrieb → Rechenleistung, Navigation →
+  Mustererkennung, Abschirmung → Fehlerkorrektur, Verteidigung → Absicherung (Replikation,
+  Werksbau, Rover-Bau, Zellwerk-Bau blieben). Phase-Label „Expansion“ → **„Skalierung“**; Panels
+  „Expansion“/„Schiffs-Design“/„Konflikt“ → „Fabriknetzwerk“/„Instanz-Design“/„Prioritätskonflikt“.
+  Nur Anzeigetexte geändert, interne Feldnamen/Formeln/Speicherstände unverändert.
+- Vollständige Tooltip-Abdeckung: jede Kennzahl im Spiel hat jetzt einen Glossar-Eintrag,
+  einschließlich einer seit der EV-Umbenennung verwaisten `Erz`-Karteikarte, die durch den
+  tatsächlich verwendeten Begriff `Rohmaterial` ersetzt wurde.
+
 ### Hinzugefügt
 - Geschwindigkeitsregler (×1–×60) im Zahnrad-Menü, löst den bisherigen Ein/Aus-Entwicklermodus
   ab. Mit Hinweistext, dass nur bei ×1 wirklich ein „echtes“ Spiel läuft – höhere Werte sind
