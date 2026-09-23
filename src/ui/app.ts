@@ -1,7 +1,7 @@
 import type { GameState } from '../sim';
 import { playSeconds } from '../sim/state';
 import { Builder, h, type Binder, type PanelDef } from './dom';
-import { fmtNum, fmtTime } from './format';
+import { fmtFull, fmtTime } from './format';
 import type { Game } from './game';
 import { PANEL_ICONS } from './icons';
 import { panels } from './panels';
@@ -89,7 +89,7 @@ export function mountApp(root: HTMLElement, game: Game): void {
   let tickerKey = '';
   const renderHeader = (s: GameState) => {
     phase.textContent = `Phase ${s.phase} · ${PHASE_NAMES[s.phase]} · ${fmtTime(playSeconds(s, game.b))}`;
-    carsValue.textContent = fmtNum(s.cars);
+    carsValue.textContent = fmtFull(s.cars);
     const last = s.messages.slice(-3).reverse();
     const key = last.map((m) => m.tick).join(',') + s.messages.length;
     if (key !== tickerKey) {

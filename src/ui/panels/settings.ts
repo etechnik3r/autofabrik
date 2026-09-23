@@ -1,6 +1,6 @@
 import { Builder, h } from '../dom';
 import { isScientific, setScientific } from '../format';
-import { DEV_SPEED_MULTIPLIER, type Game } from '../game';
+import { MAX_SPEED, MIN_SPEED, type Game } from '../game';
 import { applyTheme, isThemeId, THEMES, type ThemeId } from '../theme';
 
 const SETTINGS_KEY = 'autofabrik.settings';
@@ -77,14 +77,27 @@ export function buildSettings(builder: Builder, game: Game, close: () => void): 
     r.command('Importieren', () => say(game.importSave(area.value) ? 'Spielstand geladen.' : 'Ungültiger Spielstand.'));
   });
 
-  builder.heading('Entwicklung');
-  builder.text(`Beschleunigt die Simulation testweise um das ${DEV_SPEED_MULTIPLIER}-Fache, um die Mechanik schnell durchzuklicken.`, 'hint');
-  const devBtn = builder.command(
-    () => `Entwicklermodus: ${game.devMode ? `an (×${DEV_SPEED_MULTIPLIER})` : 'aus'}`,
-    () => void (game.devMode = !game.devMode),
-    'btn toggle',
+  builder.heading('Geschwindigkeit');
+  builder.text(
+    `Nur bei ×${MIN_SPEED} läuft wirklich ein „echtes“ Spiel. Höhere Werte beschleunigen die Simulation testweise, um die Mechanik schnell durchzuklicken – gedacht zum Testen, nicht zum eigentlichen Spielen.`,
+    'hint',
   );
-  builder.bind(() => devBtn.classList.toggle('on', game.devMode));
+  const speedRow = builder.add(h('label', 'slider'));
+  speedRow.append(`×${MIN_SPEED}`);
+  const speedInput = speedRow.appendChild(document.createElement('input'));
+  speedRow.append(`×${MAX_SPEED}`);
+  speedInput.type = 'range';
+  speedInput.min = String(MIN_SPEED);
+  speedInput.max = String(MAX_SPEED);
+  speedInput.step = '1';
+  speedInput.value = String(game.speed);
+  speedInput.addEventListener('input', () => void (game.speed = Number(speedInput.value)));
+  const speedLabel = builder.add(h('p', 'hint'));
+  builder.bind(() => {
+    if (document.activeElement !== speedInput) speedInput.value = String(game.speed);
+    speedLabel.textContent =
+      game.speed === MIN_SPEED ? `Aktuell: ×${MIN_SPEED} (echtes Spieltempo)` : `Aktuell: ×${game.speed} (Testmodus, kein echtes Spieltempo)`;
+  });
 
   builder.heading('Zurücksetzen');
   builder.command(

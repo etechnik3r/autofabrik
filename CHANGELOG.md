@@ -7,7 +7,14 @@ Versionsnummern werden noch nicht vergeben (Projekt vor dem ersten Release).
 
 ## [Unveröffentlicht]
 
+### Hinzugefügt
+- Geschwindigkeitsregler (×1–×60) im Zahnrad-Menü, löst den bisherigen Ein/Aus-Entwicklermodus
+  ab. Mit Hinweistext, dass nur bei ×1 wirklich ein „echtes“ Spiel läuft – höhere Werte sind
+  ausdrücklich zum schnellen Testen der Mechanik gedacht.
+
 ### Geändert
+- Der Zähler „Autos gebaut“ im Kopfbereich zeigt jetzt die volle Ziffernfolge (`fmtFull`) statt
+  der abgekürzten Schreibweise mit Tsd./Mio./Mrd. & Co.
 - Phase 2 (Konzern) als durchgängige EV-Lieferkette statt generischer Bergbau-Begriffe:
   „Bergbau-Truck“ → **„Rohstoff-Rover“** (autonome Fahrzeuge der eigenen Flotte, fördern
   Rohmaterial), „Schmelzeinheit“ → **„Zellwerk“** (verarbeitet Rohmaterial zu Batteriezellen –

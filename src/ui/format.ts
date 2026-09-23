@@ -50,6 +50,12 @@ export function fmtNum(x: number): string {
   return `${dec2.format(x / Math.pow(10, group * 3))} ${NAMES[group]}`;
 }
 
+/** Ausgeschrieben mit allen Ziffern (keine Kurznamen, keine Exponentialschreibweise). */
+export function fmtFull(x: number): string {
+  if (!Number.isFinite(x)) return '∞';
+  return int.format(Math.floor(x));
+}
+
 /** Kleine Werte mit einer Nachkommastelle, große wie fmtNum. */
 export function fmtRate(x: number): string {
   return Math.abs(x) < 100 ? dec1.format(x) : fmtNum(x);

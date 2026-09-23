@@ -125,7 +125,7 @@ Die Projektliste wird nach ID gediffed. Neu erschienene Karten bleiben 30 Spiels
 
 **Unabhängig scrollende Spalten:** Ab Tablet-Breite (≥ 641 px) scrollt nicht die ganze Seite, sondern jede der drei Spalten für sich (`overflow-y: auto` pro `.col`, `#app` auf `100vh` fixiert). Kopf und Zahnrad bleiben so immer sichtbar. Auf einer gestapelten Handy-Spalte bleibt normales Seiten-Scrollen, das ist dort die gewohnte Bedienung. Echtes „nie scrollen“ ist bei unbegrenzt wachsenden Listen (Projekte, Gebäude) nicht erreichbar, ohne Inhalte zu verstecken – das hier ist der pragmatische Kompromiss, den auch das Vorbild Universal Paperclips fährt.
 
-**Dev-Modus** (`game.ts`, `DEV_SPEED_MULTIPLIER`): beschleunigt testweise nur die Anzahl ausgeführter Ticks pro realer Zeitscheibe, ohne die Echtzeit-Buchhaltung (`acc`) selbst zu verzerren – damit bleibt die Offline-Fortschritt-Erkennung beim normalen Spielen unberührt. Bewusst nicht persistiert und klar als Testwerkzeug markiert, damit er sich vor einem Release rückstandsfrei entfernen lässt.
+**Geschwindigkeitsregler** (`game.ts`, `Game.speed`, `MIN_SPEED`/`MAX_SPEED`): beschleunigt testweise nur die Anzahl ausgeführter Ticks pro realer Zeitscheibe (×1 bis ×60), ohne die Echtzeit-Buchhaltung (`acc`) selbst zu verzerren – damit bleibt die Offline-Fortschritt-Erkennung beim normalen Spielen unberührt. `speed` liegt bewusst auf der `Game`-Instanz statt in `GameState`, ist also nicht Teil des Spielstands (steht nach einem Neuladen wieder auf ×1) und wird über einen Regler im Zahnrad-Menü direkt gesetzt (kein `dispatch`, da kein Simulationszustand). Klar als Testwerkzeug markiert (nur ×1 ist ein „echtes“ Spiel), damit er sich vor einem Release rückstandsfrei entfernen lässt.
 
 ## 6. Speichern (`src/save/`)
 
