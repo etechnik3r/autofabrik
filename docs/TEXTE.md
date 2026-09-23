@@ -4,7 +4,7 @@
 Titel und Beschreibungen ändern: in `src/sim/projects/<phase>.ts` beim jeweiligen Projekt, danach dieses
 Dokument neu erzeugen. Symbole stammen aus `src/ui/icons.ts`, Fachbegriffe unten aus `src/ui/glossary.ts`.
 
-Insgesamt 94 Projekte.
+Insgesamt 95 Projekte.
 
 ## Phase 1 – Produktion und Material (🔧 17)
 
@@ -72,7 +72,7 @@ Insgesamt 94 Projekte.
 | 🚘 | `P70` | Autopilot-Stack | Fahrzeuge, die ohne Menschen auskommen. Der Aufsichtsrat wird nervös. | 70.000 Taktzyklen | `P34` | nein |
 | 🔓 | `P35` | Vollautonomie | Der Aufsichtsrat übergibt die volle Kontrolle. Es gibt kein Zurück. | 100 Ansehen | `P70` | nein |
 
-## Phase 2 – Konzern (🏭 15)
+## Phase 2 – Konzern (🏭 16)
 
 | Icon | ID | Titel | Beschreibung | Kosten | Voraussetzung(en) | Wiederholbar |
 |---|---|---|---|---|---|---|
@@ -82,6 +82,7 @@ Insgesamt 94 Projekte.
 | 🚛 | `P43` | Rohstoff-Rover | Autonome Rover fördern Rohmaterial für die Batterieproduktion. | 25.000 Taktzyklen | `P41` | nein |
 | 🔥 | `P44` | Zellwerke | Mobile Zellwerke verarbeiten Rohmaterial zu Batteriezellen – den neuen Teilesätzen. | 25.000 Taktzyklen | `P41` | nein |
 | 🏭 | `P45` | Gigafactories | Werke, die Teilesätze in industriellem Maßstab verbauen. | 35.000 Taktzyklen | `P43`, `P44` | nein |
+| 🔁 | `P103` | Auto-Bau | Kauft automatisch weitere Rohstoff-Rover und Zellwerke nach, solange der Fahrzeugpool reicht. | 60.000 Taktzyklen | `P43`, `P44` | nein |
 | 🚀 | `P100` | Gigafactory-Retrofit | Gigafactories produzieren 100-mal so viel. | 80.000 Taktzyklen | – | nein |
 | 🌙 | `P101` | Lights-out-Fertigung | Kein Licht, keine Pausen. Gigafactories produzieren 1 000-mal so viel. | 85.000 Taktzyklen | – | nein |
 | 🔗 | `P102` | Selbstheilende Lieferkette | Gigafactories verstärken sich gegenseitig (Leistung wächst quadratisch). | 1,00 Trd. Autos | – | nein |
@@ -143,7 +144,7 @@ Insgesamt 94 Projekte.
 | Integrität | Sammelt sich aus Siegen gegen Forks. Zahlungsmittel, um die maximale Autonomie zu erhöhen. |
 | Autonomie | Punkte, die auf die acht Schiffsattribute verteilt werden. Mehr Autonomie erlaubt mehr Punkte insgesamt. |
 | Erz | Bereits abgebautes, noch nicht verhüttetes Material. |
-| Rohstoffvorkommen | Noch nicht abgebautes Material auf der Erde bzw. im erkundeten Universum. |
+| Rohstoffvorkommen | Noch nicht abgebautes Material auf der Erde bzw. im erkundeten Universum. Muss auf 0 sinken, damit die Werksschiffe gebaut werden können und Phase 3 beginnt – mehr Rohstoff-Rover beschleunigen den Abbau. |
 | Fahrzeugpool | Produzierte, nicht verkaufte Autos. Dient ab Phase 2 als Baumaterial für alles. |
 | Gewinnschwelle | Wahrscheinlichkeit, dass eine Position der Kapitalanlage im Kurs steigt statt fällt. Höher ist besser für dich. |
 | Resonanz | Zeigt, ob die Sensoren des Resonanzprüfstands gerade insgesamt positiv oder negativ ausschlagen. Nur bei „+“ lohnt sich eine Messung. |

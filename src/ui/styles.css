@@ -505,6 +505,11 @@ body {
   font-style: italic;
 }
 
+.project .preq {
+  font-size: 11px;
+  color: var(--accent);
+}
+
 @keyframes pulse {
   0%,
   100% {

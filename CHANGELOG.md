@@ -14,7 +14,13 @@ Versionsnummern werden noch nicht vergeben (Projekt vor dem ersten Release).
 - Neues Kapitel „Cheat-Zone“ im Zahnrad-Menü, das den Geschwindigkeitsregler und eine neue
   „Projekt-Vorschau“ bündelt: Ist sie aktiviert, zeigt die Projektliste zusätzlich noch nicht
   freigeschaltete Projekte gestrichelt und blass an (nicht kaufbar), sodass man vorab sehen kann,
-  was als Nächstes kommt.
+  was als Nächstes kommt. Jede Vorschau-Karte nennt jetzt auch die Bedingung, unter der das
+  Projekt sichtbar wird (neues Feld `requirement` an jedem Projekt).
+- Neues Projekt „Auto-Bau“ (P103, Konzern/Phase 2): kauft automatisch weitere Rohstoff-Rover und
+  Zellwerke nach (jeweils den größten leistbaren Stapel), solange der Fahrzeugpool reicht – spart
+  das manuelle Wiederholt-Klicken auf „+1.000“ beim Ausbau der Abbau-Flotte.
+- Hinweistext im Glossar zu „Rohstoffvorkommen“: macht jetzt klar, dass es auf 0 sinken muss,
+  damit die Werksschiffe gebaut werden können und Phase 3 beginnt.
 
 ### Geändert
 - Der Zähler „Autos gebaut“ im Kopfbereich zeigt jetzt die volle Ziffernfolge (`fmtFull`) statt

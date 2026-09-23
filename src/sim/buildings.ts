@@ -127,3 +127,31 @@ export function dismantle(s: GameState, b: Balance, kind: BuildingKind): boolean
 export function dismantleAll(s: GameState, b: Balance): void {
   for (const kind of Object.keys(BUILDING_NAMES) as BuildingKind[]) dismantle(s, b, kind);
 }
+
+/**
+ * Kauft einmal pro Spielsekunde den größten leistbaren Stapel (1 000 → 1) der Gebäudeart nach,
+ * die gerade der Engpass ist (gleiche Regel wie beim Bot: Abbau- vs. Verhüttungsrate) – nicht
+ * einfach beide Arten parallel, sonst würde Auto-Bau mit eigenen (Spieler- oder Bot-)Käufen um
+ * denselben Fahrzeugpool konkurrieren und die Balance verschlechtern statt sie zu beschleunigen.
+ * Rührt außerdem nichts an, solange das Erz aufgebraucht ist (Übergang zu Werksschiffen/Phase 3
+ * braucht den ganzen Pool) oder solange Pool für die nächste Gigafactory zurückgelegt werden
+ * sollte – sonst nimmt Auto-Bau genau den Pool weg, den man fürs nächste, größere Vorhaben
+ * ansparen wollte, und verlangsamt den Fortschritt statt ihn zu beschleunigen.
+ * Läuft nur, wenn `flags.autoBuild` an ist (P103, „Auto-Bau“).
+ */
+export function autoBuild(s: GameState, b: Balance): void {
+  if (!buildingAvailable(s, 'truck') || !buildingAvailable(s, 'smelter')) return;
+  const i = s.industry;
+  if (i.ore <= 0) return;
+  const reserve = buildingAvailable(s, 'giga') ? i.gigaCost : 0;
+  const boost = (n: number) => (i.droneBoost > 1 ? i.droneBoost * n : 1);
+  const mine = boost(i.trucks) * i.trucks * b.phase2.truckRate;
+  const smelt = boost(i.smelters) * i.smelters * b.phase2.smelterRate;
+  const kind: BuildingKind = i.oreMined > smelt * 1000 || smelt < mine ? 'smelter' : 'truck';
+  for (const amount of [...BULK_AMOUNTS[kind]].reverse()) {
+    if (canBuild(s, b, kind, amount) && s.pool - buildCost(s, b, kind, amount) >= reserve) {
+      build(s, b, kind, amount);
+      break;
+    }
+  }
+}

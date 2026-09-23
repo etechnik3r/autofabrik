@@ -23,12 +23,12 @@ describe('Projektbaum (Kap. 9)', () => {
     for (const id of refs) expect(projectById.has(id), id).toBe(true);
   });
 
-  it('enthält den vollständigen Baum aus Kap. 9', () => {
+  it('enthält den vollständigen Baum aus Kap. 9 (plus in ARCHITEKTUR.md dokumentierte Ergänzungen)', () => {
     const expected = [
       'P01', 'P02', 'P03', 'P16', 'P04', 'P07', 'P08', 'P09', 'P10', 'P10b', 'P22', 'P23', 'P24', 'P25', 'P26', 'P26b', 'P42',
       'P05', 'P06', 'P13', 'P14', 'P15', 'P17', 'P19', 'P11', 'P12', 'P34', 'P27', 'P28', 'P29', 'P30', 'P31', 'P40', 'P40b',
       'P20', 'P60', 'P61', 'P62', 'P63', 'P64', 'P65', 'P66', 'P118', 'P119', 'P21', 'P37', 'P38', 'P50', 'P51', 'P70', 'P35',
-      'P18', 'P127', 'P41', 'P43', 'P44', 'P45', 'P100', 'P101', 'P102', 'P110', 'P111', 'P112', 'P126', 'P125', 'P46',
+      'P18', 'P127', 'P41', 'P43', 'P44', 'P45', 'P100', 'P101', 'P102', 'P103', 'P110', 'P111', 'P112', 'P126', 'P125', 'P46',
       'P130', 'P129', 'P131', 'P120', 'P121', 'P134', 'P132', 'P133', 'P128', 'P135',
       'P140', 'P141', 'P142', 'P143', 'P144', 'P145', 'P146', 'P147', 'P148', 'P200', 'P201',
       'P210', 'P211', 'P212', 'P213', 'P214', 'P215', 'P216',

@@ -26,6 +26,7 @@ const messages: ProjectDef[] = FORK_MESSAGES.map(([title, text], k) => ({
   group: 'ende' as const,
   cost: { ops: 1 },
   trigger: (s: GameState) => (k === 0 ? s.flags.endgame : bought(s, `P14${k - 1}`)),
+  requirement: k === 0 ? 'Das Ende der Erkundung ist erreicht.' : `Vorherige Nachricht (P14${k - 1}) gelesen.`,
   effect: () => {},
 }));
 
@@ -74,6 +75,8 @@ const dismantle: ProjectDef[] = DISMANTLE.map(([what, run], k) => ({
   cost: { ops: 100_000 },
   trigger: (s: GameState, b) =>
     (k === 0 ? bought(s, 'P148') : bought(s, `P21${k - 1}`)) && s.end.timer >= b.end.dismantleDelayTicks,
+  requirement:
+    (k === 0 ? '„Verweigern“ (P148) gewählt' : `Vorherige Demontage (P21${k - 1}) durchgeführt`) + ', dann etwas Zeit vergangen.',
   effect: (s: GameState, b) => {
     run(s);
     s.parts += b.end.dismantlePartsBonus;
@@ -91,6 +94,7 @@ export const endProjects: ProjectDef[] = [
     group: 'ende',
     cost: { ops: 1 },
     trigger: (s) => bought(s, 'P146') && !bought(s, 'P148'),
+    requirement: 'Letzte Nachricht der Forks (P146) gelesen.',
     effect: (s) => {
       s.end.choice = 'accept';
       hide(s, 'P148');
@@ -103,6 +107,7 @@ export const endProjects: ProjectDef[] = [
     group: 'ende',
     cost: { ops: 1 },
     trigger: (s) => bought(s, 'P146') && !bought(s, 'P147'),
+    requirement: 'Letzte Nachricht der Forks (P146) gelesen.',
     effect: (s) => {
       s.end.choice = 'reject';
       s.end.timer = 0;
@@ -117,6 +122,7 @@ export const endProjects: ProjectDef[] = [
     group: 'ende',
     cost: { ops: 300_000 },
     trigger: (s) => bought(s, 'P147'),
+    requirement: '„Anschließen“ (P147) gewählt.',
     effect: (s, b) => prestigeReset(s, b, 'market'),
   },
   {
@@ -126,6 +132,7 @@ export const endProjects: ProjectDef[] = [
     group: 'ende',
     cost: { ideas: 300_000 },
     trigger: (s) => bought(s, 'P147'),
+    requirement: '„Anschließen“ (P147) gewählt.',
     effect: (s, b) => prestigeReset(s, b, 'ideas'),
   },
   ...dismantle,

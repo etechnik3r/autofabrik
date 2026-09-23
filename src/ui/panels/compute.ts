@@ -112,6 +112,7 @@ export const projectsPanel = definePanel({
           head.appendChild(h('span', 'ptitle', def.title));
           const cost = el.appendChild(h('span', 'pcost', 'noch nicht freigeschaltet'));
           el.appendChild(h('span', 'pdesc', def.description));
+          el.appendChild(h('span', 'preq', `Bedingung: ${def.requirement ?? 'noch nicht dokumentiert'}`));
           list.append(el);
           c = { el, cost, def, tag: '', isNew: false };
           cards.set(def.id, c);

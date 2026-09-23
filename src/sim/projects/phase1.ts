@@ -16,6 +16,7 @@ const production: ProjectDef[] = [
     group: 'produktion',
     cost: { ops: 750 },
     trigger: (s) => s.robots >= 1,
+    requirement: 'Mindestens 1 Montageroboter gekauft.',
     effect: (s) => void (s.robotBoost += 0.25),
   },
   {
@@ -25,6 +26,7 @@ const production: ProjectDef[] = [
     group: 'produktion',
     cost: { ops: 2_500 },
     trigger: (s) => bought(s, 'P01'),
+    requirement: 'Roboter-Kalibrierung (P01) gekauft.',
     effect: (s) => void (s.robotBoost += 0.5),
   },
   {
@@ -34,6 +36,7 @@ const production: ProjectDef[] = [
     group: 'produktion',
     cost: { ops: 5_000 },
     trigger: (s) => bought(s, 'P02'),
+    requirement: 'Greifer-Upgrade (P02) gekauft.',
     effect: (s) => void (s.robotBoost += 0.75),
   },
   {
@@ -43,6 +46,7 @@ const production: ProjectDef[] = [
     group: 'produktion',
     cost: { ops: 6_000 },
     trigger: (s) => bought(s, 'P15'),
+    requirement: 'Crashtest-Bestnote (P15) gekauft.',
     effect: (s) => void (s.robotBoost += 5),
   },
   {
@@ -53,6 +57,7 @@ const production: ProjectDef[] = [
     cost: { rep: 1 },
     trigger: (s) =>
       p1(s) && treasuryValue(s) < s.partsCost && s.money < s.partsCost && s.parts < 1 && s.stock < 1,
+    requirement: 'Weder Geld noch Kapitalanlage noch Lager oder Teile reichen für die nächste Lieferung („pleite“).',
     effect: (s) => void (s.parts = s.partsPerDelivery),
     repeatable: () => true,
     message: 'Notlieferung eingetroffen.',
@@ -64,6 +69,7 @@ const production: ProjectDef[] = [
     group: 'produktion',
     cost: { ops: 1_750 },
     trigger: (s) => p1(s) && s.deliveries >= 1,
+    requirement: 'Mindestens 1 Lieferung bestellt.',
     effect: (s) => void (s.partsPerDelivery *= 1.5),
   },
   {
@@ -73,6 +79,7 @@ const production: ProjectDef[] = [
     group: 'produktion',
     cost: { ops: 3_500 },
     trigger: (s) => p1(s) && s.partsPerDelivery >= 1_500,
+    requirement: 'Mindestens 1 500 Teilesätze je Lieferung.',
     effect: (s) => void (s.partsPerDelivery *= 1.75),
   },
   {
@@ -82,6 +89,7 @@ const production: ProjectDef[] = [
     group: 'produktion',
     cost: { ops: 7_500 },
     trigger: (s) => p1(s) && s.partsPerDelivery >= 2_600,
+    requirement: 'Mindestens 2 600 Teilesätze je Lieferung.',
     effect: (s) => void (s.partsPerDelivery *= 2),
   },
   {
@@ -91,6 +99,7 @@ const production: ProjectDef[] = [
     group: 'produktion',
     cost: { ops: 12_000 },
     trigger: (s) => p1(s) && s.partsPerDelivery >= 5_000,
+    requirement: 'Mindestens 5 000 Teilesätze je Lieferung.',
     effect: (s) => void (s.partsPerDelivery *= 3),
   },
   {
@@ -100,6 +109,7 @@ const production: ProjectDef[] = [
     group: 'produktion',
     cost: { ops: 15_000 },
     trigger: (s) => p1(s) && s.partsCost >= 12_500,
+    requirement: 'Preis je Lieferung mindestens 12.500 k∈.',
     effect: (s) => void (s.partsPerDelivery *= 11),
   },
   {
@@ -109,6 +119,7 @@ const production: ProjectDef[] = [
     group: 'produktion',
     cost: { ops: 12_000 },
     trigger: (s) => p1(s) && s.robots >= 75,
+    requirement: 'Mindestens 75 Montageroboter.',
     effect: (s) => void (s.flags.lines = true),
   },
   {
@@ -118,6 +129,7 @@ const production: ProjectDef[] = [
     group: 'produktion',
     cost: { ops: 14_000 },
     trigger: (s) => bought(s, 'P22'),
+    requirement: 'Fertigungsstraßen (P22) gekauft.',
     effect: (s) => void (s.lineBoost += 0.25),
   },
   {
@@ -127,6 +139,7 @@ const production: ProjectDef[] = [
     group: 'produktion',
     cost: { ops: 17_000 },
     trigger: (s) => bought(s, 'P23'),
+    requirement: 'Straßen-Takt I (P23) gekauft.',
     effect: (s) => void (s.lineBoost += 0.5),
   },
   {
@@ -136,6 +149,7 @@ const production: ProjectDef[] = [
     group: 'produktion',
     cost: { ops: 19_500 },
     trigger: (s) => bought(s, 'P24'),
+    requirement: 'Straßen-Takt II (P24) gekauft.',
     effect: (s) => void (s.lineBoost += 1),
   },
   {
@@ -145,6 +159,7 @@ const production: ProjectDef[] = [
     group: 'produktion',
     cost: { ops: 7_000 },
     trigger: (s) => p1(s) && s.deliveries >= 15,
+    requirement: 'Mindestens 15 Lieferungen bestellt.',
     effect: (s) => void (s.flags.autoBuy = true),
   },
   {
@@ -154,6 +169,7 @@ const production: ProjectDef[] = [
     group: 'produktion',
     cost: { ops: 60_000 },
     trigger: (s) => p1(s) && bought(s, 'P26'),
+    requirement: 'Auto-Einkauf (P26) gekauft.',
     effect: (s) => void (s.flags.autoPrice = true),
   },
   {
@@ -163,6 +179,7 @@ const production: ProjectDef[] = [
     group: 'produktion',
     cost: { ops: 500 },
     trigger: (s) => p1(s) && s.flags.compute,
+    requirement: 'Rechenzentrum online.',
     effect: (s) => void (s.flags.revenue = true),
   },
 ];
@@ -176,6 +193,7 @@ function repProject(id: string, title: string, ideas: number, description: strin
     group: 'marke',
     cost: { ideas },
     trigger: (s) => p1(s) && s.flags.ideas && s.ideas >= ideas,
+    requirement: `Ideenwerkstatt freigeschaltet, mindestens ${ideas} Ideen.`,
     effect: (s) => void (s.rep += 1),
   };
 }
@@ -188,6 +206,7 @@ const brand: ProjectDef[] = [
     group: 'marke',
     cost: { ops: 1_000 },
     trigger: (s, b) => s.ops >= opsCapacity(s, b),
+    requirement: 'Taktzyklen-Speicher randvoll.',
     effect: (s) => void (s.flags.ideas = true),
   },
   { ...repProject('P06', 'Slogan-Wettbewerb', 10, 'Ein Claim, der hängen bleibt.'), trigger: (s) => p1(s) && s.flags.ideas },
@@ -203,6 +222,7 @@ const brand: ProjectDef[] = [
     group: 'marke',
     cost: { ideas: 25, ops: 2_500 },
     trigger: (s) => bought(s, 'P13'),
+    requirement: 'Designpreis (P13) gekauft.',
     effect: (s) => void (s.adEffect *= 1.5),
   },
   {
@@ -212,6 +232,7 @@ const brand: ProjectDef[] = [
     group: 'marke',
     cost: { ideas: 45, ops: 4_500 },
     trigger: (s) => bought(s, 'P14'),
+    requirement: 'Innovationspreis (P14) gekauft.',
     effect: (s) => void (s.adEffect *= 2),
   },
   {
@@ -221,6 +242,7 @@ const brand: ProjectDef[] = [
     group: 'marke',
     cost: { ops: 7_500, rep: 1 },
     trigger: (s) => bought(s, 'P12'),
+    requirement: 'Markenmelodie (P12) gekauft.',
     effect: (s) => void (s.adEffect *= 5),
   },
   {
@@ -230,6 +252,7 @@ const brand: ProjectDef[] = [
     group: 'marke',
     cost: { ideas: 500, insight: 1_000, ops: 20_000 },
     trigger: (s) => p1(s) && s.insight >= 1,
+    requirement: 'Mindestens 1 Marktwissen (aus dem Preiskampf-Simulator).',
     effect: (s) => void (s.rep += 1),
   },
   societyProject('P28', 'Unfallfreie Straßen', { ops: 25_000 }, 10),
@@ -243,6 +266,7 @@ const brand: ProjectDef[] = [
     group: 'marke',
     cost: { money: 50_000_000 },
     trigger: (s) => p1(s) && s.rep >= 85 && s.rep < 100 && s.cars >= 101e6,
+    requirement: 'Ansehen zwischen 85 und 100, mindestens 101 Mio. Autos gebaut.',
     effect: (s) => void (s.rep += 1),
   },
   {
@@ -252,6 +276,7 @@ const brand: ProjectDef[] = [
     group: 'marke',
     cost: (s) => ({ money: s.lobbyCost }),
     trigger: (s) => p1(s) && bought(s, 'P40') && s.rep < 100,
+    requirement: 'Stiftung gründen (P40) gekauft, Ansehen unter 100.',
     effect: (s) => {
       s.rep += 1;
       s.lobbyCost *= 2;
@@ -268,6 +293,7 @@ function societyProject(id: string, title: string, cost: { ops: number; insight?
     group: 'marke',
     cost,
     trigger: (s) => bought(s, 'P27'),
+    requirement: 'Ethikrat (P27) gekauft.',
     effect: (s, b) => {
       s.rep += rep;
       s.treasury.gain += b.treasury.gainThresholdStep;
@@ -285,6 +311,7 @@ const strategyProjects: ProjectDef[] = STRATEGY_COSTS.map((ops, k) => ({
   group: 'systeme' as const,
   cost: { ops },
   trigger: (s) => (k === 0 ? bought(s, 'P20') : bought(s, `P6${k - 1}`)),
+  requirement: k === 0 ? 'Preiskampf-Simulator (P20) gekauft.' : `Vorherige Strategie (${STRATEGY_NAMES[k]}) gekauft.`,
   effect: (s) => unlockStrategy(s),
 }));
 
@@ -296,6 +323,7 @@ const systems: ProjectDef[] = [
     group: 'systeme',
     cost: { ops: 12_000 },
     trigger: (s) => bought(s, 'P19'),
+    requirement: 'Verhandlungstheorie (P19) gekauft.',
     effect: (s) => void (s.flags.strategy = true),
   },
   ...strategyProjects,
@@ -306,6 +334,7 @@ const systems: ProjectDef[] = [
     group: 'systeme',
     cost: { ideas: 50_000 },
     trigger: (s) => bought(s, 'P20') && s.rep >= 90,
+    requirement: 'Preiskampf-Simulator (P20) gekauft, Ansehen mindestens 90.',
     effect: (s) => void (s.flags.autoTourney = true),
   },
   {
@@ -315,6 +344,7 @@ const systems: ProjectDef[] = [
     group: 'systeme',
     cost: { ideas: 25_000 },
     trigger: (s) => s.strategy.unlocked >= STRATEGY_NAMES.length,
+    requirement: 'Alle Strategien freigeschaltet.',
     effect: (s, b) => {
       s.strategy.boost = 2;
       s.strategy.fixedCost = b.strategy.fixedCostAfterP119;
@@ -327,6 +357,7 @@ const systems: ProjectDef[] = [
     group: 'systeme',
     cost: { ops: 10_000 },
     trigger: (s) => p1(s) && s.rep >= 8,
+    requirement: 'Ansehen mindestens 8.',
     effect: (s) => void (s.flags.treasury = true),
   },
   {
@@ -336,6 +367,7 @@ const systems: ProjectDef[] = [
     group: 'systeme',
     cost: { money: 100_000_000 },
     trigger: (s) => p1(s) && treasuryValue(s) >= 1_000_000,
+    requirement: 'Gesamtwert der Kapitalanlage mindestens 1.000.000 k∈.',
     effect: (s) => {
       s.demandBoost *= 5;
       s.rep += 1;
@@ -348,6 +380,7 @@ const systems: ProjectDef[] = [
     group: 'systeme',
     cost: { insight: 1_000, money: 1_000_000_000 },
     trigger: (s) => p1(s) && bought(s, 'P37'),
+    requirement: 'Übernahme Zulieferer (P37) gekauft.',
     effect: (s) => {
       s.demandBoost *= 10;
       s.rep += 1;
@@ -360,6 +393,7 @@ const systems: ProjectDef[] = [
     group: 'systeme',
     cost: { ops: 10_000 },
     trigger: (s) => s.cores >= 5,
+    requirement: 'Mindestens 5 Rechenkerne.',
     effect: (s) => {
       s.flags.quantum = true;
       s.quantum.chips = 1;
@@ -372,6 +406,7 @@ const systems: ProjectDef[] = [
     group: 'systeme',
     cost: (s, b) => ({ ops: b.quantum.chipBaseCost + b.quantum.chipCostStep * timesBought(s, 'P51') }),
     trigger: (s, b) => bought(s, 'P50') && s.quantum.chips < b.quantum.chips,
+    requirement: 'Resonanzprüfstand (P50) gekauft, weniger Sensoren als das Maximum.',
     effect: (s) => void s.quantum.chips++,
     repeatable: (s, b) => s.quantum.chips < b.quantum.chips,
   },
@@ -382,6 +417,7 @@ const systems: ProjectDef[] = [
     group: 'systeme',
     cost: { ops: 70_000 },
     trigger: (s) => bought(s, 'P34'),
+    requirement: 'Neuromarketing (P34) gekauft.',
     effect: () => {},
   },
   {
@@ -391,6 +427,7 @@ const systems: ProjectDef[] = [
     group: 'systeme',
     cost: { rep: 100 },
     trigger: (s) => p1(s) && bought(s, 'P70'),
+    requirement: 'Autopilot-Stack (P70) gekauft.',
     effect: (s) => enterPhase2(s),
   },
 ];

@@ -729,6 +729,20 @@
       "repeatable": false
     },
     {
+      "id": "P103",
+      "group": "konzern",
+      "icon": "🔁",
+      "title": "Auto-Bau",
+      "description": "Kauft automatisch weitere Rohstoff-Rover und Zellwerke nach, solange der Fahrzeugpool reicht.",
+      "text": "60.000 Taktzyklen",
+      "dynamic": false,
+      "deps": [
+        "P43",
+        "P44"
+      ],
+      "repeatable": false
+    },
+    {
       "id": "P100",
       "group": "konzern",
       "icon": "🚀",
@@ -1207,7 +1221,7 @@
     },
     {
       "term": "Rohstoffvorkommen",
-      "text": "Noch nicht abgebautes Material auf der Erde bzw. im erkundeten Universum."
+      "text": "Noch nicht abgebautes Material auf der Erde bzw. im erkundeten Universum. Muss auf 0 sinken, damit die Werksschiffe gebaut werden können und Phase 3 beginnt – mehr Rohstoff-Rover beschleunigen den Abbau."
     },
     {
       "term": "Fahrzeugpool",

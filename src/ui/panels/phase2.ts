@@ -1,4 +1,5 @@
 import { BUILDING_NAMES, BULK_AMOUNTS, buildCost, buildingAvailable, buildingCount } from '../../sim/buildings';
+import { bought } from '../../sim/projects/types';
 import type { BuildingKind } from '../../sim/state';
 import { definePanel } from '../dom';
 import { fmtNum, fmtPct } from '../format';
@@ -17,6 +18,12 @@ export const corporationPanel = definePanel({
     p.stat('Rohmaterial', (s) => `${fmtNum(s.industry.oreMined)} ME`, (s) => s.flags.mining);
     p.stat('Teilesätze', (s) => fmtNum(s.parts));
     p.stat('Autos/s', (s) => fmtNum(s.stats.carsPerSec));
+    const autoBuildBtn = p.button((s) => `Auto-Bau: ${s.flags.autoBuild ? 'an' : 'aus'}`, { type: 'toggleAutoBuild' }, {
+      visible: (s) => bought(s, 'P103'),
+      title: 'Kauft automatisch weitere Rohstoff-Rover und Zellwerke nach, solange der Fahrzeugpool reicht.',
+      cls: 'btn toggle',
+    });
+    p.bind((s) => autoBuildBtn.classList.toggle('on', s.flags.autoBuild));
     for (const kind of KINDS) {
       p.group('building', (s) => buildingAvailable(s, kind) || (s.phase === 3 && buildingCount(s, kind) > 0), (g) => {
         g.stat(BUILDING_NAMES[kind], (s) => fmtNum(buildingCount(s, kind)));

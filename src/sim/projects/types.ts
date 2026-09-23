@@ -27,6 +27,11 @@ export interface ProjectDef {
   repeatable?: (s: GameState, b: Balance) => boolean;
   /** Meldung im Ticker nach dem Kauf. */
   message?: string;
+  /**
+   * Für die Cheat-Zone „Projekt-Vorschau“: menschenlesbare Beschreibung, wann `trigger` wahr wird
+   * (der Trigger selbst ist eine Funktion und lässt sich nicht automatisch in Text übersetzen).
+   */
+  requirement?: string;
 }
 
 export function bought(s: GameState, id: string): boolean {

@@ -1,4 +1,5 @@
 import type { Balance } from './balance';
+import { autoBuild } from './buildings';
 import { updateIdeas, updateOps } from './compute';
 import { conflicts } from './conflict';
 import { checkEnd, updateEnd } from './end';
@@ -33,6 +34,9 @@ export function fastTick(s: GameState, b: Balance): void {
     smelt(s, b);
     gigaProduction(s);
   }
+  // Nur einmal pro Spielsekunde prüfen: canBuild()/buildCost() sind für große Stapel (bis 1 000
+  // Stück) teuer, jeden Fast-Tick (alle 10 ms) wäre das ein 100-facher Overhead ohne Nutzen.
+  if (s.phase === 2 && s.flags.autoBuild && s.tick % (1000 / b.tick.fastMs) === 0) autoBuild(s, b);
   if (s.phase === 3) {
     hazards(s, b);
     seedBuild(s, b);

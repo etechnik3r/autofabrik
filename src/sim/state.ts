@@ -25,6 +25,7 @@ export const FLAG_NAMES = [
   'trucks', // P43
   'smelters', // P44
   'gigas', // P45
+  'autoBuild', // Schalter, "verfügbar" = bought(s, 'P103')
   'fleet', // P126
   'momentum', // P125
   'fleetReboot', // P130

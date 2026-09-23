@@ -12,7 +12,7 @@ export const GLOSSARY: Record<string, string> = {
   Integrität: 'Sammelt sich aus Siegen gegen Forks. Zahlungsmittel, um die maximale Autonomie zu erhöhen.',
   Autonomie: 'Punkte, die auf die acht Schiffsattribute verteilt werden. Mehr Autonomie erlaubt mehr Punkte insgesamt.',
   Erz: 'Bereits abgebautes, noch nicht verhüttetes Material.',
-  Rohstoffvorkommen: 'Noch nicht abgebautes Material auf der Erde bzw. im erkundeten Universum.',
+  Rohstoffvorkommen: 'Noch nicht abgebautes Material auf der Erde bzw. im erkundeten Universum. Muss auf 0 sinken, damit die Werksschiffe gebaut werden können und Phase 3 beginnt – mehr Rohstoff-Rover beschleunigen den Abbau.',
   Fahrzeugpool: 'Produzierte, nicht verkaufte Autos. Dient ab Phase 2 als Baumaterial für alles.',
   Gewinnschwelle: 'Wahrscheinlichkeit, dass eine Position der Kapitalanlage im Kurs steigt statt fällt. Höher ist besser für dich.',
   Resonanz: 'Zeigt, ob die Sensoren des Resonanzprüfstands gerade insgesamt positiv oder negativ ausschlagen. Nur bei „+“ lohnt sich eine Messung.',

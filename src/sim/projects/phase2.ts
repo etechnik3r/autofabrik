@@ -14,6 +14,7 @@ export const phase2Projects: ProjectDef[] = [
     group: 'konzern',
     cost: { ops: 45_000 },
     trigger: (s) => p2(s) && bought(s, 'P17'),
+    requirement: 'Patentoffensive (P17) gekauft, Phase 2 erreicht.',
     effect: () => {},
   },
   {
@@ -23,6 +24,7 @@ export const phase2Projects: ProjectDef[] = [
     group: 'konzern',
     cost: { ops: 40_000 },
     trigger: (s) => bought(s, 'P18'),
+    requirement: 'Werkslayout-Topologie (P18) gekauft.',
     effect: (s) => void (s.flags.power = true),
   },
   {
@@ -32,6 +34,7 @@ export const phase2Projects: ProjectDef[] = [
     group: 'konzern',
     cost: { ops: 35_000 },
     trigger: (s) => bought(s, 'P127'),
+    requirement: 'Stromnetz (P127) gekauft.',
     effect: (s) => void (s.flags.mining = true),
   },
   {
@@ -41,6 +44,7 @@ export const phase2Projects: ProjectDef[] = [
     group: 'konzern',
     cost: { ops: 25_000 },
     trigger: (s) => bought(s, 'P41'),
+    requirement: 'Rohstoffgewinnung (P41) gekauft.',
     effect: (s) => void (s.flags.trucks = true),
   },
   {
@@ -50,6 +54,7 @@ export const phase2Projects: ProjectDef[] = [
     group: 'konzern',
     cost: { ops: 25_000 },
     trigger: (s) => bought(s, 'P41'),
+    requirement: 'Rohstoffgewinnung (P41) gekauft.',
     effect: (s) => void (s.flags.smelters = true),
   },
   {
@@ -59,7 +64,18 @@ export const phase2Projects: ProjectDef[] = [
     group: 'konzern',
     cost: { ops: 35_000 },
     trigger: (s) => bought(s, 'P43') && bought(s, 'P44'),
+    requirement: 'Rohstoff-Rover (P43) und Zellwerke (P44) freigeschaltet.',
     effect: (s) => void (s.flags.gigas = true),
+  },
+  {
+    id: 'P103',
+    title: 'Auto-Bau',
+    description: 'Kauft automatisch weitere Rohstoff-Rover und Zellwerke nach, solange der Fahrzeugpool reicht.',
+    group: 'konzern',
+    cost: { ops: 60_000 },
+    trigger: (s) => bought(s, 'P43') && bought(s, 'P44'),
+    requirement: 'Rohstoff-Rover (P43) und Zellwerke (P44) freigeschaltet.',
+    effect: (s) => void (s.flags.autoBuild = true),
   },
   {
     id: 'P100',
@@ -68,6 +84,7 @@ export const phase2Projects: ProjectDef[] = [
     group: 'konzern',
     cost: { ops: 80_000 },
     trigger: (s) => s.industry.gigas >= 10,
+    requirement: 'Mindestens 10 Gigafactories.',
     effect: (s) => void (s.industry.gigaRate *= 100),
   },
   {
@@ -77,6 +94,7 @@ export const phase2Projects: ProjectDef[] = [
     group: 'konzern',
     cost: { ops: 85_000 },
     trigger: (s) => s.industry.gigas >= 20,
+    requirement: 'Mindestens 20 Gigafactories.',
     effect: (s) => void (s.industry.gigaRate *= 1000),
   },
   {
@@ -86,6 +104,7 @@ export const phase2Projects: ProjectDef[] = [
     group: 'konzern',
     cost: { pool: 1e21 },
     trigger: (s) => s.industry.gigas >= 50,
+    requirement: 'Mindestens 50 Gigafactories.',
     effect: (s) => void (s.industry.gfBoost = 1000),
   },
   {
@@ -95,6 +114,7 @@ export const phase2Projects: ProjectDef[] = [
     group: 'konzern',
     cost: { ops: 80_000 },
     trigger: (s) => units(s) >= 500,
+    requirement: 'Mindestens 500 Rohstoff-Rover und Zellwerke zusammen.',
     effect: (s) => void (s.industry.unitRateMult *= 100),
   },
   {
@@ -104,6 +124,7 @@ export const phase2Projects: ProjectDef[] = [
     group: 'konzern',
     cost: { ops: 100_000 },
     trigger: (s) => units(s) >= 5_000,
+    requirement: 'Mindestens 5 000 Rohstoff-Rover und Zellwerke zusammen.',
     effect: (s) => void (s.industry.unitRateMult *= 1000),
   },
   {
@@ -113,6 +134,7 @@ export const phase2Projects: ProjectDef[] = [
     group: 'konzern',
     cost: { insight: 12_000 },
     trigger: (s) => units(s) >= 50_000,
+    requirement: 'Mindestens 50 000 Rohstoff-Rover und Zellwerke zusammen.',
     effect: (s) => void (s.industry.droneBoost = 2),
   },
   {
@@ -122,6 +144,7 @@ export const phase2Projects: ProjectDef[] = [
     group: 'konzern',
     cost: { insight: 12_000 },
     trigger: (s) => units(s) >= 200,
+    requirement: 'Mindestens 200 Rohstoff-Rover und Zellwerke zusammen.',
     effect: (s) => void (s.flags.fleet = true),
   },
   {
@@ -131,6 +154,7 @@ export const phase2Projects: ProjectDef[] = [
     group: 'konzern',
     cost: { ideas: 30_000 },
     trigger: (s) => s.industry.solar >= 50,
+    requirement: 'Mindestens 50 Solarparks.',
     effect: (s) => void (s.flags.momentum = true),
   },
   {
@@ -140,6 +164,7 @@ export const phase2Projects: ProjectDef[] = [
     group: 'konzern',
     cost: { ops: 120_000, energy: 1e7, pool: 5e27 },
     trigger: (s) => p2(s) && s.industry.ore <= 0,
+    requirement: 'Rohstoffvorkommen restlos abgebaut (auf 0 gesunken) – mehr Rohstoff-Rover bauen, um schneller voranzukommen.',
     effect: (s, b) => enterPhase3(s, b),
   },
 ];

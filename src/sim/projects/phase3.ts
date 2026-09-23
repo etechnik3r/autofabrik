@@ -14,6 +14,7 @@ export const phase3Projects: ProjectDef[] = [
     group: 'expansion',
     cost: { ops: 100_000 },
     trigger: (s) => p3(s) && s.industry.trucks + s.industry.smelters >= 2,
+    requirement: 'Phase 3, mindestens 2 Rohstoff-Rover/Zellwerke aus der alten Flotte.',
     effect: (s) => {
       s.flags.fleetReboot = true;
       s.flags.fleet = true;
@@ -26,6 +27,7 @@ export const phase3Projects: ProjectDef[] = [
     group: 'expansion',
     cost: { ops: 125_000 },
     trigger: (s) => p3(s) && s.space.lostHazard >= 100,
+    requirement: 'Phase 3, mindestens 100 Schiffe durch Gefahren verloren.',
     effect: (s) => void (s.flags.hazardShield = true),
   },
   {
@@ -35,6 +37,7 @@ export const phase3Projects: ProjectDef[] = [
     group: 'expansion',
     cost: { ops: 150_000 },
     trigger: (s) => p3(s) && s.space.lostConflict >= 1,
+    requirement: 'Phase 3, mindestens 1 Schiff im Konflikt mit Forks verloren.',
     effect: (s) => void (s.flags.defense = true),
   },
   {
@@ -44,6 +47,7 @@ export const phase3Projects: ProjectDef[] = [
     group: 'expansion',
     cost: { ops: 175_000, insight: 15_000 },
     trigger: (s) => bought(s, 'P131') && s.space.lostConflict >= 1e7,
+    requirement: 'Abwehrprotokoll (P131) gekauft, mindestens 10 Mio. Schiffe im Konflikt verloren.',
     effect: (s) => void (s.flags.ooda = true),
   },
   {
@@ -53,6 +57,7 @@ export const phase3Projects: ProjectDef[] = [
     group: 'expansion',
     cost: { ideas: 225_000 },
     trigger: (s) => p3(s) && s.space.lostConflict >= 1e7,
+    requirement: 'Phase 3, mindestens 10 Mio. Schiffe im Konflikt verloren.',
     effect: (s) => void (s.flags.integrity = true),
   },
   {
@@ -62,6 +67,7 @@ export const phase3Projects: ProjectDef[] = [
     group: 'expansion',
     cost: { ops: 200_000, insight: 10_000 },
     trigger: (s) => bought(s, 'P121'),
+    requirement: 'Integritätsprotokoll (P121) gekauft.',
     effect: (s) => void (s.flags.streak = true),
   },
   {
@@ -71,6 +77,7 @@ export const phase3Projects: ProjectDef[] = [
     group: 'expansion',
     cost: { ops: 250_000, ideas: 125_000, pool: 5e31 },
     trigger: (s) => bought(s, 'P121'),
+    requirement: 'Integritätsprotokoll (P121) gekauft.',
     effect: (s) => void (s.space.integrity += 50_000),
   },
   {
@@ -80,6 +87,7 @@ export const phase3Projects: ProjectDef[] = [
     group: 'expansion',
     cost: (s) => ({ ideas: s.space.memorialCost, insight: s.space.memorialCost / 10 }),
     trigger: (s) => bought(s, 'P121') && s.space.autonomy >= s.space.maxAutonomy && attrSum(s) >= s.space.autonomy,
+    requirement: 'Integritätsprotokoll (P121) gekauft, Autonomie-Punkte voll verteilt und am Maximum.',
     effect: (s) => {
       s.space.integrity += 10_000;
       s.space.memorialCost += 10_000;
@@ -96,6 +104,7 @@ export const phase3Projects: ProjectDef[] = [
       p3(s) &&
       s.strategy.unlocked >= 8 &&
       autonomyCost(s.space.autonomy, b) > s.insight,
+    requirement: 'Phase 3, alle Strategien freigeschaltet, Autonomie-Ausbau teurer als vorhandenes Marktwissen.',
     effect: (s) => void (s.flags.placeBonus = true),
   },
   {
@@ -105,6 +114,7 @@ export const phase3Projects: ProjectDef[] = [
     group: 'expansion',
     cost: { storage: 10 },
     trigger: (s, b) => p3(s) && s.space.ships < 1 && s.pool < b.phase3.shipCost && s.storage >= 10,
+    requirement: 'Phase 3, keine Schiffe mehr, Fahrzeugpool reicht nicht für ein neues, mindestens 10 Speichereinheiten.',
     effect: (s) => void (s.pool += 1e22),
     repeatable: () => true,
   },

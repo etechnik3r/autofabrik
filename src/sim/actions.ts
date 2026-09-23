@@ -35,6 +35,7 @@ export type Action =
   | { type: 'toggleAutoBuy' }
   | { type: 'toggleAutoPrice' }
   | { type: 'toggleAutoTourney' }
+  | { type: 'toggleAutoBuild' }
   | { type: 'project'; id: string }
   | { type: 'treasuryDeposit' }
   | { type: 'treasuryWithdraw' }
@@ -115,6 +116,10 @@ const handlers: Handlers = {
   toggleAutoTourney: {
     can: (s) => bought(s, 'P118'),
     run: (s) => void (s.flags.autoTourney = !s.flags.autoTourney),
+  },
+  toggleAutoBuild: {
+    can: (s) => bought(s, 'P103'),
+    run: (s) => void (s.flags.autoBuild = !s.flags.autoBuild),
   },
   project: {
     can: (s, b, a) => canBuyProject(s, b, a.id),
